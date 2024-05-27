@@ -1,0 +1,62 @@
+# depslib dependency file v1.0
+1716501416 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
+	<iostream>
+	"Alquiler.h"
+	"Venta.h"
+	"Fecha.h"
+	"funciones.h"
+	"ArchivoAlquiler.h"
+	"ArchivoVenta.h"
+	"DetalleAlquiler.h"
+
+1716499049 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\detallealquiler.cpp
+	"DetalleAlquiler.h"
+
+1716503316 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\funciones.h
+	<iostream>
+
+1716259797 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\detallealquiler.h
+	<iostream>
+	<cstdlib>
+	"funciones.h"
+
+1716499125 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquiler.cpp
+	"Alquiler.h"
+
+1716327557 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\alquiler.h
+	<iostream>
+	<cstdlib>
+	"Fecha.h"
+	"funciones.h"
+
+1716327263 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\fecha.h
+	<iostream>
+	<string.h>
+	<ctime>
+
+1716498704 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\venta.cpp
+	"Venta.h"
+
+1716349611 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\venta.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Fecha.h"
+	"funciones.h"
+
+1716327213 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\fecha.cpp
+	"Fecha.h"
+
+1716416798 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivoventa.cpp
+	"ArchivoVenta.h"
+
+1716330512 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivoventa.h
+	<iostream>
+	<cstring>
+	"Venta.h"
+
+1716347773 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivoalquiler.cpp
+	"ArchivoAlquiler.h"
+
+1716347785 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivoalquiler.h
+
