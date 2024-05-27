@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1716501416 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
+1716774644 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
 	<iostream>
 	"Alquiler.h"
 	"Venta.h"
@@ -8,11 +8,12 @@
 	"ArchivoAlquiler.h"
 	"ArchivoVenta.h"
 	"DetalleAlquiler.h"
+	"Persona.h"
 
 1716499049 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\detallealquiler.cpp
 	"DetalleAlquiler.h"
 
-1716503316 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\funciones.h
+1716776571 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\funciones.h
 	<iostream>
 
 1716259797 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\detallealquiler.h
