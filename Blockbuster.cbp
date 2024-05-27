@@ -36,23 +36,36 @@
 		</Compiler>
 		<Unit filename="include/Alquiler.h" />
 		<Unit filename="include/ArchivoAlquiler.h" />
+		<Unit filename="include/ArchivoArticulo.h" />
+		<Unit filename="include/ArchivoJuego.h" />
+		<Unit filename="include/ArchivoVHS.h" />
 		<Unit filename="include/ArchivoVenta.h" />
+		<Unit filename="include/Articulo.h" />
+		<Unit filename="include/ArticulosManager.h" />
 		<Unit filename="include/Cliente.h" />
 		<Unit filename="include/DetalleAlquiler.h" />
 		<Unit filename="include/Fecha.h" />
+		<Unit filename="include/Juego.h" />
 		<Unit filename="include/Persona.h" />
 		<Unit filename="include/Personal.h" />
+		<Unit filename="include/VHS.h" />
 		<Unit filename="include/Venta.h" />
 		<Unit filename="include/funciones.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Alquiler.cpp" />
 		<Unit filename="src/ArchivoAlquiler.cpp" />
+		<Unit filename="src/ArchivoJuego.cpp" />
+		<Unit filename="src/ArchivoVHS.cpp" />
 		<Unit filename="src/ArchivoVenta.cpp" />
+		<Unit filename="src/Articulo.cpp" />
+		<Unit filename="src/ArticulosManager.cpp" />
 		<Unit filename="src/Cliente.cpp" />
 		<Unit filename="src/DetalleAlquiler.cpp" />
 		<Unit filename="src/Fecha.cpp" />
+		<Unit filename="src/Juego.cpp" />
 		<Unit filename="src/Persona.cpp" />
 		<Unit filename="src/Personal.cpp" />
+		<Unit filename="src/VHS.cpp" />
 		<Unit filename="src/Venta.cpp" />
 		<Unit filename="src/funciones.cpp" />
 		<Extensions>
