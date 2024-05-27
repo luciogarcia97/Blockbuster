@@ -60,3 +60,31 @@
 
 1716347785 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivoalquiler.h
 
+1716774447 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\cliente.cpp
+	"Cliente.h"
+	"Persona.h"
+	<iostream>
+	<cstring>
+
+1716774447 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\cliente.h
+	"Persona.h"
+	<string>
+
+1716774447 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\persona.h
+	<string>
+
+1716774447 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\persona.cpp
+	"Persona.h"
+	<iostream>
+	<cstring>
+
+1716774447 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\personal.cpp
+	"Personal.h"
+	"Persona.h"
+	<iostream>
+	<cstring>
+
+1716774447 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\personal.h
+	"Persona.h"
+	<string>
+

@@ -37,6 +37,7 @@
 		<Unit filename="include/Alquiler.h" />
 		<Unit filename="include/ArchivoAlquiler.h" />
 		<Unit filename="include/ArchivoVenta.h" />
+		<Unit filename="include/Cliente.h" />
 		<Unit filename="include/DetalleAlquiler.h" />
 		<Unit filename="include/Fecha.h" />
 		<Unit filename="include/Venta.h" />
@@ -45,6 +46,7 @@
 		<Unit filename="src/Alquiler.cpp" />
 		<Unit filename="src/ArchivoAlquiler.cpp" />
 		<Unit filename="src/ArchivoVenta.cpp" />
+		<Unit filename="src/Cliente.cpp" />
 		<Unit filename="src/DetalleAlquiler.cpp" />
 		<Unit filename="src/Fecha.cpp" />
 		<Unit filename="src/Venta.cpp" />

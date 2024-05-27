@@ -45,3 +45,5 @@ inline void headerVentas(){
     //Tiene formato de tabla
     cout << "Venta" << "\t\tCliente" << "\t\tFecha" << "\t\tVendedor" << "\t\tForma de pago" << endl;
 }
+
+

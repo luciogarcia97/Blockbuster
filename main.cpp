@@ -6,23 +6,15 @@
 #include "ArchivoAlquiler.h"
 #include "ArchivoVenta.h"
 #include "DetalleAlquiler.h"
+#include "Persona.h"
 
 using namespace std;
 
 int main()
 {
-    Venta obj, obj2;
-    ArchivoVenta data("ventas.dat");
+    Persona obj;
 
-    obj2.cargarVenta();
-//    obj2.mostrarVenta();
-    system("pause");
-//    obj2.setNumeroVenta(1234);
-    system("cls");
-//    data.agregarRegistroVenta(obj);
-    data.agregarRegistroVenta(obj2);
-
-    data.listarArchivo();
+    obj.mostrarPersona();
 
     return 0;
 }
