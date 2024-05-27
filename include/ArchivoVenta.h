@@ -16,9 +16,6 @@ class ArchivoVenta
         int agregarRegistroVenta(Venta obj);
 
         bool listarArchivo();
-
-    protected:
-
     private:
         char _nombre[30];
 };

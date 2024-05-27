@@ -89,8 +89,6 @@ void Alquiler::cargarAlquiler(){
     cout << "Se registro el alquiler correctamente!" << endl;
 }
 void Alquiler::mostrarAlquiler(){
-    cout << "Alquiler" << "\tCliente" << "\t\tFecha Alquiler" << "\tVendedor" << "\tForma de pago" << "\tFecha de Devolucion" << "\t\tFecha de Entrega" << "\t\tEstado" << endl;
-
     cout << _numero_alquiler << "\t\t" << _numero_cliente << "\t\t";
     _fecha_alquiler.MostrarFecha();
     cout << "\t" << _legajo_personal << "\t\t" << _forma_pago << "\t\t";

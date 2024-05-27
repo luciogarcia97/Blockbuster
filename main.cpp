@@ -12,9 +12,16 @@ using namespace std;
 
 int main()
 {
-    Persona obj;
+    Fecha fecha;
+    Fecha fecha2(29,5,1997);
+    Alquiler obj, obj1, obj2(123, 321, 2, 1010, fecha, fecha2, fecha, 1);
+    ArchivoAlquiler data("Alquiler.dat");
+//    obj.cargarAlquiler();
+    data.agregarRegistroAqluier(obj);
+    data.agregarRegistroAqluier(obj1);
+    data.agregarRegistroAqluier(obj2);
+    data.listarArchivo();
 
-    obj.mostrarPersona();
 
     return 0;
 }

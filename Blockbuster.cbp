@@ -40,6 +40,8 @@
 		<Unit filename="include/Cliente.h" />
 		<Unit filename="include/DetalleAlquiler.h" />
 		<Unit filename="include/Fecha.h" />
+		<Unit filename="include/Persona.h" />
+		<Unit filename="include/Personal.h" />
 		<Unit filename="include/Venta.h" />
 		<Unit filename="include/funciones.h" />
 		<Unit filename="main.cpp" />
@@ -49,7 +51,10 @@
 		<Unit filename="src/Cliente.cpp" />
 		<Unit filename="src/DetalleAlquiler.cpp" />
 		<Unit filename="src/Fecha.cpp" />
+		<Unit filename="src/Persona.cpp" />
+		<Unit filename="src/Personal.cpp" />
 		<Unit filename="src/Venta.cpp" />
+		<Unit filename="src/funciones.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

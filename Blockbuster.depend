@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1716774644 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
+1716781521 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
 	<iostream>
 	"Alquiler.h"
 	"Venta.h"
@@ -13,7 +13,7 @@
 1716499049 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\detallealquiler.cpp
 	"DetalleAlquiler.h"
 
-1716776571 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\funciones.h
+1716780381 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\funciones.h
 	<iostream>
 
 1716259797 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\detallealquiler.h
@@ -21,7 +21,7 @@
 	<cstdlib>
 	"funciones.h"
 
-1716499125 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquiler.cpp
+1716780369 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquiler.cpp
 	"Alquiler.h"
 
 1716327557 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\alquiler.h
@@ -51,15 +51,18 @@
 1716416798 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivoventa.cpp
 	"ArchivoVenta.h"
 
-1716330512 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivoventa.h
+1716780119 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivoventa.h
 	<iostream>
 	<cstring>
 	"Venta.h"
 
-1716347773 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivoalquiler.cpp
+1716781612 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivoalquiler.cpp
 	"ArchivoAlquiler.h"
 
-1716347785 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivoalquiler.h
+1716780098 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivoalquiler.h
+	<iostream>
+	<cstring>
+	"Alquiler.h"
 
 1716774447 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\cliente.cpp
 	"Cliente.h"
@@ -88,4 +91,7 @@
 1716774447 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\personal.h
 	"Persona.h"
 	<string>
+
+1716780402 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\funciones.cpp
+	"funciones.h"
 

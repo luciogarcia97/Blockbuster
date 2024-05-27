@@ -42,3 +42,7 @@ void headerVentas(){
     //Tiene formato de tabla
     cout << "Venta" << "\t\tCliente" << "\t\tFecha" << "\t\tVendedor" << "\t\tForma de pago" << endl;
 }
+
+void headerAlquiler(){
+    cout << "Alquiler" << "\tCliente" << "\t\tFecha Alquiler" << "\tVendedor" << "\tForma de pago" << "\tFecha de Devolucion" << "\t\tFecha de Entrega" << "\t\tEstado" << endl;
+}
