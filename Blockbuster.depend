@@ -30,7 +30,7 @@
 	<iostream>
 	<ctime>
 
-1716498704 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\venta.cpp
+1716864750 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\venta.cpp
 	"Venta.h"
 
 1716864707 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\venta.h
@@ -38,7 +38,7 @@
 	"Fecha.h"
 	"funciones.h"
 
-1716327213 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\fecha.cpp
+1716864680 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\fecha.cpp
 	"Fecha.h"
 
 1716864064 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivoventa.cpp
@@ -65,7 +65,7 @@
 	"Persona.h"
 	<string>
 
-1716774447 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\persona.h
+1716865628 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\persona.h
 	<string>
 
 1716774447 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\persona.cpp

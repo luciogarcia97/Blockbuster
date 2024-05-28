@@ -2,7 +2,7 @@
 #include <string>
 
 class Persona{
-private:
+protected:
     char _nombre [30];
     char _apellido [30];
     char _mail [30];

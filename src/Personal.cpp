@@ -6,7 +6,7 @@ using namespace std;
 
 Personal::Personal()
 {
-    _legajo_personal = -1;
+    _legajo_personal = 0;
     strcpy(_contrasena, "SIN DATOS");
     strcpy(_cargo,"SIN DATOS");
     _sueldo = 0.0f;
@@ -51,7 +51,7 @@ void Personal::setLegajoPersonal(int legajo_personal)
     }
     else
     {
-        _legajo_personal = -1;
+        _legajo_personal = 0;
     }
 }
 
@@ -110,7 +110,6 @@ void Personal::cargarPersonal()
     string contrasena,cargo;
     float sueldo,comision;
 
-    cin.ignore();
     Persona::cargarPersona();
     cout << "Ingrese el Nro legajo del Personal: " << endl;
     cin >> legajo_personal;

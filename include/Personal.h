@@ -28,11 +28,8 @@ public:
     void setSueldo(float sueldo);
     void setComision(float comision);
 
-
     void cargarPersonal();
     void mostrarPersonal();
-
-
 
 
 

@@ -9,6 +9,7 @@ Cliente::Cliente()
     _id_cliente = -1;
     _estado_cliente = 0;
     _estado_alquiler = 0;
+
 }
 
 Cliente::Cliente(int numero_cliente,bool estado_cliente,bool estado_alquiler)
@@ -35,6 +36,7 @@ bool Cliente::getEstadoAlquiler()
 }
 
 
+
 void Cliente::setIdCliente(int id_cliente)
 {
     if(id_cliente > 0)
@@ -57,17 +59,17 @@ void Cliente::setEstadoAlquiler(bool estado_alquiler)
     _estado_alquiler = estado_alquiler;
 }
 
+
 void Cliente::crearCliente()
 {
     int id_cliente;
     bool estado_cliente = 0;
     bool estado_alquiler = 0;
 
-    cin.ignore();
     Persona::cargarPersona();
     cout << "Ingrese el numero de cliente: " << endl;
     cin >> id_cliente;
-    cout << "Ingrese el estado del cliente 1-activo 2-inactivo" << endl;
+    cout << "Ingrese el estado del cliente 1-activo 0-inactivo" << endl;
     cin >> estado_cliente;
     cout << "Ingrese el estado del alquiler del cliente 1-falta devolver 0-ya devolvio el producto: " << endl;
     cin >> estado_alquiler;
@@ -80,12 +82,13 @@ void Cliente::crearCliente()
 void Cliente::mostrarCliente()
 {
 
-    cout << "El nombre del Cliente es: " << Persona::getNombre() << endl;
-    cout << "El apellido del Cliente es: " << Persona::getApellido()<< endl;
-    cout << "El Mail del Cliente es: " << Persona::getMail()<< endl;
-    cout << "El Nro de Celular del Cliente es: " << Persona::getCel() << endl;
-    cout << "El Dni del Cliente es: " << Persona::getDni() << endl;
-    cout << "Id cliente: " << getIdCliente() << endl;
+
+    ///cout << "El nombre del Cliente es: " << _datos_persona.getNombre()<< endl;
+    ///cout << "El apellido del Cliente es: " << _datos_persona.getApellido()<< endl;
+    ///cout << "El Mail del Cliente es: " << _datos_persona.getMail()<< endl;
+    //cout << "El Nro de Celular del Cliente es: " << _datos_persona.getCel() << endl;
+    ///cout << "El Dni del Cliente es: " << _datos_persona.getDni() << endl;
+    cout << "Id cliente: " << getIdCliente()<< endl;
     cout << "Estado del cliente: " << getEstadoCliente() << endl;
     cout << "Estado del alquiler del cliente: " << getEstadoAlquiler() << endl;
 

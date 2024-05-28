@@ -82,6 +82,7 @@ void Persona::cargarPersona()
     string nombre,apellido,mail;
     int cel,dni;
 
+    cin.ignore();
     cout << "Ingrese el Nombre: " << endl;
     getline(cin, nombre);
     cout << "Ingrese el Apellido: " << endl;

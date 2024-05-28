@@ -9,6 +9,8 @@ private:
         bool _estado_cliente;
         bool _estado_alquiler;
 
+
+
 public:
         Cliente();
         Cliente(int id_cliente,bool estado_cliente,bool estado_alquiler);
@@ -24,4 +26,6 @@ public:
 
         void crearCliente();
         void mostrarCliente();
+
+
 };
