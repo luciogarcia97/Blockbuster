@@ -1,7 +1,7 @@
 #include "ArchivoVenta.h"
 
-ArchivoVenta::ArchivoVenta(const char* nombre){
-    strcpy(_nombre,nombre);
+ArchivoVenta::ArchivoVenta(std::string nombre){
+    setNombre(nombre);
 }
 
 Venta ArchivoVenta::leerRegistro(int posicion){
@@ -60,4 +60,8 @@ bool ArchivoVenta::listarArchivo(){
     }
     fclose(p);
     return true;
+}
+
+void ArchivoVenta::setNombre(std::string nombre){
+    strcpy(_nombre,stringToConstChar(nombre,30));
 }

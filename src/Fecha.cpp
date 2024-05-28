@@ -30,5 +30,5 @@ bool Fecha::esbisiesto(int a)
 //Muestra la fecha en formato dd/mm/aaaa
 void Fecha::MostrarFecha()
 {
-  cout<<dia<<"/"<<mes<<"/"<<anio;
+  std::cout<<dia<<"/"<<mes<<"/"<<anio;
 }

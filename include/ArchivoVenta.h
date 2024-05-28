@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 #include<cstring>
 #include "Venta.h"
 
@@ -8,7 +7,7 @@ using namespace std;
 class ArchivoVenta
 {
     public:
-        ArchivoVenta(const char* nombre);
+        ArchivoVenta(std::string nombre);
 
         Venta leerRegistro(int posicion);
         int contarRegistros();
@@ -16,6 +15,7 @@ class ArchivoVenta
         int agregarRegistroVenta(Venta obj);
 
         bool listarArchivo();
+        void setNombre(std::string nombre);
     private:
         char _nombre[30];
 };

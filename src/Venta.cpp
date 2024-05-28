@@ -49,7 +49,7 @@ void Venta::cargarVenta(){
     cout << "Se registro la venta correctamente!" << endl;
 }
 void Venta::mostrarVenta(){
-    cout << _numero_venta << "\t\t" << _numero_cliente << "\t\t";
+    std::cout << _numero_venta << "\t\t" << _numero_cliente << "\t\t";
     _fecha_venta.MostrarFecha();
-    cout << "\t" << _legajo_personal << "\t\t" << _forma_pago << endl;
+    std::cout << "\t" << _legajo_personal << "\t\t" << _forma_pago << std::endl;
 }

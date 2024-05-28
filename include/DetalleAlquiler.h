@@ -1,8 +1,5 @@
 #pragma once
-#include <iostream>
-#include <cstdlib>
 #include "funciones.h"
-using namespace std;
 
 class DetalleAlquiler
 {

@@ -1,10 +1,7 @@
 #pragma once
 #include <iostream>
-#include <cstdlib>
-#include <cstring>
 #include "Fecha.h"
 #include "funciones.h"
-// using namespace std;
 
 class Venta
 {

@@ -1,12 +1,11 @@
 #pragma once
-#include <iostream>
 #include<cstring>
 #include "Alquiler.h"
 
 class ArchivoAlquiler
 {
     public:
-        ArchivoAlquiler(const char* nombre);
+        ArchivoAlquiler(std::string nombre);
 
         Alquiler leerRegistro(int posicion);
         int contarRegistros();
@@ -14,6 +13,8 @@ class ArchivoAlquiler
         int agregarRegistroAqluier(Alquiler obj);
 
         bool listarArchivo();
+
+        void setNombre(std::string);
     private:
         char _nombre[30];
 };

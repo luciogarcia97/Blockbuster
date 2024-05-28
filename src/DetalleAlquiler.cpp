@@ -47,6 +47,5 @@ void DetalleAlquiler::cargarAlquilerDetalle(){
     cout << "Se registro el alquilerDetalle correctamente!" << endl;
 }
 void DetalleAlquiler::mostrarAlquilerDetalle(){
-    cout << "Alquiler" << "\tArticulo" << "\tCantidad" << "\tTotal" << endl;
     cout << _numero_alquiler << "\t\t" << _numero_articulo << "\t\t" << _cantidad << "\t\t" << _precio << endl;
 }

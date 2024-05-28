@@ -46,3 +46,15 @@ void headerVentas(){
 void headerAlquiler(){
     cout << "Alquiler" << "\tCliente" << "\t\tFecha Alquiler" << "\tVendedor" << "\tForma de pago" << "\tFecha de Devolucion" << "\t\tFecha de Entrega" << "\t\tEstado" << endl;
 }
+
+void headerAlquilerDetalle(){
+    cout << "Alquiler" << "\tArticulo" << "\tCantidad" << "\tTotal" << endl;
+}
+
+const char* stringToConstChar(std::string nombre, int caracteres){
+    if (nombre.size() <= caracteres)
+    {
+        return nombre.c_str();
+    }
+    return "ErrorEnNombrar";
+}
