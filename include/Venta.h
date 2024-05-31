@@ -1,7 +1,5 @@
 #pragma once
-#include <iostream>
 #include "Fecha.h"
-#include "funciones.h"
 
 class Venta
 {
@@ -19,9 +17,6 @@ class Venta
         void setNumeroCliente(int cliente){_numero_cliente = cliente;}
         void setLegajo(int legajo){_legajo_personal = legajo;}
         void setFormaPago(int forma){_forma_pago = forma;}
-
-        void cargarVenta();
-        void mostrarVenta();
 
     private:
         int _numero_venta;

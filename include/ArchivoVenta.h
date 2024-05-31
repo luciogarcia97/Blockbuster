@@ -11,10 +11,12 @@ class ArchivoVenta
 
         Venta leerRegistro(int posicion);
         int contarRegistros();
-        int agregarRegistroVenta();
-        int agregarRegistroVenta(Venta obj);
+        int agregarRegistro(Venta obj);
+        int agregarRegistro(Venta obj, int posicion);
+        int buscarRegistro(int id);
+        int getNuevoId();
+        void leerTodos(Venta registros[], int cantidad);
 
-        bool listarArchivo();
         void setNombre(std::string nombre);
     private:
         char _nombre[30];

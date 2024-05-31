@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include <ctime>
+#include <string>
+#include "funciones.h"
 
 class Fecha
 {
@@ -8,16 +10,16 @@ class Fecha
     int dia;
     int mes;
     int anio;
-    bool esbisiesto(int);
-    void NumeroSerieaFecha(int);
   public:
     Fecha(int d=0,int m=0,int a=0);
-    int getDia(){return dia;}
-    int getMes(){return mes;}
-    int getAnio(){return anio;}
-    void setDia(int d){dia=d;}
-    void setMes(int m){mes=m;};
-    void setAnio(int a){anio=a;}
+    int getDia();
+    int getMes();
+    int getAnio();
+    void setDia(int d);
+    void setMes(int m);
+    void setAnio(int a);
+    void cargarFecha();
     void MostrarFecha();
+    std::string fechaTexto();
 };
 

@@ -16,19 +16,63 @@ Fecha::Fecha(int d,int m,int a)
   }
 }
 
-//Devuelve true si el anio recibido es bisiesto.
-bool Fecha::esbisiesto(int a)
-{
-  bool bisiesto=false;
-  if(a%4==0)
-     bisiesto=true;
-  if((a%100==0) && (a%400!=0))
-           bisiesto=false;
-  return bisiesto;
+int Fecha::getDia(){
+  return dia;
+}
+
+int Fecha::getMes(){
+  return mes;
+}
+
+int Fecha::getAnio(){
+  return anio;
+}
+
+void Fecha::setDia(int d){
+  if (d < 0 || d > 31)
+  {
+    std::cout << "Dia incorrecto, ingrese nuevamente: ";
+    d = validarCinInt(); 
+  }
+  setDia(d);
+}
+void Fecha::setMes(int m){
+  if (m < 0 || m > 12)
+  {
+    std::cout << "Mes incorrecto, ingrese nuevamente: ";
+    m = validarCinInt(); 
+  }
+  setMes(m);
+}
+void Fecha::setAnio(int a){
+  if (a < 0)
+  {
+    std::cout << "Mes incorrecto, ingrese nuevamente: ";
+    a = validarCinInt(); 
+  }
+  setAnio(a);
+}
+
+void Fecha::cargarFecha(){
+  int _dia, _mes, _anio;
+
+  std::cout << "Ingrese el dia: ";
+  _dia = validarCinInt();
+  setDia(_dia);
+  std::cout << "Ingrese el mes: ";
+  _mes = validarCinInt();
+  setMes(_mes);
+  std::cout << "Ingrese el anio: ";
+  _anio = validarCinInt();
+  setAnio(_anio);
 }
 
 //Muestra la fecha en formato dd/mm/aaaa
 void Fecha::MostrarFecha()
 {
   std::cout<<dia<<"/"<<mes<<"/"<<anio;
+}
+
+std::string Fecha::fechaTexto(){
+  return std::to_string(dia) + "/" + std::to_string(mes) + "/" + std::to_string(anio);
 }

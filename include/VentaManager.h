@@ -2,14 +2,21 @@
 #include <iostream>
 #include "Venta.h"
 #include "ArchivoVenta.h"
+#include "funciones.h"
 
 class VentaManager
 {
-    public:
-        void menu();
-    private: 
-        void agregarVenta();
-        void listarVentas();
-        ArchivoVenta _dataVentas = ArchivoVenta("ventas.dat");
+public:
+   void menu();
+private:
+   void agregarVenta();
+   void listarVenta();
+   Venta crearVenta();
+   void volverCargarVenta(Venta &reg);
+   void mostrarVenta(Venta reg);
+   void modificarVenta();
+   ArchivoVenta _archivoVenta;
 };
+
+
 

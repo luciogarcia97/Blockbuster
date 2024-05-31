@@ -25,18 +25,7 @@ int ArchivoVenta::contarRegistros(){
     int valor = (tamanio/sizeof(Venta));
     return valor;
 }
-int ArchivoVenta::agregarRegistroVenta(){
-    Venta reg;
-    FILE* p;
-    p = fopen(_nombre,"ab");
-    if(p==NULL) return -1;
-    reg.cargarVenta();
-    int valor = fwrite(&reg, sizeof(reg), 1, p);
-    fclose(p);
-    return valor;
-}
-
-int ArchivoVenta::agregarRegistroVenta(Venta obj){
+int ArchivoVenta::agregarRegistro(Venta obj){
     Venta reg = obj;
     FILE* p;
     p = fopen(_nombre,"ab");
@@ -45,21 +34,57 @@ int ArchivoVenta::agregarRegistroVenta(Venta obj){
     fclose(p);
     return valor;
 }
+int ArchivoVenta::agregarRegistro(Venta obj, int posicion){
+   FILE *p;
+   p = fopen(_nombre, "rb+");
+   if(p == nullptr) return -1;
+   fseek(p, sizeof(Venta) * posicion, SEEK_SET);
+   int valor = fwrite(&obj, sizeof (Venta), 1, p);
+   fclose(p);
+   return valor;
+}
 
-bool ArchivoVenta::listarArchivo(){
+int ArchivoVenta::buscarRegistro(int id){
+    FILE* p;
     Venta reg;
-    FILE *p;
+    int posicion = 0;
     p = fopen(_nombre,"rb");
-    if(p == NULL) return false;
-    if (!(fread(&reg, sizeof(reg), 1, p))) return false;
-    headerVentas();
-    while(fread(&reg, sizeof(reg), 1, p) == 1)
+    if (p == nullptr) return -1;
+
+    while (fread(&reg,sizeof (Venta), 1, p) == 1)
     {
-        reg.mostrarVenta();
-        cout << endl;
+        if (reg.getNumeroVenta() == id){
+            fclose(p);
+            return posicion;
+        }
+        posicion++;
     }
     fclose(p);
-    return true;
+    return 0;
+}
+
+int ArchivoVenta::getNuevoId(){
+    int cantidad = contarRegistros();
+    if(cantidad>0){
+        return leerRegistro(cantidad-1).getNumeroVenta()+1;
+    }
+    else{
+        return 10;
+    }
+}
+
+void ArchivoVenta::leerTodos(Venta registros[], int cantidad){
+    FILE *pFile;
+
+    pFile = fopen("productos.dat", "rb");
+
+    if(pFile == nullptr){
+        return;
+    }
+
+    fread(registros, sizeof(Venta), cantidad, pFile);
+
+    fclose(pFile);
 }
 
 void ArchivoVenta::setNombre(std::string nombre){
