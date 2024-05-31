@@ -9,7 +9,6 @@ Cliente::Cliente()
     _id_cliente = -1;
     _estado_cliente = 0;
     _estado_alquiler = 0;
-
 }
 
 Cliente::Cliente(int numero_cliente,bool estado_cliente,bool estado_alquiler)

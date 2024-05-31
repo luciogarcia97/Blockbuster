@@ -15,7 +15,8 @@ private:
    void volverCargarVenta(Venta &reg);
    void mostrarVenta(Venta reg);
    void modificarVenta();
-   ArchivoVenta _archivoVenta;
+   void buscarVenta();
+   ArchivoVenta _archivoVenta = ArchivoVenta("ventas.dat");
 };
 
 

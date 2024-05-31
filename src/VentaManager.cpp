@@ -1,30 +1,5 @@
 #include "VentaManager.h"
 
-void VentaManager::menu(){
-	int option;
-	while(true){
-		system("cls");
-		std::cout<<"   Menu de Ventas  "<<endl;
-		std::cout<<"===================="<<endl;
-		std::cout<<"1) Ingresar nueva venta"<<endl;
-		std::cout<<"2) Listar todas las ventas"<<endl;
-		std::cout<<"===================="<<endl;
-		std::cout<<"0) SALIR"<<endl;
-		cin>>option;
-		system("cls");
-		switch(option){
-		case 1:
-            agregarVenta();
-			system("pause");
-			break;
-		case 2:
-            listarVenta();
-			system("pause");
-			break;
-		}
-	}
-}
-
 Venta VentaManager::crearVenta(){
     int numero_cliente;
     int legajo_personal;
@@ -51,7 +26,7 @@ Venta VentaManager::crearVenta(){
     timestamp = Fecha();
     std::cout << "4) La fecha de la operacion fue: " << timestamp.fechaTexto() << endl;
 
-    return Venta(numero_venta,timestamp,numero_cliente,legajo_personal,forma_pago);
+    return Venta(numero_venta, timestamp, numero_cliente,legajo_personal, forma_pago);
 }
 
 void VentaManager::volverCargarVenta(Venta &reg){
@@ -75,6 +50,11 @@ void VentaManager::volverCargarVenta(Venta &reg){
     //Carga la fecha de compra del momento en el cual se ejecuto la carga.
     timestamp = Fecha();
     std::cout << "4) La fecha de la operacion fue: " << timestamp.fechaTexto() << endl;
+
+    reg.setNumeroCliente(numero_cliente);
+    reg.setLegajo(legajo_personal);
+    reg.setFormaPago(forma_pago);
+    reg.setFechaCompra(timestamp);
 }
 
 void VentaManager::mostrarVenta(Venta reg){
@@ -85,11 +65,12 @@ void VentaManager::mostrarVenta(Venta reg){
 }
 
 void VentaManager::agregarVenta(){
-    if (_archivoVenta.agregarRegistro(crearVenta()))
+    Venta obj = crearVenta();
+    if (_archivoVenta.agregarRegistro(obj))
     {
-        cout << "El producto fue guardado con exito!" << endl;
+        cout << "La venta fue guardada con exito!" << endl;
     }else{
-        cout << "No se pudo guardar el producto!" << endl;
+        cout << "No se pudo guardar la venta!" << endl;
     }
 }
 
@@ -103,19 +84,20 @@ void VentaManager::listarVenta(){
         return;
     }
 
-    _archivoVenta.leerTodos(obj,cantidad);
     headerVentas();
     for(int i=0; i<cantidad; i++)
     {
-        mostrarVenta(obj[i]);
+        mostrarVenta(_archivoVenta.leerRegistro(i));
     }
+    
+    delete []obj;
 }
 
 void VentaManager::modificarVenta(){
     int idVentaModificar, posicion;
     Venta obj;
 
-    cout << "Ingrese id del producto a modificar: ";
+    cout << "Ingrese id de la venta a modificar: ";
     idVentaModificar = validarCinInt();
 
     posicion = _archivoVenta.buscarRegistro(idVentaModificar);
@@ -129,7 +111,50 @@ void VentaManager::modificarVenta(){
         volverCargarVenta(obj);
 
         if(_archivoVenta.agregarRegistro(obj, posicion)) cout << "Se modifico con exito!" << endl;
-        else cout << "No se pudo modificar el producto!" << endl;
+        else cout << "No se pudo modificar la venta!" << endl;
     }
-    else cout << "No se encuentra ese producto!" << endl;
+    else cout << "No se encuentra esa venta!" << endl;
+}
+
+void VentaManager::buscarVenta(){
+    int id, posicion;
+    
+    std::cout << "Ingrese el id de venta a buscar: ";
+    id = validarCinInt();
+
+    posicion = _archivoVenta.buscarRegistro(id);
+    headerVentas();
+    mostrarVenta(_archivoVenta.leerRegistro(posicion));
+}
+
+void VentaManager::menu(){
+	int option;
+	do{
+		system("cls");
+		std::cout<<"   Menu de Ventas  "<<endl;
+		std::cout<<"===================="<<endl;
+		std::cout<<"1) Ingresar nueva venta"<<endl;
+		std::cout<<"2) Listar todas las ventas"<<endl;
+		std::cout<<"3) Buscar venta"<<endl;
+		std::cout<<"===================="<<endl;
+		std::cout<<"0) SALIR"<<endl;
+		cin>>option;
+		system("cls");
+
+		switch(option){
+		case 1:
+            agregarVenta();
+			system("pause");
+			break;
+		case 2:
+            listarVenta();
+			system("pause");
+			break;
+        case 3:
+            buscarVenta();
+			system("pause");
+			break;
+		}
+	}while (option != 0);
+    
 }

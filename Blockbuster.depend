@@ -1,14 +1,7 @@
 # depslib dependency file v1.0
-1716781663 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
+1717113414 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
 	<iostream>
-	"Alquiler.h"
-	"Venta.h"
-	"Fecha.h"
-	"funciones.h"
-	"ArchivoAlquiler.h"
-	"ArchivoVenta.h"
-	"DetalleAlquiler.h"
-	"Persona.h"
+	"VentaManager.h"
 
 1716852784 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\detallealquiler.cpp
 	"DetalleAlquiler.h"
@@ -26,24 +19,25 @@
 	"Fecha.h"
 	"funciones.h"
 
-1717104561 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\fecha.h
+1717127937 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\fecha.h
 	<iostream>
 	<ctime>
+	<string>
 	"funciones.h"
 
-1717112055 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\venta.cpp
+1717183873 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\venta.cpp
 	"Venta.h"
 
-1717112059 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\venta.h
+1717183788 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\venta.h
 	"Fecha.h"
 
-1717104564 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\fecha.cpp
+1717127960 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\fecha.cpp
 	"Fecha.h"
 
-1717113113 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivoventa.cpp
+1717187708 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivoventa.cpp
 	"ArchivoVenta.h"
 
-1717113121 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivoventa.h
+1717129019 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivoventa.h
 	<cstring>
 	"Venta.h"
 
@@ -54,7 +48,7 @@
 	<cstring>
 	"Alquiler.h"
 
-1716865627 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\cliente.cpp
+1717183821 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\cliente.cpp
 	"Cliente.h"
 	"Persona.h"
 	<iostream>
@@ -82,7 +76,7 @@
 	"Persona.h"
 	<string>
 
-1716864235 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\funciones.cpp
+1717187847 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\funciones.cpp
 	"funciones.h"
 
 1716841182 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivojuego.cpp
@@ -188,10 +182,10 @@
 	"Personal.h"
 	"Persona.h"
 
-1717113145 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventamanager.cpp
+1717188428 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventamanager.cpp
 	"VentaManager.h"
 
-1717113094 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\ventamanager.h
+1717188332 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\ventamanager.h
 	<iostream>
 	"Venta.h"
 	"ArchivoVenta.h"

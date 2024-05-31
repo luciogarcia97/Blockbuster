@@ -40,7 +40,7 @@ float validarCinFloat(){
 void headerVentas(){
     //TO DO, esto se puede mejorar con algunos repos de github donde crean una clase que te hace toda esta configuracion. (https://stackoverflow.com/questions/6755250/format-output-in-a-table-c)
     //Tiene formato de tabla
-    cout << "Venta" << "\t\tCliente" << "\t\tFecha" << "\t\tVendedor" << "\t\tForma de pago" << endl;
+    cout << "Venta" << "\t\tCliente" << "\t\tFecha" << "\t\tVendedor" << "\tForma de pago" << endl;
 }
 
 void headerAlquiler(){
