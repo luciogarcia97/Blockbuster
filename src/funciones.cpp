@@ -7,13 +7,13 @@ int validarCinInt(){
    do
    {
        error = 0;
-       cin >> value;
-       if (cin.fail())
+       std::cin >> value;
+       if (std::cin.fail())
        {
-           cout << "Dato invalido, reingrese nuevamente" << endl;
+           std::cout << "Dato invalido, reingrese nuevamente" << std::endl;
            error = 1;
-           cin.clear();
-           cin.ignore(80, '\n');
+           std::cin.clear();
+           std::cin.ignore(80, '\n');
        }
    }while(error == 1);
    return value;
@@ -25,13 +25,13 @@ float validarCinFloat(){
     do
     {
         error = 0;
-        cin >> value;
-        if (cin.fail())
+        std::cin >> value;
+        if (std::cin.fail())
         {
-            cout << "Dato invalido, reingrese nuevamente" << endl;
+            std::cout << "Dato invalido, reingrese nuevamente" << std::endl;
             error = 1;
-            cin.clear();
-            cin.ignore(80, '\n');
+            std::cin.clear();
+            std::cin.ignore(80, '\n');
         }
     }while(error == 1);
     return value;
@@ -40,15 +40,15 @@ float validarCinFloat(){
 void headerVentas(){
     //TO DO, esto se puede mejorar con algunos repos de github donde crean una clase que te hace toda esta configuracion. (https://stackoverflow.com/questions/6755250/format-output-in-a-table-c)
     //Tiene formato de tabla
-    cout << "Venta" << "\t\tCliente" << "\t\tFecha" << "\t\tVendedor" << "\tForma de pago" << endl;
+    std::cout << "Venta" << "\t\tCliente" << "\t\tFecha" << "\t\tVendedor" << "\tForma de pago" << std::endl;
 }
 
 void headerAlquiler(){
-    cout << "Alquiler" << "\tCliente" << "\t\tFecha Alquiler" << "\tVendedor" << "\tForma de pago" << "\tFecha de Devolucion" << "\t\tFecha de Entrega" << "\t\tEstado" << endl;
+    std::cout << "Alquiler" << "\tCliente" << "\t\tFecha Alquiler" << "\tVendedor" << "\tForma de pago" << "\tFecha de Devolucion" << "\t\tFecha de Entrega" << "\t\tEstado" << std::endl;
 }
 
 void headerAlquilerDetalle(){
-    cout << "Alquiler" << "\tArticulo" << "\tCantidad" << "\tTotal" << endl;
+    std::cout << "Alquiler" << "\tArticulo" << "\tCantidad" << "\tTotal" << std::endl;
 }
 
 const char* stringToConstChar(std::string nombre, int caracteres){

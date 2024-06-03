@@ -55,7 +55,7 @@ bool ArchivoDetalleAlquiler::listarArchivo(){
     while(fread(&reg, sizeof(reg), 1, p) == 1)
     {
         reg.mostrarAlquilerDetalle();
-        cout << endl;
+        std::cout << std::endl;
     }
     fclose(p);
     return true;

@@ -25,9 +25,6 @@ class Alquiler
         void setFormaPago(int forma);
         void setEstadoAlquiler(bool estado);
 
-        void cargarAlquiler();
-        void mostrarAlquiler();
-
         // TO DO: deberiamos hacer un metodo que finalice el alquiler.
 
     protected:

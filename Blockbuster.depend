@@ -1,25 +1,26 @@
 # depslib dependency file v1.0
-1717113414 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
+1717299780 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
 	<iostream>
 	"VentaManager.h"
+	"AlquilerManager.h"
 
-1716852784 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\detallealquiler.cpp
+1717306151 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\detallealquiler.cpp
 	"DetalleAlquiler.h"
 
-1716861927 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\funciones.h
+1717305892 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\funciones.h
 	<iostream>
 
 1716864144 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\detallealquiler.h
 	"funciones.h"
 
-1716780369 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquiler.cpp
+1717284061 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquiler.cpp
 	"Alquiler.h"
 
-1716860449 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\alquiler.h
+1717284081 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\alquiler.h
 	"Fecha.h"
 	"funciones.h"
 
-1717127937 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\fecha.h
+1717374983 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\fecha.h
 	<iostream>
 	<ctime>
 	<string>
@@ -31,20 +32,20 @@
 1717183788 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\venta.h
 	"Fecha.h"
 
-1717127960 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\fecha.cpp
+1717374977 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\fecha.cpp
 	"Fecha.h"
 
-1717187708 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivoventa.cpp
+1717190796 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivoventa.cpp
 	"ArchivoVenta.h"
 
 1717129019 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivoventa.h
 	<cstring>
 	"Venta.h"
 
-1716862169 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivoalquiler.cpp
+1717284719 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivoalquiler.cpp
 	"ArchivoAlquiler.h"
 
-1716860539 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivoalquiler.h
+1717284561 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivoalquiler.h
 	<cstring>
 	"Alquiler.h"
 
@@ -76,7 +77,7 @@
 	"Persona.h"
 	<string>
 
-1717187847 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\funciones.cpp
+1717306005 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\funciones.cpp
 	"funciones.h"
 
 1716841182 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivojuego.cpp
@@ -138,7 +139,7 @@
 	"Juego.h"
 	"ArchivoVHS.h"
 
-1716862222 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivodetallealquiler.cpp
+1717306153 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivodetallealquiler.cpp
 	"ArchivoDetalleAlquiler.h"
 
 1716862001 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivodetallealquiler.h
@@ -182,7 +183,7 @@
 	"Personal.h"
 	"Persona.h"
 
-1717188428 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventamanager.cpp
+1717191338 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventamanager.cpp
 	"VentaManager.h"
 
 1717188332 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\ventamanager.h
@@ -190,4 +191,12 @@
 	"Venta.h"
 	"ArchivoVenta.h"
 	"funciones.h"
+
+1717375001 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\alquilermanager.h
+	<iostream>
+	"Alquiler.h"
+	"ArchivoAlquiler.h"
+
+1717375050 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilermanager.cpp
+	"AlquilerManager.h"
 

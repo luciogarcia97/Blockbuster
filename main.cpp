@@ -1,11 +1,12 @@
 #include <iostream>
 #include "VentaManager.h"
+#include "AlquilerManager.h"
 
 using namespace std;
 
 int main()
 {
-   VentaManager pm;
+   AlquilerManager pm;
 
    pm.menu();
 

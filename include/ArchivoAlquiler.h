@@ -9,10 +9,9 @@ class ArchivoAlquiler
 
         Alquiler leerRegistro(int posicion);
         int contarRegistros();
-        int agregarRegistroAlquiler();
-        int agregarRegistroAqluier(Alquiler obj);
-
-        bool listarArchivo();
+        int agregarRegistroAlquiler(Alquiler obj);
+        int getNuevoId();
+        int buscarRegistro(int id);
 
         void setNombre(std::string);
     private:

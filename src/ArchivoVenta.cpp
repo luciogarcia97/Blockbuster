@@ -66,9 +66,7 @@ int ArchivoVenta::getNuevoId(){
     if(cantidad>0){
         return leerRegistro(cantidad-1).getNumeroVenta()+1;
     }
-    else{
-        return 1;
-    }
+    return 1;
 }
 
 void ArchivoVenta::leerTodos(Venta registros[], int cantidad){

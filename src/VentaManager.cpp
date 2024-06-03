@@ -8,7 +8,7 @@ Venta VentaManager::crearVenta(){
     Fecha timestamp;
 
     numero_venta = _archivoVenta.getNuevoId();
-    cout << "Ingrese Venta # " << numero_venta << endl;
+    std::cout << "Ingrese Venta #" << numero_venta << std::endl;
 
     //Carga numero de cliente con validacion
     std::cout << "1) Ingrese el numero de cliente: ";
@@ -24,7 +24,7 @@ Venta VentaManager::crearVenta(){
 
     //Carga la fecha de compra del momento en el cual se ejecuto la carga.
     timestamp = Fecha();
-    std::cout << "4) La fecha de la operacion fue: " << timestamp.fechaTexto() << endl;
+    std::cout << "4) La fecha de la operacion fue: " << timestamp.fechaTexto() << std::endl;
 
     return Venta(numero_venta, timestamp, numero_cliente,legajo_personal, forma_pago);
 }
@@ -49,7 +49,7 @@ void VentaManager::volverCargarVenta(Venta &reg){
 
     //Carga la fecha de compra del momento en el cual se ejecuto la carga.
     timestamp = Fecha();
-    std::cout << "4) La fecha de la operacion fue: " << timestamp.fechaTexto() << endl;
+    std::cout << "4) La fecha de la operacion fue: " << timestamp.fechaTexto() << std::endl;
 
     reg.setNumeroCliente(numero_cliente);
     reg.setLegajo(legajo_personal);
@@ -61,16 +61,16 @@ void VentaManager::mostrarVenta(Venta reg){
     std::cout << reg.getNumeroVenta() << "\t\t" << reg.getNumeroCliente() << "\t\t";
     reg.getFechaVenta().MostrarFecha();
     std::cout << "\t" << reg.getLegajo() << "\t\t" << reg.getFormaPago() << std::endl;
-    std::cout << endl;
+    std::cout << std::endl;
 }
 
 void VentaManager::agregarVenta(){
     Venta obj = crearVenta();
     if (_archivoVenta.agregarRegistro(obj))
     {
-        cout << "La venta fue guardada con exito!" << endl;
+        std::cout << "La venta fue guardada con exito!" << std::endl;
     }else{
-        cout << "No se pudo guardar la venta!" << endl;
+        std::cout << "No se pudo guardar la venta!" << std::endl;
     }
 }
 
@@ -80,7 +80,7 @@ void VentaManager::listarVenta(){
 
     obj = new Venta[cantidad];
     if(obj == nullptr){
-        cout << "No se pudo pedir memoria... " << endl;
+        cout << "No se pudo pedir memoria... " << std::endl;
         return;
     }
 
@@ -110,10 +110,10 @@ void VentaManager::modificarVenta(){
 
         volverCargarVenta(obj);
 
-        if(_archivoVenta.agregarRegistro(obj, posicion)) cout << "Se modifico con exito!" << endl;
-        else cout << "No se pudo modificar la venta!" << endl;
+        if(_archivoVenta.agregarRegistro(obj, posicion)) cout << "Se modifico con exito!" << std::endl;
+        else cout << "No se pudo modificar la venta!" << std::endl;
     }
-    else cout << "No se encuentra esa venta!" << endl;
+    else cout << "No se encuentra esa venta!" << std::endl;
 }
 
 void VentaManager::buscarVenta(){
@@ -131,13 +131,13 @@ void VentaManager::menu(){
 	int option;
 	do{
 		system("cls");
-		std::cout<<"   Menu de Ventas  "<<endl;
-		std::cout<<"===================="<<endl;
-		std::cout<<"1) Ingresar nueva venta"<<endl;
-		std::cout<<"2) Listar todas las ventas"<<endl;
-		std::cout<<"3) Buscar venta"<<endl;
-		std::cout<<"===================="<<endl;
-		std::cout<<"0) SALIR"<<endl;
+		std::cout<<"   Menu de Ventas  " << std::endl;
+		std::cout<<"====================" << std::endl;
+		std::cout<<"1) Ingresar nueva venta" << std::endl;
+		std::cout<<"2) Listar todas las ventas" << std::endl;
+		std::cout<<"3) Buscar venta" << std::endl;
+		std::cout<<"====================" << std::endl;
+		std::cout<<"0) SALIR"<< std::endl;
 		cin>>option;
 		system("cls");
 
