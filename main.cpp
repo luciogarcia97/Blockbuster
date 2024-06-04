@@ -6,10 +6,11 @@ using namespace std;
 
 int main()
 {
-   AlquilerManager pm;
+//   AlquilerManager pm;
+//
+//   pm.menu();
 
-   pm.menu();
-
-
+    VentaManager vm;
+    vm.menu();
     return 0;
 }

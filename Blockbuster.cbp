@@ -35,6 +35,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Alquiler.h" />
+		<Unit filename="include/AlquilerDetalleManager.h" />
 		<Unit filename="include/AlquilerManager.h" />
 		<Unit filename="include/ArchivoAlquiler.h" />
 		<Unit filename="include/ArchivoArticulo.h" />
@@ -60,6 +61,7 @@
 		<Unit filename="include/funciones.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Alquiler.cpp" />
+		<Unit filename="src/AlquilerDetalleManager.cpp" />
 		<Unit filename="src/AlquilerManager.cpp" />
 		<Unit filename="src/ArchivoAlquiler.cpp" />
 		<Unit filename="src/ArchivoDetalleAlquiler.cpp" />
