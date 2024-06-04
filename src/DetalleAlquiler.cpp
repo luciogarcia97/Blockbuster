@@ -18,34 +18,3 @@ void DetalleAlquiler::setNumeroArticuloAlquilerDetalle(int articulo){_numero_art
 void DetalleAlquiler::setCantidad(int cantidad){_cantidad = cantidad;}
 void DetalleAlquiler::setPrecio(float precio){_precio = precio;}
 
-void DetalleAlquiler::cargarAlquilerDetalle(){
-    int numero_alquiler;
-    int numero_articulo;
-    int cantidad;
-    float precio;
-
-    std::cout << "Carga de datos para Ventas" << std::endl;
-    std::cout << "--------------------------" << std::endl << std::endl;
-
-    std::cout << "1) Ingrese el numero del alquiler: ";
-    numero_alquiler = validarCinInt();
-    setNumeroAlquilerDetalle(numero_alquiler);
-
-
-    std::cout << "2) Ingrese el numero de articulo: ";
-    numero_articulo = validarCinInt();
-    setNumeroArticuloAlquilerDetalle(numero_articulo);
-
-
-    std::cout << "3) Ingrese la cantidad de productos: ";
-    cantidad = validarCinInt();
-    setCantidad(cantidad);
-
-    //TO DO: Carga de precio con Articulo => cantidad * precio_unitario
-
-    system("cls");
-    std::cout << "Se registro el alquilerDetalle correctamente!" << std::endl;
-}
-void DetalleAlquiler::mostrarAlquilerDetalle(){
-    std::cout << _numero_alquiler << "\t\t" << _numero_articulo << "\t\t" << _cantidad << "\t\t" << _precio << std::endl;
-}

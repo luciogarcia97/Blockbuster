@@ -16,6 +16,7 @@ DetalleAlquiler ArchivoDetalleAlquiler::leerRegistro(int posicion){
     fclose(p);
     return reg;
 }
+
 int ArchivoDetalleAlquiler::contarRegistros(){
     FILE* p;
     p = fopen(_nombre,"rb");
@@ -26,16 +27,7 @@ int ArchivoDetalleAlquiler::contarRegistros(){
     int valor = (tamanio/sizeof(DetalleAlquiler));
     return valor;
 }
-int ArchivoDetalleAlquiler::agregarRegistroAlquilerDetalle(){
-    DetalleAlquiler reg;
-    FILE* p;
-    p = fopen(_nombre,"ab");
-    if(p==NULL) return -1;
-    reg.cargarAlquilerDetalle();
-    int valor = fwrite(&reg, sizeof(reg), 1, p);
-    fclose(p);
-    return valor;
-}
+
 int ArchivoDetalleAlquiler::agregarRegistroAlquilerDetalle(DetalleAlquiler obj){
     DetalleAlquiler reg = obj;
     FILE* p;
@@ -45,21 +37,63 @@ int ArchivoDetalleAlquiler::agregarRegistroAlquilerDetalle(DetalleAlquiler obj){
     fclose(p);
     return valor;
 }
-bool ArchivoDetalleAlquiler::listarArchivo(){
-    DetalleAlquiler reg;
-    FILE *p;
-    p = fopen(_nombre,"rb");
-    if(p == NULL) return false;
-    if (!(fread(&reg, sizeof(reg), 1, p))) return false;
-    headerAlquilerDetalle();
-    while(fread(&reg, sizeof(reg), 1, p) == 1)
+
+int ArchivoDetalleAlquiler::getNuevoId(){
+    int cantidad = contarRegistros();
+    if (cantidad > 0)
     {
-        reg.mostrarAlquilerDetalle();
-        std::cout << std::endl;
+        return leerRegistro(cantidad - 1).getNumeroAlquilerDetalle()+1;
+    }
+    return 1;
+    
+}
+
+int ArchivoDetalleAlquiler::buscarRegistro(int id){
+    FILE* p;
+    DetalleAlquiler reg;
+    int posicion = 0;
+    p = fopen(_nombre,"rb");
+    if(p == nullptr) return -1;
+
+    while (fread(&reg, sizeof(DetalleAlquiler), 1, p) == 1)
+    {
+        if (reg.getNumeroAlquilerDetalle() == id)
+        {
+            fclose(p);
+            return posicion;
+        }
+        posicion ++;
     }
     fclose(p);
-    return true;
+    return 0;
 }
+
+int ArchivoDetalleAlquiler::contarRegistrosRepetidos(int id){
+    int cantidad = contarRegistros();
+    DetalleAlquiler *obj;
+    int contador = 0;
+
+    obj = new DetalleAlquiler[cantidad];
+    if (obj == nullptr)
+    {
+        std::cout << "No se pudo pedir memoria para contar los detalles del alquiler..." << std::endl;
+        delete []obj;
+        return -1;
+    }
+    
+    for (int i = 0; i < cantidad; i++)
+    {
+        if (id == obj[i].getNumeroAlquilerDetalle())
+        {
+            contador ++;
+        }
+
+    }
+
+    delete []obj;
+    return contador;
+}
+
 void ArchivoDetalleAlquiler::setNombre(std::string nombre){
     strcpy(_nombre,stringToConstChar(nombre,30));
 }

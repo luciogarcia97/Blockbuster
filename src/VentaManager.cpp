@@ -81,6 +81,7 @@ void VentaManager::listarVenta(){
     obj = new Venta[cantidad];
     if(obj == nullptr){
         cout << "No se pudo pedir memoria... " << std::endl;
+        delete []obj;
         return;
     }
 
@@ -152,6 +153,12 @@ void VentaManager::menu(){
 			break;
         case 3:
             buscarVenta();
+			system("pause");
+			break;
+        case 0:
+            break;
+        default:
+            std::cout << "Opcion incorrecta, presione cualquier tecla para volver a seleccionar opcion" << std::endl;
 			system("pause");
 			break;
 		}

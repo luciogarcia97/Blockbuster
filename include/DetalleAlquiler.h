@@ -16,9 +16,6 @@ class DetalleAlquiler
         void setCantidad(int cantidad);
         void setPrecio(float precio);
 
-        void cargarAlquilerDetalle();
-        void mostrarAlquilerDetalle();
-
     protected:
 
     private:

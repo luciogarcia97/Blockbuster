@@ -38,6 +38,10 @@ Alquiler AlquilerManager::crearAlquiler(){
     Fecha fecha_obligada_devolucion(dia,mes,anio);
     Fecha fecha_entrega = Fecha();
 
+    AlquilerDetalleManager ADM;
+
+    ADM.cargarDetalleAlquiler(numero_alquiler);
+
 
     system("cls");
     std::cout << "Se registro el alquiler correctamente!" << std::endl;
@@ -62,19 +66,20 @@ void AlquilerManager::listarAlquiler(){
     obj = new Alquiler[cantidad];
     if(obj == nullptr){
         std::cout << "No se pudo pedir memoria..." << std::endl;
+        delete []obj;
         return;
     }
 
     headerAlquiler();
     for (int i = 0; i < cantidad; i++)
     {
-        mostarAlquiler(_archivoAlquiler.leerRegistro(i));
+        mostrarAlquiler(_archivoAlquiler.leerRegistro(i));
     }
 
     delete []obj;
 }
 
-void AlquilerManager::mostarAlquiler(Alquiler reg){
+void AlquilerManager::mostrarAlquiler(Alquiler reg){
     std::cout << reg.getNumeroAlquiler() << "\t\t" << reg.getNumeroCliente() << "\t\t";
     reg.getFechaAlquiler().MostrarFecha();
     std::cout << "\t" << reg.getLegajo() << "\t\t" << reg.getFormaPago() << "\t\t";
@@ -100,7 +105,7 @@ bool AlquilerManager::validarIgualdadFechas(Fecha fecha1, Fecha fecha2){
 Alquiler AlquilerManager::buscarAlquiler(){
     int id, posicion;
 
-    std::cout << "Ingrese el numero de alquiler a modificar: ";
+    std::cout << "Ingrese el numero de alquiler a buscar: ";
     id = validarCinInt();
 
     posicion = _archivoAlquiler.buscarRegistro(id);
@@ -110,17 +115,20 @@ Alquiler AlquilerManager::buscarAlquiler(){
 void AlquilerManager::devolucionAlquiler(){
     int opcion;
     Alquiler reg = buscarAlquiler();
-    mostarAlquiler(reg);
+    Fecha timestamp;
+    mostrarAlquiler(reg);
     std::cout << std::endl << "Actualizar el alquiler como entregado? (1-Si o 0-No)" << std::endl;
     opcion = validarCinInt();
     if (opcion){
-        reg.setFechaEntrega(Fecha());
+        //Registro la fecha del momento y actualizo el estado del alquiler
+        reg.setFechaEntrega(timestamp);
         reg.setEstadoAlquiler(false);
     }
 }
 
 void AlquilerManager::menu(){
     int option;
+    AlquilerDetalleManager adm;
 	do{
 		system("cls");
 		std::cout<<"   Menu de Alquiler  " << std::endl;
@@ -129,6 +137,7 @@ void AlquilerManager::menu(){
 		std::cout<<"2) Listar todos los alquileres" << std::endl;
 		std::cout<<"3) Buscar alquiler" << std::endl;
 		std::cout<<"4) Registrar entrega de alquiler" << std::endl;
+		std::cout<<"5) Detalle de alquiler" << std::endl;
 		std::cout<<"====================" << std::endl;
 		std::cout<<"0) SALIR"<< std::endl;
 		std::cin>>option;
@@ -151,6 +160,12 @@ void AlquilerManager::menu(){
             devolucionAlquiler();
 			system("pause");
 			break;
+        case 5:
+            adm.menu();
+			system("pause");
+			break;
+        case 0:
+            break;
         default:
             std::cout << "Opcion incorrecta, presione cualquier tecla para volver a seleccionar opcion" << std::endl;
 			system("pause");

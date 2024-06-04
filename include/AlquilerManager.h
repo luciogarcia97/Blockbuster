@@ -3,6 +3,7 @@
 #include "Alquiler.h"
 #include "Cliente.h"
 #include "ArchivoAlquiler.h"
+#include "AlquilerDetalleManager.h"
 
 class AlquilerManager
 {
@@ -12,7 +13,7 @@ class AlquilerManager
         void agregarAlquiler();
         void listarAlquiler();
         Alquiler crearAlquiler();
-        void mostarAlquiler(Alquiler reg);
+        void mostrarAlquiler(Alquiler reg);
         Alquiler buscarAlquiler();
         void devolucionAlquiler();
         bool validarIgualdadFechas(Fecha fecha1, Fecha fecha2);
