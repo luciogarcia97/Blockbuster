@@ -7,6 +7,8 @@ Venta VentaManager::crearVenta(){
     int numero_venta;
     Fecha timestamp;
 
+    std::cout << "Carga de datos para Venta" << std::endl;
+    std::cout << "-------------------------" << std::endl << std::endl;
     numero_venta = _archivoVenta.getNuevoId();
     std::cout << "Ingrese Venta #" << numero_venta << std::endl;
 
@@ -22,10 +24,16 @@ Venta VentaManager::crearVenta(){
     std::cout << "3) Ingrese el metodo de pago: ";
     forma_pago = validarCinInt();
 
+    //Carga de la venta detalle
+    VentaDetalleManager vdm;
+    vdm.cargarDetalleVenta(numero_venta);
+    
     //Carga la fecha de compra del momento en el cual se ejecuto la carga.
     timestamp = Fecha();
     std::cout << "4) La fecha de la operacion fue: " << timestamp.fechaTexto() << std::endl;
-
+    
+    system("cls");
+    std::cout << "Se registro la venta correctamente!" << std::endl;
     return Venta(numero_venta, timestamp, numero_cliente,legajo_personal, forma_pago);
 }
 
@@ -130,6 +138,7 @@ void VentaManager::buscarVenta(){
 
 void VentaManager::menu(){
 	int option;
+    VentaDetalleManager vdm;
 	do{
 		system("cls");
 		std::cout<<"   Menu de Ventas  " << std::endl;
@@ -137,6 +146,7 @@ void VentaManager::menu(){
 		std::cout<<"1) Ingresar nueva venta" << std::endl;
 		std::cout<<"2) Listar todas las ventas" << std::endl;
 		std::cout<<"3) Buscar venta" << std::endl;
+		std::cout<<"4) Detalle de venta" << std::endl;
 		std::cout<<"====================" << std::endl;
 		std::cout<<"0) SALIR"<< std::endl;
 		cin>>option;
@@ -153,6 +163,10 @@ void VentaManager::menu(){
 			break;
         case 3:
             buscarVenta();
+			system("pause");
+			break;
+        case 4:
+            vdm.menu();
 			system("pause");
 			break;
         case 0:

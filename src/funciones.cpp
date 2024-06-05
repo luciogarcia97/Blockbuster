@@ -51,10 +51,24 @@ void headerAlquilerDetalle(){
     std::cout << "Alquiler" << "\tArticulo" << "\tCantidad" << "\tValor total" << std::endl;
 }
 
+void headerVentaDetalle(){
+    std::cout << "Venta" << "\tArticulo" << "\tCantidad" << "\tValor total" << std::endl;
+}
+
 const char* stringToConstChar(std::string nombre, int caracteres){
     if (nombre.size() <= caracteres)
     {
         return nombre.c_str();
     }
     return "ErrorEnNombrar";
+}
+
+bool validarPositivoInt(int value){
+    if (value > 0) return true;
+    return false;
+}
+
+bool validarPositivoFloat(float value){
+    if (value > 0) return true;
+    return false;
 }

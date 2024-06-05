@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Venta.h"
 #include "ArchivoVenta.h"
+#include "VentaDetalleManager.h"
 #include "funciones.h"
 
 class VentaManager
