@@ -1,5 +1,8 @@
 #include "Personal.h"
 #include "Persona.h"
+#include "PersonalManager.h"
+#include "PersonaManager.h"
+#include "PersonalArchivo.h"
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -10,16 +13,36 @@ Personal::Personal()
     strcpy(_contrasena, "SIN DATOS");
     strcpy(_cargo,"SIN DATOS");
     _sueldo = 0.0f;
-    _comision = 0.0f;
+    _porcentaje_comision = 0.0f;
+    _comision_acumulada = 0.0f;
 }
 
-Personal::Personal(int legajo_personal,string contrasena,string cargo,float sueldo,float comision)
+Personal::Personal(int legajo_personal, std::string contrasena, std::string cargo,float sueldo,float porcentajeComision, float comision_acu,bool estado_personal)
 {
     setLegajoPersonal(legajo_personal);
     setContrasena(contrasena);
     setCargo(cargo);
     setSueldo(sueldo);
-    setComision(comision);
+    setPorcentajeComision(porcentajeComision);
+    setComisionAcumulada(comision_acu);
+    setEstadoPersonal(estado_personal);
+}
+Personal::Personal(Persona obj,int legajo_personal, std::string contrasena, std::string cargo, float sueldo,float porcentajeComision, float comision_acu,bool estado_personal)
+{
+    setNombre(obj.getNombre());
+    setApellido(obj.getApellido());
+    setMail(obj.getMail());
+    setCel(obj.getCel());
+    setDni(obj.getDni());
+    setLegajoPersonal(legajo_personal);
+    setContrasena(contrasena);
+    setCargo(cargo);
+    setSueldo(sueldo);
+    setPorcentajeComision(porcentajeComision);
+    setComisionAcumulada(comision_acu);
+    setEstadoPersonal(estado_personal);
+
+
 }
 
 int Personal::getLegajoPersonal()
@@ -38,9 +61,17 @@ float Personal::getSueldo()
 {
     return _sueldo;
 }
-float Personal::getComision()
+float Personal::getPorcentajeComision()
 {
-    return _comision;
+    return _porcentaje_comision;
+}
+float Personal::getComisionAcumulada()
+{
+    return _comision_acumulada;
+}
+bool Personal::getEstadoPersonal()
+{
+    return _estado_personal;
 }
 
 void Personal::setLegajoPersonal(int legajo_personal)
@@ -91,43 +122,41 @@ void Personal::setSueldo(float sueldo)
     }
 }
 
-void Personal::setComision(float comision)
+void Personal::setPorcentajeComision(float comision)
 {
     if (comision > 0)
     {
-        _comision = comision;
+        _porcentaje_comision = comision;
     }
     else
     {
-        _comision = 0.0f;
+        _porcentaje_comision = 0.0f;
+    }
+}
+void Personal::setComisionAcumulada(float comision)
+{
+    if (comision > 0)
+    {
+        _comision_acumulada = comision;
+    }
+    else
+    {
+        _comision_acumulada = 0.0f;
+    }
+}
+void Personal::setEstadoPersonal(bool estado_personal)
+{
+    if (estado_personal == 1 || estado_personal == 0){
+        _estado_personal = estado_personal;
     }
 }
 
-
-void Personal::cargarPersonal()
+void Personal::crearPersonal()
 {
-    int legajo_personal;
-    string contrasena,cargo;
-    float sueldo,comision;
-
-    Persona::cargarPersona();
-    cout << "Ingrese el Nro legajo del Personal: " << endl;
-    cin >> legajo_personal;
-    cout << "Ingrese la contrasena del Personal: " << endl;
-    cin >> contrasena;
-    cout << "Ingrese el Cargo del Personal :" << endl;
-    cin >> cargo;
-    cout << "Ingrese el Sueldo del Personal: " << endl;
-    cin >> sueldo;
-    cout << "Ingrese la comision del Personal: " << endl;
-    cin >> comision;
-
-    setLegajoPersonal(legajo_personal);
-    setContrasena(contrasena);
-    setCargo(cargo);
-    setSueldo(sueldo);
-    setComision(comision);
+    PersonaManager obj;
+    obj.cargarPersona();
 }
+
 
 void Personal::mostrarPersonal()
 {
@@ -137,8 +166,9 @@ void Personal::mostrarPersonal()
     cout << "El Numero de celular es: " << Persona::getCel() << endl;
     cout << "El numero de dni es: " << Persona::getDni() << endl;
     cout << "El Nro de Legajo es: " << getLegajoPersonal() << endl;
-    cout << "La contraseña del Personal es: " << getContrasena() << endl;
+    cout << "La contraseï¿½a del Personal es: " << getContrasena() << endl;
     cout << "El cargo del Personal es: " << getCargo() << endl;
     cout << "El sueldo del Personal es: " << getSueldo() << endl;
-    cout << "La comision del Personal es: " << getComision() << endl;
+    cout << "El porcentaje de comision del Personal es: " << getPorcentajeComision() << "%" << endl;
+    cout << "La comision acumulada del Personal para este periodo es: $" << getComisionAcumulada() << endl;
 }

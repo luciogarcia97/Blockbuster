@@ -1,16 +1,18 @@
 #include <iostream>
-#include "VentaManager.h"
-#include "AlquilerManager.h"
+#include "AppManager.h"
+
 
 using namespace std;
 
 int main()
 {
-   AlquilerManager pm;
+    AppManager am;
+    am.menu();
+//    AlquilerManager pm;
 
-   pm.menu();
+//    pm.menu();
 
-//    VentaManager vm;
-//    vm.menu();
+// //    VentaManager vm;
+// //    vm.menu();
     return 0;
 }

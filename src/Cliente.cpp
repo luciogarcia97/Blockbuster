@@ -1,5 +1,8 @@
 #include "Cliente.h"
 #include "Persona.h"
+#include "ClienteArchivo.h"
+#include "ClientesManager.h"
+#include "PersonaManager.h"
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -9,6 +12,7 @@ Cliente::Cliente()
     _id_cliente = -1;
     _estado_cliente = 0;
     _estado_alquiler = 0;
+
 }
 
 Cliente::Cliente(int numero_cliente,bool estado_cliente,bool estado_alquiler)
@@ -16,7 +20,18 @@ Cliente::Cliente(int numero_cliente,bool estado_cliente,bool estado_alquiler)
     setIdCliente(numero_cliente);
     setEstadoCliente(estado_cliente);
     setEstadoAlquiler(estado_alquiler);
+}
+Cliente::Cliente(Persona obj,int id_cliente,bool estado_cliente,bool estado_alquiler)
+{
 
+    setNombre(obj.getNombre());
+    setApellido(obj.getApellido());
+    setMail(obj.getMail());
+    setCel(obj.getCel());
+    setDni(obj.getDni());
+    setIdCliente(id_cliente);
+    setEstadoCliente(estado_cliente);
+    setEstadoAlquiler(estado_alquiler);
 }
 
 int Cliente::getIdCliente()
@@ -33,7 +48,6 @@ bool Cliente::getEstadoAlquiler()
 {
     return _estado_alquiler;
 }
-
 
 
 void Cliente::setIdCliente(int id_cliente)
@@ -58,24 +72,10 @@ void Cliente::setEstadoAlquiler(bool estado_alquiler)
     _estado_alquiler = estado_alquiler;
 }
 
-
 void Cliente::crearCliente()
 {
-    int id_cliente;
-    bool estado_cliente = 0;
-    bool estado_alquiler = 0;
-
-    Persona::cargarPersona();
-    cout << "Ingrese el numero de cliente: " << endl;
-    cin >> id_cliente;
-    cout << "Ingrese el estado del cliente 1-activo 0-inactivo" << endl;
-    cin >> estado_cliente;
-    cout << "Ingrese el estado del alquiler del cliente 1-falta devolver 0-ya devolvio el producto: " << endl;
-    cin >> estado_alquiler;
-
-    setIdCliente(id_cliente);
-    setEstadoCliente(estado_cliente);
-    setEstadoAlquiler(estado_alquiler);
+    PersonaManager obj;
+    obj.cargarPersona();
 }
 
 void Cliente::mostrarCliente()

@@ -14,11 +14,11 @@ private:
 public:
         Cliente();
         Cliente(int id_cliente,bool estado_cliente,bool estado_alquiler);
+        Cliente(Persona obj,int id_cliente,bool estado_cliente,bool estado_alquiler);
 
         int getIdCliente();
         bool getEstadoCliente();
         bool getEstadoAlquiler();
-
 
         void setIdCliente(int id_cliente);
         void setEstadoCliente(bool estado_cliente);

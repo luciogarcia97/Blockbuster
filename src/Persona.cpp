@@ -76,7 +76,7 @@ void Persona::setDni(int dni)
         _dni = 0;
     }
 }
-
+/*
 void Persona::cargarPersona()
 {
     string nombre,apellido,mail;
@@ -110,7 +110,7 @@ void Persona::mostrarPersona()
     cout << "Cel: " << getCel() << endl;
     cout << "Dni: " << getDni() << endl;
 }
-
+*/
 string Persona::getNombre()
 {
     return _nombre;

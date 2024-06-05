@@ -12,7 +12,10 @@ public:
     Personal crearPersonal();
     void agregarPersonal();
     void listarPersonal();
+    void mostrarPersonal(Personal reg);
+    void volverCargarPersonal(Personal &registro);
+    void modificarPersonal();
+    void eliminarPersonal();
     PersonalArchivo _personalArchivo;
-
 };
 

@@ -26,8 +26,25 @@ bool PersonalArchivo::guardar (Personal reg){
     return result;
 
 }
-Personal PersonalArchivo::leer(int index){
+bool PersonalArchivo::guardar (int index, Personal registro){
     bool result;
+
+    FILE *pFile;
+    pFile = fopen("Personal.dat","rb+");
+
+    if(pFile == nullptr){
+        return false;
+    }
+    fseek(pFile, sizeof(Personal)*index, SEEK_SET);
+
+    result = fwrite(&registro,sizeof (Personal),1,pFile);
+
+    fclose(pFile);
+
+    return result;
+
+}
+Personal PersonalArchivo::leer(int index){
     Personal reg;
     FILE *pFile;
 
@@ -52,7 +69,7 @@ int PersonalArchivo::getCantidadRegistrosPersonal (){
     pFile = fopen("Personal.dat","rb");
 
     if(pFile == nullptr){
-        return 0;
+        return -1;
     }
     fseek(pFile, 0, SEEK_END);
 
@@ -60,4 +77,37 @@ int PersonalArchivo::getCantidadRegistrosPersonal (){
     fclose(pFile);
 
     return tam;
+}
+int PersonalArchivo::buscarPersonal(int legajo)
+{
+    Personal reg;
+    FILE *pFile;
+    int pos = 0;
+
+    pFile = fopen("Personal.dat","rb");
+
+    if (pFile == nullptr){
+        return -1;
+    }
+    while (fread(&reg, sizeof(Personal),1,pFile))
+    {
+        if (reg.getLegajoPersonal()== legajo){
+            fclose(pFile);
+            return pos;
+        }
+        pos++;
+    }
+
+    fclose(pFile);
+    return -1;
+}
+int PersonalArchivo::getNuevoLegajo()
+{
+    int cantidad = getCantidadRegistrosPersonal();
+
+    if (cantidad >0){
+        return leer(cantidad-1).getLegajoPersonal()+1;
+
+    }
+    return 1;
 }

@@ -25,8 +25,6 @@ public:
     int getCel();
     int getDni();
 
-    void cargarPersona();
-    void mostrarPersona();
 
 
 };
