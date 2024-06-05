@@ -5,7 +5,7 @@
 using namespace std;
 
 ArchivoVHS::ArchivoVHS() {
-	
+
 }
 bool ArchivoVHS::guardar(VHS art){
 	bool result;
@@ -22,8 +22,8 @@ int ArchivoVHS::buscarXnumero(int numeroArt){
 	FILE *p;
 	VHS obj;
 	int pos=0;
-	fopen("VHS.dat", "rb");
-	if(p==NULL) return -1;
+	p = fopen("VHS.dat", "rb");
+	if(p==nullptr) return -1;
 	while(fread(&obj, sizeof obj, 1, p)==1){
 		if(obj.getNumero() == numeroArt){
 			fclose(p);
@@ -35,7 +35,6 @@ int ArchivoVHS::buscarXnumero(int numeroArt){
 	return -2;
 }
 VHS ArchivoVHS::leerRegistro(int pos){
-	bool result;
 	VHS reg;
 	FILE *pFile;
 	pFile = fopen("VHS.dat", "rb");
@@ -50,8 +49,8 @@ VHS ArchivoVHS::leerRegistro(int pos){
 bool ArchivoVHS::listarRegistros(){
 	FILE *p;
 	VHS obj;
-	fopen("VHS.dat", "rb");
-	if(p==NULL) return false;
+	p = fopen("VHS.dat", "rb");
+	if(p==nullptr) return false;
 	while(fread(&obj, sizeof obj, 1, p)==1){
 		obj.mostrar();
 		cout<<endl;

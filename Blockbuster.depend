@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1717471069 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
+1717544837 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
 	<iostream>
 	"VentaManager.h"
 	"AlquilerManager.h"
@@ -77,7 +77,7 @@
 	"Persona.h"
 	<string>
 
-1717306005 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\funciones.cpp
+1717545545 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\funciones.cpp
 	"funciones.h"
 
 1716841182 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivojuego.cpp
@@ -103,7 +103,7 @@
 	"Articulo.h"
 	<string>
 
-1716841188 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivovhs.cpp
+1717545368 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivovhs.cpp
 	"ArchivoVHS.h"
 	"VHS.h"
 	"Articulo.h"
@@ -139,7 +139,7 @@
 	"Juego.h"
 	"ArchivoVHS.h"
 
-1717470946 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivodetallealquiler.cpp
+1717546020 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivodetallealquiler.cpp
 	"ArchivoDetalleAlquiler.h"
 
 1717470565 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivodetallealquiler.h
@@ -202,7 +202,7 @@
 1717472326 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilermanager.cpp
 	"AlquilerManager.h"
 
-1717472287 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilerdetallemanager.cpp
+1717546083 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilerdetallemanager.cpp
 	"AlquilerDetalleManager.h"
 
 1717471584 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\alquilerdetallemanager.h

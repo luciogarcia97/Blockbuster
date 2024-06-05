@@ -26,8 +26,11 @@ void AlquilerDetalleManager::cargarDetalleAlquiler(int numeroAlquiler){
         //validaciones
         int posicionVHS = dataVHS.buscarXnumero(numero_articulo);
 
-        if(posicionVHS!= -2 && posicionVHS != -1)precio = dataVHS.leerRegistro(posicionVHS).getPrecio() * cantidad;
-        else if (posicionVHS == -2)std::cout << "No hay un VHS cargado con este Id" << std::endl;
+        if(posicionVHS > 0){
+            precio = dataVHS.leerRegistro(posicionVHS).getPrecio() * cantidad;
+            std::cout << "Entro al calculo de precio" << std::endl;
+        }
+        else if (posicionVHS == -2) std::cout << "No hay un VHS cargado con este Id" << std::endl;
         else std::cout << "Error al leer el archivo" << std::endl;
         
         
@@ -46,7 +49,7 @@ void AlquilerDetalleManager::cargarDetalleAlquiler(int numeroAlquiler){
 void AlquilerDetalleManager::agregarAlquilerDetalle(DetalleAlquiler obj){
     if (_archivoAlquilerDetalle.agregarRegistroAlquilerDetalle(obj))
     {
-        std::cout << "El Detalle del alquiler numero" << obj.getNumeroAlquilerDetalle() << " se registro con exito" << std::endl;
+        std::cout << "El detalle del alquiler #" << obj.getNumeroAlquilerDetalle() << " se registro con exito" << std::endl;
     }else{
         std::cout << "No se pudo guardar el detalle!" << std::endl;
     }
@@ -71,7 +74,6 @@ void AlquilerDetalleManager::listarAlquilerDetalle(){
 
 void AlquilerDetalleManager::listarAlquilerDetalleById(){
     int id;
-    
     std::cout << "Ingrese el numero de alquiler a buscar: ";
     id = validarCinInt();
 
@@ -99,6 +101,7 @@ void AlquilerDetalleManager::listarAlquilerDetalleById(){
             delete []obj;
             return;
         }
+        if (i == 0) headerAlquilerDetalle();
         mostrarAlquilerDetalle(obj[i]);
     }
     delete []obj;

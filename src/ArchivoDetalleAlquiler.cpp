@@ -70,27 +70,17 @@ int ArchivoDetalleAlquiler::buscarRegistro(int id){
 
 int ArchivoDetalleAlquiler::contarRegistrosRepetidos(int id){
     int cantidad = contarRegistros();
-    DetalleAlquiler *obj;
+    DetalleAlquiler obj;
     int contador = 0;
-
-    obj = new DetalleAlquiler[cantidad];
-    if (obj == nullptr)
-    {
-        std::cout << "No se pudo pedir memoria para contar los detalles del alquiler..." << std::endl;
-        delete []obj;
-        return -1;
-    }
-    
+ 
     for (int i = 0; i < cantidad; i++)
     {
-        if (id == obj[i].getNumeroAlquilerDetalle())
+        obj = leerRegistro(i);
+        if (id == obj.getNumeroAlquilerDetalle())
         {
             contador ++;
         }
-
     }
-
-    delete []obj;
     return contador;
 }
 
