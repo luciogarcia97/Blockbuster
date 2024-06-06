@@ -65,6 +65,19 @@ int ArchivoAlquiler::buscarRegistro(int id){
     return 0;
 }
 
+bool ArchivoAlquiler::guardarRegistro(int posicion, Alquiler reg){
+    bool result;
+    FILE *pFile;
+    pFile = fopen(_nombre,"rb+");
+    if(pFile == nullptr){
+        return false;
+    }
+    fseek(pFile, sizeof(Alquiler)*posicion, SEEK_SET);
+    result = fwrite(&reg,sizeof (Alquiler),1,pFile);
+    fclose(pFile);
+    return result;
+}
+
 void ArchivoAlquiler::setNombre(std::string nombre){
     strcpy(_nombre,stringToConstChar(nombre,30));
 }

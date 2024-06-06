@@ -1,5 +1,6 @@
 #pragma once
 #include "Persona.h"
+#include "funciones.h"
 class PersonaManager
 {
 public:

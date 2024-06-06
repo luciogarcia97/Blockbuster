@@ -9,7 +9,7 @@ Personal AppManager::Logueo(){
     string pass;
     cout << "------ BIENVENIDO A BLOCKBUSTER ------- " << endl;
     cout << "Numero de Usuario: ";
-    cin >> legajo;
+    legajo = validarCinInt();
     cout << "Ingrese su clave: ";
     cin >> pass;
     cout << "--------------------------------------- " << endl;
@@ -36,7 +36,7 @@ void AppManager::menu()
     {
         obj = Logueo();
     } while (obj.getLegajoPersonal() == 0);
-    
+
     int option;
     system("cls");
     do
@@ -72,3 +72,5 @@ void AppManager::menu()
     }
     while(option != 0);
 }
+
+

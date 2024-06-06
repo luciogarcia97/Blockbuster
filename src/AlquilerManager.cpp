@@ -115,14 +115,16 @@ Alquiler AlquilerManager::buscarAlquiler(){
 void AlquilerManager::devolucionAlquiler(){
     int opcion;
     Alquiler reg = buscarAlquiler();
+    int posicion = _archivoAlquiler.buscarRegistro(reg.getNumeroAlquiler());
     Fecha timestamp;
     mostrarAlquiler(reg);
     std::cout << std::endl << "Actualizar el alquiler como entregado? (1-Si o 0-No)" << std::endl;
     opcion = validarCinInt();
-    if (opcion){
+    if (opcion == 1){
         //Registro la fecha del momento y actualizo el estado del alquiler
         reg.setFechaEntrega(timestamp);
         reg.setEstadoAlquiler(false);
+        _archivoAlquiler.guardarRegistro(posicion,reg);
     }
 }
 

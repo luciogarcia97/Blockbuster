@@ -17,9 +17,9 @@ Persona PersonaManager::cargarPersona()
     cout << "Ingrese el Email: " << endl;
     getline(cin,mail);
     cout << "Ingrese el numero de celular: " << endl;
-    cin >> cel;
+    cel = validarCinInt();
     cout << "Ingrese el numero de dni: " << endl;
-    cin >> dni;
+    dni = validarCinInt();
 
 
     return Persona(nombre,apellido,mail,cel,dni);

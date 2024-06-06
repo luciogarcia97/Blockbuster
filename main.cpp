@@ -8,11 +8,5 @@ int main()
 {
     AppManager am;
     am.menu();
-//    AlquilerManager pm;
-
-//    pm.menu();
-
-// //    VentaManager vm;
-// //    vm.menu();
     return 0;
 }

@@ -12,6 +12,7 @@ class ArchivoAlquiler
         int agregarRegistroAlquiler(Alquiler obj);
         int getNuevoId();
         int buscarRegistro(int id);
+        bool guardarRegistro(int posicion, Alquiler reg);
 
         void setNombre(std::string);
     private:

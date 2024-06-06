@@ -27,11 +27,11 @@ Personal PersonalManager::crearPersonal()
     cout << "Ingrese la contrasena del Personal: " << endl;
     cin >> contrasena;
     cout << "Ingrese el Cargo del Personal :" << endl;
-    cin >> cargo;
+    cargo = validarCinInt();
     cout << "Ingrese el Sueldo del Personal: " << endl;
-    cin >> sueldo;
+    sueldo = validarCinFloat();
     cout << "Ingrese el porcentaje de comision del Personal: " << endl;
-    cin >> porcentaje_comision;
+    porcentaje_comision = validarCinFloat();
     cout << "Ingrese el estado del Personal: 1-ACTIVO 0-INACTIVO" << endl;
     cin >> estado_personal;
 
