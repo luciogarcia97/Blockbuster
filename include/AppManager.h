@@ -1,16 +1,13 @@
 #pragma once
-#include "AlquilerManager.h"
-#include "VentaManager.h"
-#include "PersonalManager.h"
-#include "ClientesManager.h"
+#include "AppPersonaManager.h"
+#include "AppFacturacionManagger.h"
 
 class AppManager{
 public:
     void menu();
+    Personal Logueo();
 private:
-    AlquilerManager _am;
-    VentaManager _vm;
-    PersonalManager _pm;
-    ClienteManager _cm;
+    AppPersonaManager _pm;
+    AppFacturacionManagger _fm;
 };
 

@@ -87,7 +87,7 @@ int PersonalArchivo::buscarPersonal(int legajo)
     pFile = fopen("Personal.dat","rb");
 
     if (pFile == nullptr){
-        return -1;
+        return -2;
     }
     while (fread(&reg, sizeof(Personal),1,pFile))
     {

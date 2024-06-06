@@ -72,12 +72,6 @@ void Cliente::setEstadoAlquiler(bool estado_alquiler)
     _estado_alquiler = estado_alquiler;
 }
 
-void Cliente::crearCliente()
-{
-    PersonaManager obj;
-    obj.cargarPersona();
-}
-
 void Cliente::mostrarCliente()
 {
 

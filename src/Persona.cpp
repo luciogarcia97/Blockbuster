@@ -76,41 +76,6 @@ void Persona::setDni(int dni)
         _dni = 0;
     }
 }
-/*
-void Persona::cargarPersona()
-{
-    string nombre,apellido,mail;
-    int cel,dni;
-
-    cin.ignore();
-    cout << "Ingrese el Nombre: " << endl;
-    getline(cin, nombre);
-    cout << "Ingrese el Apellido: " << endl;
-    getline(cin, apellido);
-    cout << "Ingrese el Email: " << endl;
-    getline(cin,mail);
-    cout << "Ingrese el numero de celular: " << endl;
-    cin >> cel;
-    cout << "Ingrese el numero de dni: " << endl;
-    cin >> dni;
-
-    setNombre(nombre);
-    setApellido(apellido);
-    setMail(mail);
-    setCel(cel);
-    setDni(dni);
-}
-
-void Persona::mostrarPersona()
-{
-
-    cout << "Nombre: " << getNombre() << endl;
-    cout << "Apellido: " << getApellido() << endl;
-    cout << "Mail: " << getMail() << endl;
-    cout << "Cel: " << getCel() << endl;
-    cout << "Dni: " << getDni() << endl;
-}
-*/
 string Persona::getNombre()
 {
     return _nombre;

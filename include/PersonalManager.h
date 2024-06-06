@@ -6,7 +6,8 @@
 class PersonalManager{
 
 public:
-        void menu();
+    void menu();
+    Personal buscarPersonalPorLegajo(int legajo);
     private:
 
     Personal crearPersonal();

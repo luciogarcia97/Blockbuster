@@ -12,7 +12,7 @@ Personal PersonalManager::crearPersonal()
 {
     int legajo_personal;
     char contrasena [30];
-    char cargo [30];
+    int cargo;
     float sueldo;
     float porcentaje_comision;
     float comi_acu = 0.0f;
@@ -179,8 +179,8 @@ void PersonalManager::eliminarPersonal()
 
 void PersonalManager::volverCargarPersonal(Personal &registro)
 {
-    string nombre,apellido,mail,cargo,contrasena;
-    int cel,dni;
+    string nombre,apellido,mail,contrasena;
+    int cargo,cel,dni;
     bool estado_personal;
     float sueldo, porcentaje_comision;
 
@@ -234,4 +234,14 @@ void PersonalManager::mostrarPersonal(Personal reg)
     cout << "Estado del Personal: " << (reg.getEstadoPersonal() ? "Disponible": "Eliminado") << endl;
 }
 
-
+Personal PersonalManager::buscarPersonalPorLegajo(int legajo){
+    Personal obj;
+    int posicion;
+    posicion = _personalArchivo.buscarPersonal(legajo);
+    if (posicion >= 0)
+    {
+        obj = _personalArchivo.leer(posicion); //Devuelve un Personal
+        return obj;
+    }
+    return obj;
+}

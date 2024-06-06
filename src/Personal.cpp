@@ -1,3 +1,4 @@
+#include "funciones.h"
 #include "Personal.h"
 #include "Persona.h"
 #include "PersonalManager.h"
@@ -11,13 +12,13 @@ Personal::Personal()
 {
     _legajo_personal = 0;
     strcpy(_contrasena, "SIN DATOS");
-    strcpy(_cargo,"SIN DATOS");
+    _cargo = 0;
     _sueldo = 0.0f;
     _porcentaje_comision = 0.0f;
     _comision_acumulada = 0.0f;
 }
 
-Personal::Personal(int legajo_personal, std::string contrasena, std::string cargo,float sueldo,float porcentajeComision, float comision_acu,bool estado_personal)
+Personal::Personal(int legajo_personal, std::string contrasena, int cargo,float sueldo,float porcentajeComision, float comision_acu,bool estado_personal)
 {
     setLegajoPersonal(legajo_personal);
     setContrasena(contrasena);
@@ -27,7 +28,7 @@ Personal::Personal(int legajo_personal, std::string contrasena, std::string carg
     setComisionAcumulada(comision_acu);
     setEstadoPersonal(estado_personal);
 }
-Personal::Personal(Persona obj,int legajo_personal, std::string contrasena, std::string cargo, float sueldo,float porcentajeComision, float comision_acu,bool estado_personal)
+Personal::Personal(Persona obj,int legajo_personal, std::string contrasena, int cargo, float sueldo,float porcentajeComision, float comision_acu,bool estado_personal)
 {
     setNombre(obj.getNombre());
     setApellido(obj.getApellido());
@@ -53,7 +54,7 @@ string Personal::getContrasena()
 {
     return _contrasena;
 }
-string Personal::getCargo()
+int Personal::getCargo()
 {
     return _cargo;
 }
@@ -98,15 +99,15 @@ void Personal::setContrasena(string contrasena)
     }
 }
 
-void Personal::setCargo(string cargo)
+void Personal::setCargo(int cargo)
 {
-    if (cargo.size() <= 30)
+    if (validarPositivoInt(cargo))
     {
-        strcpy(_cargo, cargo.c_str());
+        _cargo = cargo;
     }
     else
     {
-        strcpy (_cargo, "SIN DATOS");
+        _cargo = 0;
     }
 }
 
@@ -149,12 +150,6 @@ void Personal::setEstadoPersonal(bool estado_personal)
     if (estado_personal == 1 || estado_personal == 0){
         _estado_personal = estado_personal;
     }
-}
-
-void Personal::crearPersonal()
-{
-    PersonaManager obj;
-    obj.cargarPersona();
 }
 
 

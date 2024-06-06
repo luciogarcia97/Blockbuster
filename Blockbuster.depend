@@ -48,7 +48,7 @@
 	<cstring>
 	"Alquiler.h"
 
-1717548289 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\cliente.cpp
+1717636834 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\cliente.cpp
 	"Cliente.h"
 	"Persona.h"
 	"ClienteArchivo.h"
@@ -57,19 +57,20 @@
 	<iostream>
 	<cstring>
 
-1717548289 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\cliente.h
+1717636829 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\cliente.h
 	"Persona.h"
 	<string>
 
-1717548290 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\persona.h
+1717637074 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\persona.h
 	<string>
 
-1717548290 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\persona.cpp
+1717637343 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\persona.cpp
 	"Persona.h"
 	<iostream>
 	<cstring>
 
-1717549771 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\personal.cpp
+1717640942 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\personal.cpp
+	"funciones.h"
 	"Personal.h"
 	"Persona.h"
 	"PersonalManager.h"
@@ -78,7 +79,7 @@
 	<iostream>
 	<cstring>
 
-1717549459 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\personal.h
+1717640808 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\personal.h
 	"Persona.h"
 	<string>
 
@@ -172,14 +173,14 @@
 	"Cliente.h"
 	"Persona.h"
 
-1717548597 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\personalarchivo.cpp
+1717639063 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\personalarchivo.cpp
 	"PersonalArchivo.h"
 	"Personal.h"
 
 1717548290 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\personalarchivo.h
 	"Personal.h"
 
-1717550064 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\personalmanager.cpp
+1717643305 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\personalmanager.cpp
 	<iostream>
 	"PersonalManager.h"
 	"PersonalArchivo.h"
@@ -187,7 +188,7 @@
 	"Persona.h"
 	"PersonaManager.h"
 
-1717548290 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\personalmanager.h
+1717639499 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\personalmanager.h
 	"PersonalArchivo.h"
 	"Personal.h"
 	"Persona.h"
@@ -231,13 +232,11 @@
 	"Persona.h"
 	<iostream>
 
-1717548993 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\appmanager.h
-	"AlquilerManager.h"
-	"VentaManager.h"
-	"PersonalManager.h"
-	"ClientesManager.h"
+1717641882 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\appmanager.h
+	"AppPersonaManager.h"
+	"AppFacturacionManagger.h"
 
-1717549117 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\appmanager.cpp
+1717643313 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\appmanager.cpp
 	<iostream>
 	"AppManager.h"
 
@@ -265,4 +264,20 @@
 
 1717553367 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventadetallemanager.cpp
 	"VentaDetalleManager.h"
+
+1717636484 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\apppersonamanager.h
+	<iostream>
+	"PersonalManager.h"
+	"ClientesManager.h"
+
+1717637777 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\appfacturacionmanagger.cpp
+	"AppFacturacionManagger.h"
+
+1717637678 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\appfacturacionmanagger.h
+	"AlquilerManager.h"
+	"VentaManager.h"
+	<iostream>
+
+1717641645 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\apppersonamanager.cpp
+	"AppPersonaManager.h"
 

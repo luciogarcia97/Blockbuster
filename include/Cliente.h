@@ -24,7 +24,6 @@ public:
         void setEstadoCliente(bool estado_cliente);
         void setEstadoAlquiler(bool estado_alquiler);
 
-        void crearCliente();
         void mostrarCliente();
 
 

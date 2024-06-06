@@ -7,7 +7,7 @@ class Personal:public Persona
 private:
     int _legajo_personal;
     char _contrasena [30];
-    char _cargo [30];
+    int _cargo;
     float _sueldo;
     float _porcentaje_comision;
     float _comision_acumulada;
@@ -15,12 +15,12 @@ private:
 
 public:
     Personal();
-    Personal(int legajo_personal, std::string contrasena, std::string cargo,float sueldo,float porcentajeComision, float comision_acu,bool estado_personal);
-    Personal(Persona obj,int legajo_personal, std::string contrasena, std::string cargo, float sueldo,float porcentajeComision, float comision_acu,bool estado_personal);
+    Personal(int legajo_personal, std::string contrasena, int cargo,float sueldo,float porcentajeComision, float comision_acu,bool estado_personal);
+    Personal(Persona obj,int legajo_personal, std::string contrasena, int cargo, float sueldo,float porcentajeComision, float comision_acu,bool estado_personal);
 
     int getLegajoPersonal();
     std::string getContrasena();
-    std::string getCargo();
+    int getCargo();
     float getSueldo();
     float getPorcentajeComision();
     float getComisionAcumulada();
@@ -29,12 +29,11 @@ public:
 
     void setLegajoPersonal(int legajo_personal);
     void setContrasena(std::string contrasena);
-    void setCargo(std::string cargo);
+    void setCargo(int cargo);
     void setSueldo(float sueldo);
     void setPorcentajeComision(float comision);
     void setComisionAcumulada(float comision);
     void setEstadoPersonal(bool estado_personal);
 
-    void crearPersonal();
     void mostrarPersonal();
 };

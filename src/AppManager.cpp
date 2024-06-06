@@ -4,19 +4,49 @@
 using namespace std;
 
 
+Personal AppManager::Logueo(){
+    int legajo;
+    string pass;
+    cout << "------ BIENVENIDO A BLOCKBUSTER ------- " << endl;
+    cout << "Numero de Usuario: ";
+    cin >> legajo;
+    cout << "Ingrese su clave: ";
+    cin >> pass;
+    cout << "--------------------------------------- " << endl;
+
+    PersonalManager pm;
+    Personal obj;
+    Personal aux = pm.buscarPersonalPorLegajo(legajo);
+    if((aux.getContrasena() == pass) && (aux.getLegajoPersonal() > 0)){
+        obj = aux;
+        return obj;
+    }
+
+    system("cls");
+    cout << "Su usuario y/o contrasena son invalidos, reintente presionando una tecla"<<endl;
+    system("pause");
+    system("cls");
+    return obj;
+}
+
 void AppManager::menu()
 {
+    Personal obj;
+    do
+    {
+        obj = Logueo();
+    } while (obj.getLegajoPersonal() == 0);
+    
     int option;
     system("cls");
     do
     {
         system("cls");
-
         cout << "------ MENU PRINCIPAL ------- " << endl;
-        cout << "1- Menu Alquiler" << endl;
-        cout << "2- Menu Venta" << endl;
-        cout << "3- Menu Personal" << endl;
-        cout << "4- Menu Cliente" << endl;
+        cout << "1- Menu Facturacion" << endl;
+        cout << "2- Menu Persona" << endl;
+        cout << "3- Menu Stock" << endl;
+        cout << "4- UPDATES...." << endl;
         cout << "-----------------------------" << endl;
         cout << "0- SALIR" << endl;
         cout << "Opcion: "<< endl;
@@ -25,19 +55,17 @@ void AppManager::menu()
         switch(option)
         {
         case 1:
-            _am.menu();
+            _fm.menu();
             system("pause");
             break;
         case 2:
-            _vm.menu();
-            system("pause");
-            break;
-        case 3:
             _pm.menu();
             system("pause");
             break;
+        case 3:
+            system("pause");
+            break;
         case 4:
-            _cm.menu();
             system("pause");
             break;
         }
