@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1717709213 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
+1717765784 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
 	<iostream>
 	"AppManager.h"
 
@@ -41,7 +41,7 @@
 	<cstring>
 	"Venta.h"
 
-1717710122 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivoalquiler.cpp
+1717769535 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivoalquiler.cpp
 	"ArchivoAlquiler.h"
 
 1717710064 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivoalquiler.h
@@ -193,7 +193,7 @@
 	"Personal.h"
 	"Persona.h"
 
-1717553943 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventamanager.cpp
+1717771916 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventamanager.cpp
 	"VentaManager.h"
 
 1717553593 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\ventamanager.h
@@ -210,7 +210,7 @@
 	"ArchivoAlquiler.h"
 	"AlquilerDetalleManager.h"
 
-1717710326 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilermanager.cpp
+1717772019 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilermanager.cpp
 	"AlquilerManager.h"
 
 1717546186 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilerdetallemanager.cpp
@@ -237,7 +237,7 @@
 	"AppPersonaManager.h"
 	"AppFacturacionManagger.h"
 
-1717711346 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\appmanager.cpp
+1717771969 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\appmanager.cpp
 	<iostream>
 	"AppManager.h"
 
@@ -271,7 +271,7 @@
 	"PersonalManager.h"
 	"ClientesManager.h"
 
-1717637777 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\appfacturacionmanagger.cpp
+1717771841 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\appfacturacionmanagger.cpp
 	"AppFacturacionManagger.h"
 
 1717637678 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\appfacturacionmanagger.h
@@ -279,6 +279,6 @@
 	"VentaManager.h"
 	<iostream>
 
-1717641645 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\apppersonamanager.cpp
+1717772020 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\apppersonamanager.cpp
 	"AppPersonaManager.h"
 

@@ -85,10 +85,10 @@ void AlquilerManager::mostrarAlquiler(Alquiler reg){
     std::cout << "\t" << reg.getLegajo() << "\t\t" << reg.getFormaPago() << "\t\t";
     reg.getFechaObligadaDevolucion().MostrarFecha();
     std::cout << "\t\t\t";
-    if (validarIgualdadFechas(reg.getFechaAlquiler(),reg.getFechaEntrega()) && reg.getEstadoAlquiler()) std::cout << "null";
+    if (reg.getEstadoAlquiler()) std::cout << "null";
     else reg.getFechaEntrega().MostrarFecha();
     std::cout << "\t\t\t";
-    std::cout << (reg.getEstadoAlquiler()? "En Curso":" Finalizado") << std::endl;
+    std::cout << (reg.getEstadoAlquiler()? "\tEn Curso":"Finalizado") << std::endl;
 }
 
 bool AlquilerManager::validarIgualdadFechas(Fecha fecha1, Fecha fecha2){
@@ -109,22 +109,52 @@ Alquiler AlquilerManager::buscarAlquiler(){
     id = validarCinInt();
 
     posicion = _archivoAlquiler.buscarRegistro(id);
+    if (posicion == -2)
+    {
+        std::cout << "No existe el archivo alquiler" << std::endl;
+        return Alquiler();
+    }else if (posicion == -1)
+    {
+        std::cout << "No existe el registro ingresado" << std::endl;
+        return Alquiler();
+    }
     return _archivoAlquiler.leerRegistro(posicion);
 }
 
 void AlquilerManager::devolucionAlquiler(){
     int opcion;
-    Alquiler reg = buscarAlquiler();
-    int posicion = _archivoAlquiler.buscarRegistro(reg.getNumeroAlquiler());
+    Alquiler reg;
+    int posicion;
     Fecha timestamp;
+    do
+    {
+        reg = buscarAlquiler();
+        posicion = _archivoAlquiler.buscarRegistro(reg.getNumeroAlquiler());
+        if(reg.getNumeroAlquiler() == 0){
+            std::cout << "Desea realizar una nueva busqueda? (1-Si o 0-No)" << std::endl;
+            opcion = validarCinInt();
+            if(opcion == 0) return;
+        }
+        system("cls");
+    } while(reg.getNumeroAlquiler() == 0);
+
+    if (!reg.getEstadoAlquiler()){
+        std::cout << "El alquiler ingresado se encuentra entregado, se regresara al menu de alquileres" << std::endl;
+        return;
+    }
+    
+    headerAlquiler();
     mostrarAlquiler(reg);
     std::cout << std::endl << "Actualizar el alquiler como entregado? (1-Si o 0-No)" << std::endl;
     opcion = validarCinInt();
     if (opcion == 1){
-        //Registro la fecha del momento y actualizo el estado del alquiler
         reg.setFechaEntrega(timestamp);
         reg.setEstadoAlquiler(false);
-        _archivoAlquiler.guardarRegistro(posicion,reg);
+        if(!_archivoAlquiler.guardarRegistro(posicion,reg)){
+            std::cout << "El alquiler no pudo ser actualizado." << std::endl;
+            return;
+        }
+        std::cout << "El alquiler #" << reg.getNumeroAlquiler() << " fue actualizado correctamente." << std::endl;
     }
 }
 
@@ -148,23 +178,18 @@ void AlquilerManager::menu(){
 		switch(option){
 		case 1:
             agregarAlquiler();
-			system("pause");
 			break;
 		case 2:
             listarAlquiler();
-			system("pause");
 			break;
         case 3:
             buscarAlquiler();
-			system("pause");
 			break;
         case 4:
             devolucionAlquiler();
-			system("pause");
 			break;
         case 5:
             adm.menu();
-			system("pause");
 			break;
         case 0:
             break;

@@ -19,11 +19,9 @@ void AppFacturacionManagger::menu()
         {
         case 1:
             _vm.menu();
-            system("pause");
             break;
         case 2:            
             _am.menu();
-            system("pause");
             break;
         }
     }

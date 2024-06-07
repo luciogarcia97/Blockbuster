@@ -56,17 +56,13 @@ void AppManager::menu()
         {
         case 1:
             _fm.menu();
-            system("pause");
             break;
         case 2:
             _pm.menu();
-            system("pause");
             break;
         case 3:
-            system("pause");
             break;
         case 4:
-            system("pause");
             break;
         }
     }

@@ -50,7 +50,7 @@ int ArchivoAlquiler::buscarRegistro(int id){
     Alquiler reg;
     int posicion = 0;
     p = fopen(_nombre,"rb");
-    if(p == nullptr) return -1;
+    if(p == nullptr) return -2;
 
     while (fread(&reg, sizeof(Alquiler), 1, p) == 1)
     {
@@ -62,7 +62,7 @@ int ArchivoAlquiler::buscarRegistro(int id){
         posicion ++;
     }
     fclose(p);
-    return 0;
+    return -1;
 }
 
 bool ArchivoAlquiler::guardarRegistro(int posicion, Alquiler reg){

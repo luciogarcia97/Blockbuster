@@ -155,19 +155,15 @@ void VentaManager::menu(){
 		switch(option){
 		case 1:
             agregarVenta();
-			system("pause");
 			break;
 		case 2:
             listarVenta();
-			system("pause");
 			break;
         case 3:
             buscarVenta();
-			system("pause");
 			break;
         case 4:
             vdm.menu();
-			system("pause");
 			break;
         case 0:
             break;

@@ -91,8 +91,6 @@ void ClienteManager::menu(){
         eliminarCliente();
         break;
         }
-    system("pause");
-
     }while(opcion!= 0);
 
 }
@@ -152,7 +150,7 @@ void ClienteManager::eliminarCliente()
         cliente = _clienteArchivo.leer(index);
         mostrarCliente(cliente);
 
-        cout << "¿Esta seguro/a de eliminar el cliente? 1-SI 0-NO" << endl;
+        cout << "ï¿½Esta seguro/a de eliminar el cliente? 1-SI 0-NO" << endl;
         cin >> eliminar;
         if (eliminar){
             cliente.setEstadoCliente(false);

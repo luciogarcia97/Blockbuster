@@ -26,11 +26,9 @@ void AppPersonaManager::menu()
         {
         case 1:
             _pm.menu();
-            system("pause");
             break;
         case 2:
             _cm.menu();
-            system("pause");
             break;
         }
     }
