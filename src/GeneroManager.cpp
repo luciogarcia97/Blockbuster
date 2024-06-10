@@ -13,7 +13,7 @@ void GeneroManager::menu(){
         cout << "----------------------------" << endl;
         cout << "0- SALIR" << endl;
         cout << "INGRESE OPCION :" << endl;
-        cin >> opcion;
+        opcion = validarCinInt();
         system("cls");
         switch (opcion){
         case 1:
@@ -58,7 +58,7 @@ bool estado;
     cout << "Ingrese el nombre del Genero: " << endl;
     std::getline (std::cin,nombre_genero);
     cout << "Ingrese el estado del Genero: 1-ACTIVO 0-INACTIVO" << endl;
-    cin >> estado;
+    estado = validarCinBool();
 
     return Genero(id, nombre_genero, estado);
 }
@@ -100,7 +100,7 @@ void GeneroManager::modificarGenero(){
    Genero genero;
 
     cout << "Ingrese el Numero de ID que desea modificar :" << endl;
-    cin >> num_genero;
+    num_genero = validarCinInt();
 
     index = _generoArchivo.buscarRegistro(num_genero);
 
@@ -127,7 +127,7 @@ int num_genero, index;
     bool eliminar;
 
     cout << "Ingrese el Numero de legajo del genero que desea eliminar :" << endl;
-    cin >> num_genero;
+    num_genero = validarCinInt();
 
     index = _generoArchivo.buscarRegistro(num_genero);
 
@@ -137,7 +137,7 @@ int num_genero, index;
         mostrarGenero(genero);
 
         cout << "Esta seguro/a de eliminar el Genero? 1-SI 0-NO" << endl;
-        cin >> eliminar;
+        eliminar = validarCinBool();
         if (eliminar){
             genero.setEstado(false);
 
@@ -170,7 +170,7 @@ void GeneroManager::volverCargarGenero(Genero &registro){
     std::getline (std::cin,nombre_genero);
 
     cout << "Ingrese el estado del Genero: 1-ACTIVO 0-INACTIVO" << endl;
-    cin >> estado;
+    estado = validarCinBool();
 
     registro.setNombre(nombre_genero);
     registro.setEstado(estado);

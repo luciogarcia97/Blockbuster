@@ -37,6 +37,30 @@ float validarCinFloat(){
     return value;
 }
 
+bool validarCinBool() {
+  bool valor;
+  int entrada;
+  int error;
+
+  do {
+        error = 0;
+        std::cout << "Ingrese un valor (0 o 1): ";
+        std::cin >> entrada;
+
+        if (std::cin.fail() || (entrada != 0 && entrada != 1)) {
+            std::cout << "Dato invalido, reingrese nuevamente" << std::endl;
+            error = 1;
+            std::cin.clear();
+            std::cin.ignore(80, '\n');
+        } else {
+            valor = entrada;
+            break;
+        }
+  } while(error == 1);
+
+  return valor;
+}
+
 void headerVentas(){
     //TO DO, esto se puede mejorar con algunos repos de github donde crean una clase que te hace toda esta configuracion. (https://stackoverflow.com/questions/6755250/format-output-in-a-table-c)
     //Tiene formato de tabla

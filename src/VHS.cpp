@@ -57,7 +57,7 @@ void VHS::cargar(){
 	cin>>_director;
 	cout<<endl;
 	cout<<"Duracion: ";
-	cin>>_duracion;
+	_duracion = validarCinInt();
 }
 void VHS::mostrar(){
 	Articulo::mostrar();

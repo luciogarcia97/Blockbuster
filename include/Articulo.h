@@ -1,6 +1,8 @@
 #ifndef ARTICULO_H
 #define ARTICULO_H
 
+#include "funciones.h"
+
 class Articulo {
 public:
 	Articulo();

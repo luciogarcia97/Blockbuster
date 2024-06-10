@@ -26,14 +26,18 @@ Personal PersonalManager::crearPersonal()
 
     cout << "Ingrese la contrasena del Personal: " << endl;
     cin >> contrasena;
-    cout << "Ingrese el Cargo del Personal :" << endl;
-    cargo = validarCinInt();
+    do
+    {
+        cout << "Ingrese el Cargo del Personal : (1-Gerente, 2-Supervisor, 3-Vendedor)" << endl;
+        cargo = validarCinInt();
+    } while (cargo < 1 || cargo > 3);
+    
     cout << "Ingrese el Sueldo del Personal: " << endl;
     sueldo = validarCinFloat();
     cout << "Ingrese el porcentaje de comision del Personal: " << endl;
     porcentaje_comision = validarCinFloat();
     cout << "Ingrese el estado del Personal: 1-ACTIVO 0-INACTIVO" << endl;
-    cin >> estado_personal;
+    estado_personal = validarCinBool();
 
     return Personal (p,legajo_personal,contrasena,cargo,sueldo,porcentaje_comision,comi_acu,estado_personal);
 }
@@ -88,7 +92,7 @@ void PersonalManager::menu(){
         cout << "----------------------------" << endl;
         cout << "0- SALIR" << endl;
         cout << "INGRESE OPCION :" << endl;
-        cin >> opcion;
+        opcion = validarCinInt();
 
         switch (opcion){
         case 1:
@@ -103,8 +107,8 @@ void PersonalManager::menu(){
         case 4:
         eliminarPersonal();
         break;
-
         }
+        system("pause");
     }while(opcion!= 0);
 
 }
@@ -114,7 +118,7 @@ void PersonalManager::modificarPersonal()
     Personal personal;
 
     cout << "Ingrese el Numero de legajo que desea modificar :" << endl;
-    cin >> num_personal;
+    num_personal = validarCinInt();
 
     index = _personalArchivo.buscarPersonal(num_personal);
 
@@ -141,7 +145,7 @@ void PersonalManager::eliminarPersonal()
     bool eliminar;
 
     cout << "Ingrese el Numero de legajo del personal que desea eliminar :" << endl;
-    cin >> num_personal;
+    num_personal = validarCinInt();
 
     index = _personalArchivo.buscarPersonal(num_personal);
 
@@ -150,8 +154,8 @@ void PersonalManager::eliminarPersonal()
         personal = _personalArchivo.leer(index);
         mostrarPersonal(personal);
 
-        cout << "�Esta seguro/a de eliminar el Personal? 1-SI 0-NO" << endl;
-        cin >> eliminar;
+        cout << "Esta seguro/a de eliminar el Personal? 1-SI 0-NO" << endl;
+        eliminar = validarCinBool();
         if (eliminar){
             personal.setEstadoPersonal(false);
 
@@ -192,19 +196,23 @@ void PersonalManager::volverCargarPersonal(Personal &registro)
     cout << "Ingrese el Email: " << endl;
     getline(cin,mail);
     cout << "Ingrese el numero de celular: " << endl;
-    cin >> cel;
+    cel = validarCinInt();
     cout << "Ingrese el numero de dni: " << endl;
-    cin >> dni;
+    dni = validarCinInt();
     cout << "Ingrese la contrasena del Personal: " << endl;
     cin >> contrasena;
-    cout << "Ingrese el Cargo del Personal :" << endl;
-    cin >> cargo;
+    do
+    {
+        cout << "Ingrese el Cargo del Personal : (1-Gerente, 2-Supervisor, 3-Vendedor)" << endl;
+        cargo = validarCinInt();
+    } while (cargo < 1 || cargo > 3);
+    
     cout << "Ingrese el Sueldo del Personal: " << endl;
-    cin >> sueldo;
+    sueldo = validarCinFloat();
     cout << "Ingrese la comision del Personal: " << endl;
-    cin >> porcentaje_comision;
+    porcentaje_comision = validarCinFloat();
     cout << "Ingrese el estado del Personal: 1-ACTIVO 0-INACTIVO" << endl;
-    cin >> estado_personal;
+    estado_personal = validarCinBool();
 
     registro.setNombre(nombre);
     registro.setApellido(apellido);

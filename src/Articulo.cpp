@@ -43,21 +43,21 @@ int Articulo::getEstado(){
 }
 void Articulo::cargar(){
 	cout<<"Numero de Articulo: ";
-	cin>>_numeroArt;
+	_numeroArt = validarCinInt();
 	cout<<endl;
 	cout<<"Stock: ";
-	cin>>_stock;
+	_stock = validarCinInt();
 	cout<<endl;
 	cout<<"Precio: ";
-	cin>>_precio;
+	_precio = validarCinFloat();
 	cout<<endl;
 	cout<<"Estado: ";
-	cin>>_estado;
+	_estado = validarCinBool();
 }
 void Articulo::mostrar(){
 	if(_estado==true){
-	cout<<"Numero de Articulo: "<<_numeroArt<<endl;
-	cout<<"Stock: "<<_stock<<endl;
-	cout<<"Precio: "<<_precio<<endl;
+		cout<<"Numero de Articulo: "<< getNumero() << endl;
+		cout<<"Stock: " << getStock() << endl;
+		cout<<"Precio: " << getPrecio() << endl;
 	}
 }

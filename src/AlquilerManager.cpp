@@ -172,7 +172,7 @@ void AlquilerManager::menu(){
 		std::cout<<"5) Detalle de alquiler" << std::endl;
 		std::cout<<"====================" << std::endl;
 		std::cout<<"0) SALIR"<< std::endl;
-		std::cin>>option;
+		option = validarCinInt();
 		system("cls");
 
 		switch(option){

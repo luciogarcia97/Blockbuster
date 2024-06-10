@@ -163,7 +163,7 @@ int option;
 		std::cout<<"3) Buscar alquiler detalle por numero de alquiler" << std::endl;
 		std::cout<<"==============================" << std::endl;
 		std::cout<<"0) SALIR"<< std::endl;
-		std::cin>>option;
+		option = validarCinInt();
 		system("cls");
 
 		switch(option){

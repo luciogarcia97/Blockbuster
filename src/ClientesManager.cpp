@@ -1,9 +1,4 @@
-#include <iostream>
 #include "ClientesManager.h"
-#include "ClienteArchivo.h"
-#include "Cliente.h"
-#include "Persona.h"
-#include "PersonaManager.h"
 
 using namespace std;
 
@@ -20,9 +15,9 @@ Cliente ClienteManager::crearCliente()
     p = obj.cargarPersona();
 
     cout << "Ingrese el estado del cliente 1-activo 0-inactivo" << endl;
-    cin >> estado_cliente;
+    estado_cliente = validarCinBool();
     cout << "Ingrese el estado del alquiler del cliente 1-falta devolver 0-ya devolvio el producto: " << endl;
-    cin >> estado_alquiler;
+    estado_alquiler = validarCinBool();
 
 
     return Cliente(p,id_cliente,estado_cliente,estado_alquiler);
@@ -75,7 +70,7 @@ void ClienteManager::menu(){
         cout << "----------------------------" << endl;
         cout << "0- SALIR" << endl;
         cout << "INGRESE OPCION :" << endl;
-        cin >> opcion;
+        opcion = validarCinInt();
 
         switch (opcion){
         case 1:
@@ -114,7 +109,7 @@ void ClienteManager::modificarCliente()
     Cliente cliente;
 
     cout << "Ingrese el Numero de cliente que desea modificar :" << endl;
-    cin >> num_cliente;
+    num_cliente = validarCinInt();
 
     index = _clienteArchivo.buscarCliente(num_cliente);
 
@@ -141,37 +136,30 @@ void ClienteManager::eliminarCliente()
     bool eliminar;
 
     cout << "Ingrese el Numero de cliente que desea eliminar :" << endl;
-    cin >> num_cliente;
+    num_cliente = validarCinInt();
 
     index = _clienteArchivo.buscarCliente(num_cliente);
 
-    if(index != -1)
+    if(index == -1){
+        cout << "No existe el cliente" << endl;
+        return;
+    }
+    cliente = _clienteArchivo.leer(index);
+    mostrarCliente(cliente);
+    cout << "Esta seguro/a de eliminar el cliente? 1-SI 0-NO" << endl;
+    eliminar = validarCinBool();
+    if (!eliminar){
+        cout << "El Cliente no fue eliminado" << endl;
+        return;
+    }
+    cliente.setEstadoCliente(false);
+    if(_clienteArchivo.guardar(index,cliente))
     {
-        cliente = _clienteArchivo.leer(index);
-        mostrarCliente(cliente);
-
-        cout << "�Esta seguro/a de eliminar el cliente? 1-SI 0-NO" << endl;
-        cin >> eliminar;
-        if (eliminar){
-            cliente.setEstadoCliente(false);
-
-            if(_clienteArchivo.guardar(index,cliente))
-            {
-                cout << "Se elimino el Cliente con exito" << endl;
-            }
-            else
-            {
-                cout << "No se pudo eliminar el Cliente" << endl;
-            }
-        }
-        else{
-            cout << "El Cliente no fue eliminado" << endl;
-        }
-
+        cout << "Se elimino el Cliente con exito" << endl;
     }
     else
     {
-        cout << "No se encuentro el cliente" << endl;
+        cout << "No se pudo eliminar el Cliente" << endl;
     }
 }
 
@@ -190,13 +178,13 @@ void ClienteManager::volverCargarCliente(Cliente &registro)
     cout << "Ingrese el Email: " << endl;
     getline(cin,mail);
     cout << "Ingrese el numero de celular: " << endl;
-    cin >> cel;
+    cel = validarCinInt();
     cout << "Ingrese el numero de dni: " << endl;
-    cin >> dni;
+    dni = validarCinInt();
     cout << "Ingrese el estado del cliente 1-activo 0-inactivo" << endl;
-    cin >> estado_cliente;
+    estado_cliente = validarCinBool();
     cout << "Ingrese el estado del alquiler del cliente 1-falta devolver 0-ya devolvio el producto: " << endl;
-    cin >> estado_alquiler;
+    estado_alquiler = validarCinBool();
 
     registro.setNombre(nombre);
     registro.setApellido(apellido);

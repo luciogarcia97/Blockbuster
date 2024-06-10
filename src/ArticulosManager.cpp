@@ -30,10 +30,10 @@ void ArticulosManager::modificarValoresVHS(VHS &art){
 	int stock;
 	float precio;
 	cout<<"Ingresar nuevo valor de STOCK: ";
-	cin>>stock;
+	stock = validarCinInt();
 	cout<<endl;
 	cout<<"Ingresar nuevo valor de PRECIO: ";
-	cin>>precio;
+	precio = validarCinFloat();
 	cout<<endl;
 	art.setStock(stock);
 	art.setPrecio(precio);
@@ -44,7 +44,7 @@ void ArticulosManager::modificarVHS(){
 	VHS art;
 	ArchivoVHS archi;
 	cout<<"Ingrese numero de articulo: ";
-	cin>>id;
+	id = validarCinInt();
 	index = archi.buscarXnumero(id);
 	if(index != -2){
 		art = archi.leerRegistro(index);
@@ -65,7 +65,7 @@ void ArticulosManager::menu(){
 		cout<<"2) JUEGOS"<<endl;
 		cout<<"===================="<<endl;
 		cout<<"0) SALIR"<<endl;
-		cin>>opc;
+		opc = validarCinInt();
 		system("cls");
 		switch(opc){
 		case 1:
@@ -92,7 +92,7 @@ void ArticulosManager::menuVHS(){
 		cout<<"5) Eliminar registro"<<endl;
 		cout<<"===================="<<endl;
 		cout<<"0) SALIR"<<endl;
-		cin>>opc;
+		opc = validarCinInt();
 		system("cls");
 		switch(opc){
 		case 1:

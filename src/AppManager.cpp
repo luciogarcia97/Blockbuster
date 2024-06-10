@@ -50,7 +50,7 @@ void AppManager::menu()
         cout << "-----------------------------" << endl;
         cout << "0- SALIR" << endl;
         cout << "Opcion: "<< endl;
-        cin >> option;
+        option = validarCinInt();
 
         switch(option)
         {

@@ -149,7 +149,7 @@ void VentaManager::menu(){
 		std::cout<<"4) Detalle de venta" << std::endl;
 		std::cout<<"====================" << std::endl;
 		std::cout<<"0) SALIR"<< std::endl;
-		cin>>option;
+		option = validarCinInt();
 		system("cls");
 
 		switch(option){

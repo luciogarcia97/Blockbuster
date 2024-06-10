@@ -13,7 +13,7 @@ void AppFacturacionManagger::menu()
         std::cout << "-------------------------------" << std::endl;
         std::cout << "0- SALIR" << std::endl;
         std::cout << "Opcion: "<< std::endl;
-        std::cin >> option;
+        option = validarCinInt();
 
         switch(option)
         {
