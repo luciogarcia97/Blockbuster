@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1717985564 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
+1717989016 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
 	<iostream>
 	"AppManager.h"
 	"GeneroManager.h"
@@ -162,7 +162,7 @@
 1717548289 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\clientearchivo.h
 	"Cliente.h"
 
-1717988031 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\clientesmanager.cpp
+1717989012 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\clientesmanager.cpp
 	"ClientesManager.h"
 
 1717986163 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\clientesmanager.h
@@ -193,7 +193,7 @@
 	"Personal.h"
 	"Persona.h"
 
-1717987381 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventamanager.cpp
+1717989010 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventamanager.cpp
 	"VentaManager.h"
 
 1717553593 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\ventamanager.h
@@ -210,7 +210,7 @@
 	"ArchivoAlquiler.h"
 	"AlquilerDetalleManager.h"
 
-1717986773 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilermanager.cpp
+1717989013 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilermanager.cpp
 	"AlquilerManager.h"
 
 1717986742 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilerdetallemanager.cpp

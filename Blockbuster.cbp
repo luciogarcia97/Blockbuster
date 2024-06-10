@@ -88,6 +88,9 @@
 		<Unit filename="src/ClientesManager.cpp" />
 		<Unit filename="src/DetalleAlquiler.cpp" />
 		<Unit filename="src/Fecha.cpp" />
+		<Unit filename="src/Genero.cpp" />
+		<Unit filename="src/GeneroArchivo.cpp" />
+		<Unit filename="src/GeneroManager.cpp" />
 		<Unit filename="src/Juego.cpp" />
 		<Unit filename="src/Persona.cpp" />
 		<Unit filename="src/PersonaManager.cpp" />

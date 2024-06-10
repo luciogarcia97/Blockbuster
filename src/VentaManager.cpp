@@ -169,9 +169,9 @@ void VentaManager::menu(){
             break;
         default:
             std::cout << "Opcion incorrecta, presione cualquier tecla para volver a seleccionar opcion" << std::endl;
-			system("pause");
 			break;
 		}
+        system("pause");
 	}while (option != 0);
     
 }

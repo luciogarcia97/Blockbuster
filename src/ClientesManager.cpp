@@ -86,6 +86,7 @@ void ClienteManager::menu(){
         eliminarCliente();
         break;
         }
+        system("pause");
     }while(opcion!= 0);
 
 }
