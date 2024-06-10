@@ -53,6 +53,9 @@
 		<Unit filename="include/ClientesManager.h" />
 		<Unit filename="include/DetalleAlquiler.h" />
 		<Unit filename="include/Fecha.h" />
+		<Unit filename="include/Genero.h" />
+		<Unit filename="include/GeneroArchivo.h" />
+		<Unit filename="include/GeneroManager.h" />
 		<Unit filename="include/Juego.h" />
 		<Unit filename="include/Persona.h" />
 		<Unit filename="include/PersonaManager.h" />

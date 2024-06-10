@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1717765784 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
+1717984356 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
 	<iostream>
 	"AppManager.h"
+	"GeneroManager.h"
 
 1717460172 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\detallealquiler.cpp
 	"DetalleAlquiler.h"
@@ -160,7 +161,7 @@
 1717548289 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\clientearchivo.h
 	"Cliente.h"
 
-1717548289 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\clientesmanager.cpp
+1717772076 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\clientesmanager.cpp
 	<iostream>
 	"ClientesManager.h"
 	"ClienteArchivo.h"
@@ -180,7 +181,7 @@
 1717548290 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\personalarchivo.h
 	"Personal.h"
 
-1717707737 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\personalmanager.cpp
+1717772069 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\personalmanager.cpp
 	<iostream>
 	"PersonalManager.h"
 	"PersonalArchivo.h"
@@ -281,4 +282,27 @@
 
 1717772020 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\apppersonamanager.cpp
 	"AppPersonaManager.h"
+
+1717985127 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\generomanager.h
+	<iostream>
+	<string>
+	"GeneroArchivo.h"
+	"Genero.h"
+	"funciones.h"
+
+1717974455 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\generoarchivo.h
+	"Genero.h"
+
+1717984667 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\genero.h
+	<iostream>
+	<cstring>
+
+1717984582 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\genero.cpp
+	"genero.h"
+
+1717985376 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\generoarchivo.cpp
+	"GeneroArchivo.h"
+
+1717985285 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\generomanager.cpp
+	"GeneroManager.h"
 
