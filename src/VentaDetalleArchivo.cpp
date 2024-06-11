@@ -86,4 +86,5 @@ int ArchivoDetalleVenta::contarRegistrosRepetidos(int id){
 
 void ArchivoDetalleVenta::setNombre(std::string nombre){
     strcpy(_nombre,stringToConstChar(nombre,30));
+    setCaracteres(_nombre);
 }

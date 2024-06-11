@@ -80,4 +80,5 @@ bool ArchivoAlquiler::guardarRegistro(int posicion, Alquiler reg){
 
 void ArchivoAlquiler::setNombre(std::string nombre){
     strcpy(_nombre,stringToConstChar(nombre,30));
+    setCaracteres(_nombre);
 }

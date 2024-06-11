@@ -26,6 +26,7 @@ void Persona::setNombre(string nombre)
     if(nombre.size() <= 30)
     {
         strcpy(_nombre, nombre.c_str());
+        setCaracteres(_nombre);
     }
     else
     {

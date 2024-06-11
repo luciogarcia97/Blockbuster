@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "funciones.h"
 
 class Persona{
 protected:

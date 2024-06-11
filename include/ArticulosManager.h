@@ -6,6 +6,7 @@
 #include "VHS.h"
 #include "Juego.h"
 #include "ArchivoVHS.h"
+#include"funciones.h"
 class ArticulosManager {
 public:
 	void menu();

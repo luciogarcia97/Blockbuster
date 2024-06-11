@@ -111,6 +111,5 @@ void setCaracteres(char cad[]){
 			i++;
 		}
 		i++;
-		
 	}
 }

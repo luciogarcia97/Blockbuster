@@ -54,7 +54,7 @@ void Juego::cargar(){
 	cin>>_generoJ;
 	cout<<endl;
 	cout<<"Plataforma: ";
-	cin>>_plataforma;
+	_plataforma = validarCinInt();
 }
 void Juego::mostrar(){
 	Articulo::mostrar();

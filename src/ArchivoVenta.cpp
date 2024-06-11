@@ -85,4 +85,5 @@ void ArchivoVenta::leerTodos(Venta registros[], int cantidad){
 
 void ArchivoVenta::setNombre(std::string nombre){
     strcpy(_nombre,stringToConstChar(nombre,30));
+    setCaracteres(_nombre);
 }

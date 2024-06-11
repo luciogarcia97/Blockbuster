@@ -86,4 +86,5 @@ int ArchivoDetalleAlquiler::contarRegistrosRepetidos(int id){
 
 void ArchivoDetalleAlquiler::setNombre(std::string nombre){
     strcpy(_nombre,stringToConstChar(nombre,30));
+    setCaracteres(_nombre);
 }

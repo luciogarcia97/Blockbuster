@@ -14,7 +14,7 @@ class ArchivoAlquiler
         int buscarRegistro(int id);
         bool guardarRegistro(int posicion, Alquiler reg);
 
-        void setNombre(std::string);
+        void setNombre(std::string nombre);
     private:
         char _nombre[30];
 };

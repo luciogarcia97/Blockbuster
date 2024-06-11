@@ -72,7 +72,7 @@ void VHS::cargar(){
 	cout << "Director: ";
 	getline(cin, director); 
 	cout << "Duracion: ";
-	cin >> duracion;
+	duracion = validarCinInt();
 	cin.ignore();
 	setTituloP(titulo);
 	setGeneroP(genero);

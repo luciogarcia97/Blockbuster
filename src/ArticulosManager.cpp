@@ -42,9 +42,9 @@ void ArticulosManager::modificarValoresVHS(VHS &art){
 	int stock;
 	float precio;
 	cout<<"Ingresar nuevo valor de STOCK: ";
-	cin>>stock;
+	stock = validarCinInt();
 	cout<<"Ingresar nuevo valor de PRECIO: ";
-	cin>>precio;
+	precio = validarCinFloat();
 	cout<<endl;
 	art.setStock(stock);
 	art.setPrecio(precio);
@@ -55,7 +55,7 @@ void ArticulosManager::modificarVHS(){
 	VHS art;
 	ArchivoVHS archi;
 	cout<<"Ingrese numero de articulo: ";
-	cin>>id;
+	id = validarCinInt();
 	index = archi.buscarXnumero(id);
 	if(index != -2){
 		art = archi.leerRegistro(index);
@@ -78,13 +78,13 @@ void ArticulosManager::eliminarVHS(){
 	ArchivoVHS archi;
 	bool resp;
 	cout<<"Ingrese numero de articulo: ";
-	cin>>id;
+	id = validarCinInt();
 	index = archi.buscarXnumero(id);
 	if(index != -2){
 		art = archi.leerRegistro(index);
 		mostrarVHS(art);
 		cout<<"�Desea eliminar el registro? (1-Si / 0-No)"<<endl;
-		cin>>resp;
+		resp = validarCinBool();
 		if(resp){
 			art.setEstado(false);
 			if(archi.grabar(index, art)){
@@ -109,7 +109,7 @@ void ArticulosManager::menu(){
 		cout<<"2) JUEGOS"<<endl;
 		cout<<"===================="<<endl;
 		cout<<"0) SALIR"<<endl;
-		cin>>opc;
+		opc = validarCinBool();
 		system("cls");
 		switch(opc){
 		case 1:
@@ -137,7 +137,7 @@ void ArticulosManager::menuVHS(){
 		cout<<"6) Volver al menu anterior"<<endl;
 		cout<<"==========================="<<endl;
 		cout<<"0) SALIR"<<endl;
-		cin>>opc;
+		opc = validarCinBool();
 		system("cls");
 		switch(opc){
 		case 1:
@@ -183,14 +183,14 @@ void ArticulosManager::menuBuscarVHS(){
 		cout<<"4) Volver al menu anterior"<<endl;
 		cout<<"==========================="<<endl;
 		cout<<"0) SALIR"<<endl;
-		cin>>opc;
+		opc = validarCinBool();
 		system("cls");
 		switch(opc){
 		case 1:
 			ArchivoVHS arch;
 			int pos, nArt;
 			cout<<"Ingresar numero de articulo: ";
-			cin>>nArt;
+			nArt = validarCinInt();
 			pos = arch.buscarXnumero(nArt);
 			ArticulosManager::mostrarVHS(arch.leerRegistro(pos));
 			system("pause");
@@ -248,9 +248,9 @@ void ArticulosManager::modificarValoresJuegos(Juego &art){
 	int stock;
 	float precio;
 	cout<<"Ingresar nuevo valor de STOCK: ";
-	cin>>stock;
+	stock = validarCinInt();
 	cout<<"Ingresar nuevo valor de PRECIO: ";
-	cin>>precio;
+	precio = validarCinFloat();
 	cout<<endl;
 	art.setStock(stock);
 	art.setPrecio(precio);
@@ -260,7 +260,7 @@ void ArticulosManager::modificarJuego(){
 	Juego art;
 	ArchivoJuego archi;
 	cout<<"Ingrese numero de articulo: ";
-	cin>>id;
+	id = validarCinInt();
 	index = archi.buscarXnumero(id);
 	if(index != -2){
 		art = archi.leerRegistro(index);
@@ -283,13 +283,13 @@ void ArticulosManager::eliminarJuego(){
 	ArchivoJuego archi;
 	bool resp;
 	cout<<"Ingrese numero de articulo: ";
-	cin>>id;
+	id = validarCinInt();
 	index = archi.buscarXnumero(id);
 	if(index != -2){
 		art = archi.leerRegistro(index);
 		mostrarJuego(art);
 		cout<<"�Desea eliminar el registro? (1-Si / 0-No)"<<endl;
-		cin>>resp;
+		resp = validarCinBool();
 		if(resp){
 			art.setEstado(false);
 			if(archi.grabar(index, art)){
@@ -318,7 +318,7 @@ void ArticulosManager::menuJuegos(){
 		cout<<"6) Volver al menu anterior"<<endl;
 		cout<<"==========================="<<endl;
 		cout<<"0) SALIR"<<endl;
-		cin>>opc;
+		opc = validarCinBool();
 		system("cls");
 		switch(opc){
 		case 1:
@@ -364,14 +364,14 @@ void ArticulosManager::menuBuscarJuegos(){
 		cout<<"4) Volver al menu anterior"<<endl;
 		cout<<"==========================="<<endl;
 		cout<<"0) SALIR"<<endl;
-		cin>>opcion;
+		opcion = validarCinBool();
 		system("cls");
 		switch(opcion){
 		case 1:
 			ArchivoJuego arch;
 			int pos, nArt;
 			cout<<"Ingresar numero de articulo: ";
-			cin>>nArt;
+			nArt = validarCinInt();
 			pos = arch.buscarXnumero(nArt);
 			ArticulosManager::mostrarJuego(arch.leerRegistro(pos));
 			system("pause");
@@ -403,14 +403,14 @@ void ArticulosManager::menuBuscarJuegos(){
 		cout<<"4) Volver al menu anterior"<<endl;
 		cout<<"==========================="<<endl;
 		cout<<"0) SALIR"<<endl;
-		cin>>opc;
+		opc = validarCinBool();
 		system("cls");
 		switch(opc){
 		case 1:
 			ArchivoJuego arch;
 			int pos, nArt;
 			cout<<"Ingresar numero de articulo: ";
-			cin>>nArt;
+			nArt = validarCinInt();
 			pos = arch.buscarXnumero(nArt);
 			ArticulosManager::mostrarJuego(arch.leerRegistro(pos));
 			system("pause");

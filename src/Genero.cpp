@@ -9,6 +9,7 @@ Genero::Genero(){
 void Genero::setNombre(std::string no){
     if (no.size()<=40){
         strcpy(_nombre, no.c_str());
+        setCaracteres(_nombre);
     }
     else {
         strcpy(_nombre, "error");
