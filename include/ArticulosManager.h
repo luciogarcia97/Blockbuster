@@ -11,6 +11,8 @@ public:
 	void menu();
 	void menuVHS();
 	void menuJuegos();
+	void menuBuscarVHS();
+	void menuBuscarJuegos();
 private:
 	void agregarVHS();
 	void listarVHS();
@@ -20,6 +22,8 @@ private:
 	void modificarVHS();
 	void eliminarVHS();
 	void agregarJuego();
+	void mostrarJuego(Juego reg);
+	void modificarValoresJuegos(Juego &art);
 	void listarJuego();
 	void buscarJuego();
 	void modificarJuego();

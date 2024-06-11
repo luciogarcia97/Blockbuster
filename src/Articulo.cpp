@@ -1,4 +1,5 @@
 #include "Articulo.h"
+#include "funciones.h"
 #include <cstdlib>
 #include <cstdio>
 #include <iostream>
@@ -42,22 +43,29 @@ int Articulo::getEstado(){
 	return _estado;
 }
 void Articulo::cargar(){
+	int numeroArt, stock;
+	float precio;
+	bool estado;
 	cout<<"Numero de Articulo: ";
-	_numeroArt = validarCinInt();
-	cout<<endl;
+	cin>>numeroArt;
+	cin.ignore();
 	cout<<"Stock: ";
-	_stock = validarCinInt();
-	cout<<endl;
+	cin>>stock;
+	cin.ignore();
 	cout<<"Precio: ";
-	_precio = validarCinFloat();
-	cout<<endl;
+	cin>>precio;
+	cin.ignore();
 	cout<<"Estado: ";
-	_estado = validarCinBool();
+	cin>>estado;
+	setNumero(numeroArt);
+	setStock(stock);
+	setPrecio(precio);
+	setEstado(estado);
 }
 void Articulo::mostrar(){
 	if(_estado==true){
-		cout<<"Numero de Articulo: "<< getNumero() << endl;
-		cout<<"Stock: " << getStock() << endl;
-		cout<<"Precio: " << getPrecio() << endl;
+	cout<<"Numero de Articulo: "<<_numeroArt<<endl;
+	cout<<"Stock: "<<_stock<<endl;
+	cout<<"Precio: "<<_precio<<endl;
 	}
 }

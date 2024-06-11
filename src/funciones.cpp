@@ -96,3 +96,21 @@ bool validarPositivoFloat(float value){
     if (value > 0) return true;
     return false;
 }
+
+void setCaracteres(char cad[]){
+	int i=1;
+	if(cad[0]>='a' && cad[0]<='z'){
+		cad[0] = cad[0] - ('a' - 'A');
+	}
+	while(cad[i]!= '\0'){
+		if(cad[i]>='A' && cad[i]<='Z'){
+			cad[i] = cad[i] + ('a' - 'A');
+		}
+		if(cad[i] == ' '){
+			cad[i+1] = cad[i+1] - ('a' - 'A');
+			i++;
+		}
+		i++;
+		
+	}
+}

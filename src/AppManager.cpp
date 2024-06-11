@@ -1,6 +1,7 @@
 #include <iostream>
 #include "AppManager.h"
 
+
 using namespace std;
 
 
@@ -61,6 +62,7 @@ void AppManager::menu()
             _pm.menu();
             break;
         case 3:
+            _am.menu();
             break;
         case 4:
             break;

@@ -11,3 +11,4 @@ void headerAlquiler();
 void headerAlquilerDetalle();
 void headerVentaDetalle();
 const char* stringToConstChar(std::string nombre, int caracteres);
+void setCaracteres(char cad[]);

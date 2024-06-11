@@ -1,4 +1,5 @@
 #include "Juego.h"
+#include "funciones.h"
 #include <cstring>
 #include <string>
 #include <iostream>
@@ -30,6 +31,7 @@ void Juego::setTituloJ(std::string titulo){
 	else{
 		strcpy(_tituloJ, "ERROR DE CARGA");
 	}
+	setCaracteres(_tituloJ);
 }
 void Juego::setGeneroJ(std::string genero){
 	if(genero.size() <= 30){
@@ -38,6 +40,7 @@ void Juego::setGeneroJ(std::string genero){
 	else{
 		strcpy(_generoJ, "ERROR DE CARGA");
 	}
+	setCaracteres(_generoJ);
 }
 void Juego::setPlataforma(int plataforma){
 	_plataforma=plataforma;
@@ -51,7 +54,7 @@ void Juego::cargar(){
 	cin>>_generoJ;
 	cout<<endl;
 	cout<<"Plataforma: ";
-	_plataforma = validarCinInt();
+	cin>>_plataforma;
 }
 void Juego::mostrar(){
 	Articulo::mostrar();

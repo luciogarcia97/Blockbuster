@@ -1,7 +1,9 @@
 #include "VHS.h"
+#include "funciones.h"
 #include <cstring>
 #include <string>
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 VHS::VHS() {
@@ -23,12 +25,25 @@ void VHS::setTituloP(std::string titulo){
 	else{
 		strcpy(_tituloP, "ERROR AL CARGAR");
 	}
+	setCaracteres(_tituloP);
 }
 void VHS::setGeneroP(std::string genero){
-	strcpy(_generoP, genero.c_str());
+	if(genero.size() <= 30){
+		strcpy(_generoP, genero.c_str());
+	}
+	else{
+		strcpy(_generoP, "ERROR AL CARGAR");
+	}
+	setCaracteres(_generoP);
 }
 void VHS::setDirector(std::string director){
-	strcpy(_director, director.c_str());
+	if(director.size() <= 30){
+		strcpy(_director, director.c_str());
+	}
+	else{
+		strcpy(_director, "ERROR AL CARGAR");
+	}
+	setCaracteres(_director);
 }
 void VHS::setDuracion(int duracion){
 	_duracion=duracion;
@@ -46,18 +61,23 @@ int VHS::getDuracion(){
 	return _duracion;
 }
 void VHS::cargar(){
+	string titulo, genero, director;
+	int duracion;
 	Articulo::cargar();
-	cout<<"Titulo: ";
-    cin>>_tituloP;
-	cout<<endl;
-	cout<<"Genero: ";
-	cin>>_generoP;
-	cout<<endl;
-	cout<<"Director: ";
-	cin>>_director;
-	cout<<endl;
-	cout<<"Duracion: ";
-	_duracion = validarCinInt();
+	cin.ignore();
+	cout << "Titulo: ";
+	getline(cin, titulo); 
+	cout << "Genero: ";
+	getline(cin, genero);
+	cout << "Director: ";
+	getline(cin, director); 
+	cout << "Duracion: ";
+	cin >> duracion;
+	cin.ignore();
+	setTituloP(titulo);
+	setGeneroP(genero);
+	setDirector(director);
+	setDuracion(duracion);
 }
 void VHS::mostrar(){
 	Articulo::mostrar();

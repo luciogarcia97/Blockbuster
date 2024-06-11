@@ -1,6 +1,7 @@
 #pragma once
 #include "AppPersonaManager.h"
 #include "AppFacturacionManagger.h"
+#include "ArticulosManager.h"
 
 class AppManager{
 public:
@@ -9,5 +10,6 @@ public:
 private:
     AppPersonaManager _pm;
     AppFacturacionManagger _fm;
+    ArticulosManager _am;
 };
 

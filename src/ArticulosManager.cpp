@@ -4,18 +4,29 @@
 #include "VHS.h"
 #include "Juego.h"
 #include "ArchivoVHS.h"
+#include "ArchivoJuego.h"
 using namespace std;
 
 
-void ArticulosManager::agregarVHS(){
+void ArticulosManager::agregarVHS(){ 
 	VHS art;
 	ArchivoVHS archiVHS;
 	art.cargar();
-	archiVHS.guardar(art);
+	if(archiVHS.guardar(art)==1){
+		cout<<"Agregado correctamente..."<<endl;
+		system("pause");
+	}
+	ArticulosManager::menuVHS();
 }
 void ArticulosManager::listarVHS(){
 	ArchivoVHS archiVHS;
-	archiVHS.listarRegistros();
+	int cantidad = archiVHS.contarRegistro();
+	
+	
+	for(int i=0;i<cantidad;i++){
+		VHS reg = archiVHS.leerRegistro(i);
+		ArticulosManager::mostrarVHS(reg);
+	}
 }
 void ArticulosManager::mostrarVHS(VHS reg) {
 	cout << "Numero de Articulo: " << reg.getNumero() << endl;
@@ -25,15 +36,15 @@ void ArticulosManager::mostrarVHS(VHS reg) {
 	cout << "Duracion: " << reg.getDuracion() << endl;
 	cout << "Stock: " << reg.getStock() << endl;
 	cout << "Precio: " << reg.getPrecio() << endl;
+	cout << "------------------------------------" << endl;
 }
 void ArticulosManager::modificarValoresVHS(VHS &art){
 	int stock;
 	float precio;
 	cout<<"Ingresar nuevo valor de STOCK: ";
-	stock = validarCinInt();
-	cout<<endl;
+	cin>>stock;
 	cout<<"Ingresar nuevo valor de PRECIO: ";
-	precio = validarCinFloat();
+	cin>>precio;
 	cout<<endl;
 	art.setStock(stock);
 	art.setPrecio(precio);
@@ -44,28 +55,61 @@ void ArticulosManager::modificarVHS(){
 	VHS art;
 	ArchivoVHS archi;
 	cout<<"Ingrese numero de articulo: ";
-	id = validarCinInt();
+	cin>>id;
 	index = archi.buscarXnumero(id);
 	if(index != -2){
 		art = archi.leerRegistro(index);
 		mostrarVHS(art);
+		modificarValoresVHS(art);
+		if(archi.grabar(index, art)){
+		cout<<"Articulo modificado correctamente..."<<endl;
+		}
+		else{
+			cout<<"No se pudo modificar el articulo..."<<endl;
+		}
 	}
 	else{
-		cout<<"Producto NO encontrado..."<<endl;
+		cout<<"Articulo no encontrado..."<<endl;
 	}
-	modificarValoresVHS(art);
+}
+void ArticulosManager::eliminarVHS(){
+	int id, index;
+	VHS art;
+	ArchivoVHS archi;
+	bool resp;
+	cout<<"Ingrese numero de articulo: ";
+	cin>>id;
+	index = archi.buscarXnumero(id);
+	if(index != -2){
+		art = archi.leerRegistro(index);
+		mostrarVHS(art);
+		cout<<"�Desea eliminar el registro? (1-Si / 0-No)"<<endl;
+		cin>>resp;
+		if(resp){
+			art.setEstado(false);
+			if(archi.grabar(index, art)){
+				cout<<"Articulo eliminado correctamente..."<<endl;
+			}
+			else{
+				cout<<"No se pudo eliminar el articulo..."<<endl;
+			}
+		}
+	}
+	else{
+		cout<<"Articulo no encontrado..."<<endl;
+	}
 }
 void ArticulosManager::menu(){
 	int opc;
 	while(true){
-		system("cls");
+		system("cls"); 
 		cout<<"   MENU ARTICULOS  "<<endl;
 		cout<<"===================="<<endl;
 		cout<<"1) VHS"<<endl;
 		cout<<"2) JUEGOS"<<endl;
 		cout<<"===================="<<endl;
 		cout<<"0) SALIR"<<endl;
-		opc = validarCinInt();
+		cin>>opc;
 		system("cls");
 		switch(opc){
 		case 1:
@@ -73,7 +117,7 @@ void ArticulosManager::menu(){
 			system("pause");
 			break;
 		case 2:
-//			menuJuegos();
+			menuJuegos();
 			system("pause");
 			break;
 		}
@@ -82,17 +126,18 @@ void ArticulosManager::menu(){
 void ArticulosManager::menuVHS(){
 	int opc;
 	while(true){
-		system("cls");
-		cout<<"         VHS        "<<endl;
-		cout<<"===================="<<endl;
-		cout<<"1) Agregar VHS"<<endl;
-		cout<<"2) Modificar VHS"<<endl;
-		cout<<"3) Listar VHS"<<endl;
-		cout<<"4) Buscar VHS"<<endl;
+		system("cls"); 
+		cout<<"            VHS          "<<endl;
+		cout<<"==========================="<<endl;
+		cout<<"1) Agregar"<<endl;
+		cout<<"2) Modificar"<<endl;
+		cout<<"3) Listar"<<endl;
+		cout<<"4) Buscar"<<endl;
 		cout<<"5) Eliminar registro"<<endl;
-		cout<<"===================="<<endl;
+		cout<<"6) Volver al menu anterior"<<endl;
+		cout<<"==========================="<<endl;
 		cout<<"0) SALIR"<<endl;
-		opc = validarCinInt();
+		cin>>opc;
 		system("cls");
 		switch(opc){
 		case 1:
@@ -100,7 +145,7 @@ void ArticulosManager::menuVHS(){
 			system("pause");
 			break;
 		case 2:
-
+			modificarVHS();
 			system("pause");
 			break;
 		case 3:
@@ -108,15 +153,280 @@ void ArticulosManager::menuVHS(){
 			system("pause");
 			break;
 		case 4:
-
+			menuBuscarVHS();
 			system("pause");
 			break;
 		case 5:
+			eliminarVHS();
+			system("pause");
+			break;
+		case 6:
+			menu();
+			return;
+		case 0:
+			exit;
+		default:
+			cout << "Opci�n inv�lida. Intente nuevamente..." << endl;
+			break;
+		}
+		}
+	}
+void ArticulosManager::menuBuscarVHS(){
+	int opc;
+	while(true){
+		system("cls"); 
+		cout<<"        BUSCAR POR         "<<endl;
+		cout<<"==========================="<<endl;
+		cout<<"1) Nuemro de Articulo"<<endl;
+		cout<<"2) Titulo"<<endl;
+		cout<<"3) Genero"<<endl;
+		cout<<"4) Volver al menu anterior"<<endl;
+		cout<<"==========================="<<endl;
+		cout<<"0) SALIR"<<endl;
+		cin>>opc;
+		system("cls");
+		switch(opc){
+		case 1:
+			ArchivoVHS arch;
+			int pos, nArt;
+			cout<<"Ingresar numero de articulo: ";
+			cin>>nArt;
+			pos = arch.buscarXnumero(nArt);
+			ArticulosManager::mostrarVHS(arch.leerRegistro(pos));
+			system("pause");
+			break;
+		case 2:
+			pos = arch.buscarXtitulo();
+			ArticulosManager::mostrarVHS(arch.leerRegistro(pos));
+			system("pause");
+			break;
+		case 3:
+			pos = arch.buscarXgenero();
+			ArticulosManager::mostrarVHS(arch.leerRegistro(pos));
+			system("pause");
+			break;
+		case 4:
+			menuVHS();
+			system("pause");
+			break;
+        }
+     }
+}
 
+
+
+void ArticulosManager::agregarJuego(){
+	Juego art;
+	ArchivoJuego archiJ;
+	art.cargar();
+	if(archiJ.guardar(art)==1){
+		cout<<"Agregado correctamente..."<<endl;
+		system("pause");
+	}
+	ArticulosManager::menuJuegos();
+}
+void ArticulosManager::listarJuego(){
+	ArchivoJuego archiJ;
+	int cantidad = archiJ.contarRegistro();
+	
+	
+	for(int i=0;i<cantidad;i++){
+		Juego reg = archiJ.leerRegistro(i);
+		ArticulosManager::mostrarJuego(reg);
+	}
+}
+void ArticulosManager::mostrarJuego(Juego reg){
+	cout << "Numero de Articulo: " << reg.getNumero() << endl;
+	cout << "Titulo: " << reg.getTituloJ() << endl;
+	cout << "Genero: " << reg.getGeneroJ() << endl;
+	cout << "Plataforma: " << reg.getPlataforma() << endl;
+	cout << "Stock: " << reg.getStock() << endl;
+	cout << "Precio: " << reg.getPrecio() << endl;
+	cout << "------------------------------------" <<endl;
+}
+void ArticulosManager::modificarValoresJuegos(Juego &art){
+	int stock;
+	float precio;
+	cout<<"Ingresar nuevo valor de STOCK: ";
+	cin>>stock;
+	cout<<"Ingresar nuevo valor de PRECIO: ";
+	cin>>precio;
+	cout<<endl;
+	art.setStock(stock);
+	art.setPrecio(precio);
+}
+void ArticulosManager::modificarJuego(){
+	int id, index;
+	Juego art;
+	ArchivoJuego archi;
+	cout<<"Ingrese numero de articulo: ";
+	cin>>id;
+	index = archi.buscarXnumero(id);
+	if(index != -2){
+		art = archi.leerRegistro(index);
+		mostrarJuego(art);
+		modificarValoresJuegos(art);
+		if(archi.grabar(index, art)){
+			cout<<"Articulo modificado correctamente..."<<endl;
+		}
+		else{
+			cout<<"No se pudo modificar el articulo..."<<endl;
+		}
+	}
+	else{
+		cout<<"Articulo no encontrado..."<<endl;
+	}
+}
+void ArticulosManager::eliminarJuego(){
+	int id, index;
+	Juego art;
+	ArchivoJuego archi;
+	bool resp;
+	cout<<"Ingrese numero de articulo: ";
+	cin>>id;
+	index = archi.buscarXnumero(id);
+	if(index != -2){
+		art = archi.leerRegistro(index);
+		mostrarJuego(art);
+		cout<<"�Desea eliminar el registro? (1-Si / 0-No)"<<endl;
+		cin>>resp;
+		if(resp){
+			art.setEstado(false);
+			if(archi.grabar(index, art)){
+				cout<<"Articulo eliminado correctamente..."<<endl;
+			}
+			else{
+				cout<<"No se pudo eliminar el articulo..."<<endl;
+			}
+		}
+	}
+	else{
+		cout<<"Articulo no encontrado..."<<endl;
+	}
+}
+void ArticulosManager::menuJuegos(){
+	int opc;
+	while(true){
+		system("cls"); 
+		cout<<"           JUEGOS          "<<endl;
+		cout<<"==========================="<<endl;
+		cout<<"1) Agregar "<<endl;
+		cout<<"2) Modificar "<<endl;
+		cout<<"3) Listar "<<endl;
+		cout<<"4) Buscar "<<endl;
+		cout<<"5) Eliminar registro"<<endl;
+		cout<<"6) Volver al menu anterior"<<endl;
+		cout<<"==========================="<<endl;
+		cout<<"0) SALIR"<<endl;
+		cin>>opc;
+		system("cls");
+		switch(opc){
+		case 1:
+			agregarJuego();
+			system("pause");
+			break;
+		case 2:
+			modificarJuego();
+			system("pause");
+			break;
+		case 3:
+			listarJuego();
+			system("pause");
+			break;
+		case 4:
+			menuBuscarJuegos();
+			system("pause");
+			break;
+		case 5:
+			eliminarJuego();
+			system("pause");
+			break;
+		case 6:
+			menu();
+			return;
+		case 0:
+			exit;
+		default:
+			cout << "Opci�n inv�lida. Intente nuevamente..." << endl;
+			break;
+		}
+	}
+}
+void ArticulosManager::menuBuscarJuegos(){
+	int opcion;
+	while(true){
+		system("cls"); 
+		cout<<"        BUSCAR POR         "<<endl;
+		cout<<"==========================="<<endl;
+		cout<<"1) Nuemro de Articulo"<<endl;
+		cout<<"2) Titulo"<<endl;
+		cout<<"3) Genero"<<endl;
+		cout<<"4) Volver al menu anterior"<<endl;
+		cout<<"==========================="<<endl;
+		cout<<"0) SALIR"<<endl;
+		cin>>opcion;
+		system("cls");
+		switch(opcion){
+		case 1:
+			ArchivoJuego arch;
+			int pos, nArt;
+			cout<<"Ingresar numero de articulo: ";
+			cin>>nArt;
+			pos = arch.buscarXnumero(nArt);
+			ArticulosManager::mostrarJuego(arch.leerRegistro(pos));
+			system("pause");
+			break;
+		case 2:
+			pos = arch.buscarXtitulo();
+			ArticulosManager::mostrarJuego(arch.leerRegistro(pos));
+			system("pause");
+			break;
+		case 3:
+			pos = arch.buscarXgenero();
+			ArticulosManager::mostrarJuego(arch.leerRegistro(pos));
+			system("pause");
+			break;
+	    case 4:
+			menuJuegos();
+			system("pause");
+			break;
+		}
+	}
+	int opc;
+	while(true){
+		system("cls"); 
+		cout<<"        BUSCAR POR         "<<endl;
+		cout<<"==========================="<<endl;
+		cout<<"1) Nuemro de Articulo"<<endl;
+		cout<<"2) Titulo"<<endl;
+		cout<<"3) Genero"<<endl;
+		cout<<"4) Volver al menu anterior"<<endl;
+		cout<<"==========================="<<endl;
+		cout<<"0) SALIR"<<endl;
+		cin>>opc;
+		system("cls");
+		switch(opc){
+		case 1:
+			ArchivoJuego arch;
+			int pos, nArt;
+			cout<<"Ingresar numero de articulo: ";
+			cin>>nArt;
+			pos = arch.buscarXnumero(nArt);
+			ArticulosManager::mostrarJuego(arch.leerRegistro(pos));
+			system("pause");
+			break;
+			//case 2:
+			
+			system("pause");
+			break;
+			//case 3:
+			
+			system("pause");
+			break;
+			//case 4:
+			return;
 			system("pause");
 			break;
 		}
 	}
 }
-
-
