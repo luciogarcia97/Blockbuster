@@ -107,8 +107,10 @@ void setCaracteres(char cad[]){
 			cad[i] = cad[i] + ('a' - 'A');
 		}
 		if(cad[i] == ' '){
-			cad[i+1] = cad[i+1] - ('a' - 'A');
-			i++;
+            if(cad[i+1]>='a' && cad[i+1]<='z'){
+                cad[i+1] = cad[i+1] - ('a' - 'A');
+                i++;
+            }
 		}
 		i++;
 	}

@@ -17,12 +17,12 @@ bool ArchivoVHS::guardar(VHS art){
 	return result;
 }
 int ArchivoVHS::buscarXnumero(int numeroArt){
-	FILE *pFile;
+	FILE* pFile;
 	VHS obj;
 	int pos=0;
-	fopen("VHS.dat", "rb");
+	pFile = fopen("VHS.dat", "rb");
 	if(pFile==nullptr){ return -1;}
-	while(fread(&obj, sizeof obj, 1, pFile)==1){
+	while(fread(&obj, sizeof(VHS), 1, pFile)==1){
 		if(obj.getNumero() == numeroArt){
 			fclose(pFile);
 			return pos;
@@ -44,7 +44,7 @@ int ArchivoVHS::buscarXtitulo(){
 		strcpy(set, titulo.c_str());
 	}
 	setCaracteres(set);
-	fopen("VHS.dat", "rb");
+	pFile = fopen("VHS.dat", "rb");
 	if(pFile==nullptr){ return -1;}
 	while(fread(&obj, sizeof obj, 1, pFile)==1){
 		if(strcmp(stringToConstChar(obj.getTituloP(), 30), set) == 0){
@@ -68,7 +68,7 @@ int ArchivoVHS::buscarXgenero(){
 		strcpy(set, genero.c_str());
 	}
 	setCaracteres(set);
-	fopen("VHS.dat", "rb");
+	pFile = fopen("VHS.dat", "rb");
 	if(pFile==nullptr){ return -1;}
 	while(fread(&obj, sizeof obj, 1, pFile)==1){
 		if(strcmp(stringToConstChar(obj.getGeneroP(), 30), set) == 0){
@@ -95,7 +95,7 @@ VHS ArchivoVHS::leerRegistro(int index){
 bool ArchivoVHS::listarRegistros(){
 	FILE *p;
 	VHS obj;
-	fopen("VHS.dat", "rb");
+	p = fopen("VHS.dat", "rb");
 	if(p==NULL) return false;
 	while(fread(&obj, sizeof obj, 1, p)==1){
 		obj.mostrar();

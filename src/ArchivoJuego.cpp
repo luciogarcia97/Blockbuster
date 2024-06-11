@@ -21,7 +21,7 @@ int ArchivoJuego::buscarXnumero(int numeroArt){
 	FILE *pFile;
 	Juego obj;
 	int pos=0;
-	fopen("Juegos.dat", "rb");
+	pFile = fopen("Juegos.dat", "rb");
 	if(pFile==nullptr){ return -1;}
 	while(fread(&obj, sizeof obj, 1, pFile)==1){
 		if(obj.getNumero() == numeroArt){
@@ -48,7 +48,7 @@ Juego ArchivoJuego::leerRegistro(int index){
 bool ArchivoJuego::listarRegistros(){
 	FILE *p;
 	Juego obj;
-	fopen("Juegos.dat", "rb");
+	p = fopen("Juegos.dat", "rb");
 	if(p==NULL) return false;
 	while(fread(&obj, sizeof obj, 1, p)==1){
 		obj.mostrar();
@@ -95,7 +95,7 @@ int ArchivoJuego::buscarXtitulo(){
 		strcpy(set, titulo.c_str());
 	}
 	setCaracteres(set);
-	fopen("Juegos.dat", "rb");
+	pFile = fopen("Juegos.dat", "rb");
 	if(pFile==nullptr){ return -1;}
 	while(fread(&obj, sizeof obj, 1, pFile)==1){
 		if(strcmp(stringToConstChar(obj.getTituloJ(), 30), set) == 0){
@@ -119,7 +119,7 @@ int ArchivoJuego::buscarXgenero(){
 		strcpy(set, genero.c_str());
 	}
 	setCaracteres(set);
-	fopen("Juegos.dat", "rb");
+	pFile = fopen("Juegos.dat", "rb");
 	if(pFile==nullptr){ return -1;}
 	while(fread(&obj, sizeof obj, 1, pFile)==1){
 		if(strcmp(stringToConstChar(obj.getGeneroJ(), 30), set) == 0){

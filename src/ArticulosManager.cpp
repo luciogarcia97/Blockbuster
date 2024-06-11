@@ -101,7 +101,7 @@ void ArticulosManager::eliminarVHS(){
 }
 void ArticulosManager::menu(){
 	int opc;
-	while(true){
+	do{
 		system("cls"); 
 		cout<<"   MENU ARTICULOS  "<<endl;
 		cout<<"===================="<<endl;
@@ -109,7 +109,7 @@ void ArticulosManager::menu(){
 		cout<<"2) JUEGOS"<<endl;
 		cout<<"===================="<<endl;
 		cout<<"0) SALIR"<<endl;
-		opc = validarCinBool();
+		opc = validarCinInt();
 		system("cls");
 		switch(opc){
 		case 1:
@@ -121,11 +121,11 @@ void ArticulosManager::menu(){
 			system("pause");
 			break;
 		}
-	}
+	}while(opc != 0);
 }
 void ArticulosManager::menuVHS(){
 	int opc;
-	while(true){
+	do{
 		system("cls"); 
 		cout<<"            VHS          "<<endl;
 		cout<<"==========================="<<endl;
@@ -134,10 +134,9 @@ void ArticulosManager::menuVHS(){
 		cout<<"3) Listar"<<endl;
 		cout<<"4) Buscar"<<endl;
 		cout<<"5) Eliminar registro"<<endl;
-		cout<<"6) Volver al menu anterior"<<endl;
 		cout<<"==========================="<<endl;
 		cout<<"0) SALIR"<<endl;
-		opc = validarCinBool();
+		opc = validarCinInt();
 		system("cls");
 		switch(opc){
 		case 1:
@@ -160,16 +159,11 @@ void ArticulosManager::menuVHS(){
 			eliminarVHS();
 			system("pause");
 			break;
-		case 6:
-			menu();
-			return;
-		case 0:
-			exit;
 		default:
 			cout << "Opci�n inv�lida. Intente nuevamente..." << endl;
 			break;
 		}
-		}
+		}while(opc != 0);
 	}
 void ArticulosManager::menuBuscarVHS(){
 	int opc;
@@ -183,7 +177,7 @@ void ArticulosManager::menuBuscarVHS(){
 		cout<<"4) Volver al menu anterior"<<endl;
 		cout<<"==========================="<<endl;
 		cout<<"0) SALIR"<<endl;
-		opc = validarCinBool();
+		opc = validarCinInt();
 		system("cls");
 		switch(opc){
 		case 1:
@@ -318,7 +312,7 @@ void ArticulosManager::menuJuegos(){
 		cout<<"6) Volver al menu anterior"<<endl;
 		cout<<"==========================="<<endl;
 		cout<<"0) SALIR"<<endl;
-		opc = validarCinBool();
+		opc = validarCinInt();
 		system("cls");
 		switch(opc){
 		case 1:
@@ -364,7 +358,7 @@ void ArticulosManager::menuBuscarJuegos(){
 		cout<<"4) Volver al menu anterior"<<endl;
 		cout<<"==========================="<<endl;
 		cout<<"0) SALIR"<<endl;
-		opcion = validarCinBool();
+		opcion = validarCinInt();
 		system("cls");
 		switch(opcion){
 		case 1:
@@ -403,7 +397,7 @@ void ArticulosManager::menuBuscarJuegos(){
 		cout<<"4) Volver al menu anterior"<<endl;
 		cout<<"==========================="<<endl;
 		cout<<"0) SALIR"<<endl;
-		opc = validarCinBool();
+		opc = validarCinInt();
 		system("cls");
 		switch(opc){
 		case 1:
