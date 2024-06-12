@@ -47,7 +47,7 @@ int ArchivoVenta::buscarRegistro(int id){
     Venta reg;
     int posicion = 0;
     p = fopen(_nombre,"rb");
-    if (p == nullptr) return -1;
+    if (p == nullptr) return -2;
 
     while (fread(&reg,sizeof (Venta), 1, p) == 1)
     {
@@ -58,7 +58,7 @@ int ArchivoVenta::buscarRegistro(int id){
         posicion++;
     }
     fclose(p);
-    return 0;
+    return -1;
 }
 
 int ArchivoVenta::getNuevoId(){

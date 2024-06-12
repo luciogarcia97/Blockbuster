@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1717989389 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
+1718157536 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
 	<iostream>
 	"AppManager.h"
 	"GeneroManager.h"
@@ -35,7 +35,7 @@
 1717374977 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\fecha.cpp
 	"Fecha.h"
 
-1718074039 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivoventa.cpp
+1718158989 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivoventa.cpp
 	"ArchivoVenta.h"
 
 1717129019 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivoventa.h
@@ -88,7 +88,7 @@
 1718075057 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\funciones.cpp
 	"funciones.h"
 
-1718075829 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivojuego.cpp
+1718076231 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivojuego.cpp
 	"ArchivoJuego.h"
 	"Juego.h"
 	"Articulo.h"
@@ -207,7 +207,7 @@
 	"Personal.h"
 	"Persona.h"
 
-1717989010 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventamanager.cpp
+1718159185 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventamanager.cpp
 	"VentaManager.h"
 
 1717553593 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\ventamanager.h

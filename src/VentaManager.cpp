@@ -132,6 +132,16 @@ void VentaManager::buscarVenta(){
     id = validarCinInt();
 
     posicion = _archivoVenta.buscarRegistro(id);
+    if (posicion == -2)
+    {
+        std::cout << "Error al leer el archivo venta.dat" << std::endl;
+        return;
+    }
+    if (posicion == -1)
+    {
+        std::cout << "No existe una venta con el id adjuntado" << std::endl;
+        return;
+    }
     headerVentas();
     mostrarVenta(_archivoVenta.leerRegistro(posicion));
 }
