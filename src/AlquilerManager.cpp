@@ -44,7 +44,6 @@ Alquiler AlquilerManager::crearAlquiler(){
 
 
     system("cls");
-    std::cout << "Se registro el alquiler correctamente!" << std::endl;
     return Alquiler(legajo_personal, numero_cliente, forma_pago, numero_alquiler, fecha_alquiler, fecha_obligada_devolucion,fecha_entrega, estado_alquiler);
 }
 

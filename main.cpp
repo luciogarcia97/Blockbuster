@@ -12,8 +12,8 @@ int main()
 
     /*
         TO DO:
-            Carga de alquiler detalle tira doble mensaje de cargado correctamente.
-            Quitar entro en el precio de alquiler y venta\
+            Agregar mejora de validar numero en todas las busquedas
+            Quitar entro en el precio de alquiler y venta
             agregar el cinignore o el getline en titulo juegos
             numero de articulo automatico para VHS y Juego
             Descomentar la parte de carga de articulo juego en alquiler y venta.

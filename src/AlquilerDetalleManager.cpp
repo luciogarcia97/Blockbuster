@@ -5,6 +5,9 @@ void AlquilerDetalleManager::cargarDetalleAlquiler(int numeroAlquiler){
     int cantidad;
     float precio = 0;
     int opcion;
+    ArchivoVHS dataVHS;
+    ArchivoJuego dataJuego;
+    ArticulosManager am;
 
     do
     {
@@ -13,32 +16,19 @@ void AlquilerDetalleManager::cargarDetalleAlquiler(int numeroAlquiler){
         std::cout << "--------------------------" << std::endl << std::endl;
 
 
-        std::cout << "1) Ingrese el numero de articulo: ";
-        numero_articulo = validarCinInt();
+        do
+        {
+            std::cout << "1) Ingrese el numero de articulo: ";
+            numero_articulo = validarCinInt();
+        } while (!am.validarExistenciaId(numero_articulo));
 
         std::cout << "2) Ingrese la cantidad de productos: ";
         cantidad = validarCinInt();
 
         //TO DO: Carga de precio con Articulo => cantidad * precio_unitario
-        ArchivoVHS dataVHS;
-        ArchivoJuego dataJuego;
-
-        //validaciones
         int posicionVHS = dataVHS.buscarXnumero(numero_articulo);
-
-        if(posicionVHS > 0){
-            precio = dataVHS.leerRegistro(posicionVHS).getPrecio() * cantidad;
-            std::cout << "Entro al calculo de precio" << std::endl;
-        }
-        else if (posicionVHS == -2) std::cout << "No hay un VHS cargado con este Id" << std::endl;
-        else std::cout << "Error al leer el archivo" << std::endl;
-        
-        
-        // int posicionJuego = dataJuego.buscarXnumero(numero_articulo);
-        //
-        // if(posicionJuego!= -2 && posicionJuego != -1)precio = dataJuego.leerRegistro(posicionJuego).getPrecio() * cantidad;
-        // else if (posicionJuego == -2)std::cout << "No hay un Juego cargado con este Id" << std::endl;
-        // else std::cout << "Error al leer el archivo" << std::endl;
+        int posicionJuego = dataJuego.buscarXnumero(numero_articulo);
+        posicionVHS >= 0? precio = dataVHS.leerRegistro(posicionVHS).getPrecio() * cantidad:precio = dataJuego.leerRegistro(posicionJuego).getPrecio() * cantidad;
 
         agregarAlquilerDetalle(DetalleAlquiler(numeroAlquiler,numero_articulo,cantidad,precio));
         std::cout << "Desea cargar otro producto? (1-Si o 2-No): ";

@@ -8,7 +8,7 @@
 using namespace std;
 
 
-void ArticulosManager::agregarVHS(){ 
+void ArticulosManager::agregarVHS(){
 	VHS art;
 	ArchivoVHS archiVHS;
 	art.cargar();
@@ -21,8 +21,8 @@ void ArticulosManager::agregarVHS(){
 void ArticulosManager::listarVHS(){
 	ArchivoVHS archiVHS;
 	int cantidad = archiVHS.contarRegistro();
-	
-	
+
+
 	for(int i=0;i<cantidad;i++){
 		VHS reg = archiVHS.leerRegistro(i);
 		ArticulosManager::mostrarVHS(reg);
@@ -102,7 +102,7 @@ void ArticulosManager::eliminarVHS(){
 void ArticulosManager::menu(){
 	int opc;
 	do{
-		system("cls"); 
+		system("cls");
 		cout<<"   MENU ARTICULOS  "<<endl;
 		cout<<"===================="<<endl;
 		cout<<"1) VHS"<<endl;
@@ -126,7 +126,7 @@ void ArticulosManager::menu(){
 void ArticulosManager::menuVHS(){
 	int opc;
 	do{
-		system("cls"); 
+		system("cls");
 		cout<<"            VHS          "<<endl;
 		cout<<"==========================="<<endl;
 		cout<<"1) Agregar"<<endl;
@@ -168,7 +168,7 @@ void ArticulosManager::menuVHS(){
 void ArticulosManager::menuBuscarVHS(){
 	int opc;
 	while(true){
-		system("cls"); 
+		system("cls");
 		cout<<"        BUSCAR POR         "<<endl;
 		cout<<"==========================="<<endl;
 		cout<<"1) Nuemro de Articulo"<<endl;
@@ -222,8 +222,8 @@ void ArticulosManager::agregarJuego(){
 void ArticulosManager::listarJuego(){
 	ArchivoJuego archiJ;
 	int cantidad = archiJ.contarRegistro();
-	
-	
+
+
 	for(int i=0;i<cantidad;i++){
 		Juego reg = archiJ.leerRegistro(i);
 		ArticulosManager::mostrarJuego(reg);
@@ -298,10 +298,22 @@ void ArticulosManager::eliminarJuego(){
 		cout<<"Articulo no encontrado..."<<endl;
 	}
 }
+
+bool ArticulosManager::validarExistenciaId(int numero_articulo){
+	ArchivoJuego objArchivoJuego;
+	ArchivoVHS objArchivoVHS;
+
+	if (objArchivoJuego.buscarXnumero(numero_articulo) >= 0 || objArchivoVHS.buscarXnumero(numero_articulo) >= 0)
+	{
+		return true;
+	}
+	return false;
+}
+
 void ArticulosManager::menuJuegos(){
 	int opc;
 	while(true){
-		system("cls"); 
+		system("cls");
 		cout<<"           JUEGOS          "<<endl;
 		cout<<"==========================="<<endl;
 		cout<<"1) Agregar "<<endl;
@@ -338,8 +350,6 @@ void ArticulosManager::menuJuegos(){
 		case 6:
 			menu();
 			return;
-		case 0:
-			exit;
 		default:
 			cout << "Opci�n inv�lida. Intente nuevamente..." << endl;
 			break;
@@ -349,7 +359,7 @@ void ArticulosManager::menuJuegos(){
 void ArticulosManager::menuBuscarJuegos(){
 	int opcion;
 	while(true){
-		system("cls"); 
+		system("cls");
 		cout<<"        BUSCAR POR         "<<endl;
 		cout<<"==========================="<<endl;
 		cout<<"1) Nuemro de Articulo"<<endl;
@@ -388,7 +398,7 @@ void ArticulosManager::menuBuscarJuegos(){
 	}
 	int opc;
 	while(true){
-		system("cls"); 
+		system("cls");
 		cout<<"        BUSCAR POR         "<<endl;
 		cout<<"==========================="<<endl;
 		cout<<"1) Nuemro de Articulo"<<endl;
@@ -410,11 +420,11 @@ void ArticulosManager::menuBuscarJuegos(){
 			system("pause");
 			break;
 			//case 2:
-			
+
 			system("pause");
 			break;
 			//case 3:
-			
+
 			system("pause");
 			break;
 			//case 4:

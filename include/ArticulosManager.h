@@ -14,6 +14,7 @@ public:
 	void menuJuegos();
 	void menuBuscarVHS();
 	void menuBuscarJuegos();
+	bool validarExistenciaId(int numero_articulo);
 private:
 	void agregarVHS();
 	void listarVHS();

@@ -1,6 +1,7 @@
 #pragma once
 #include "DetalleAlquiler.h"
 #include "ArchivoDetalleAlquiler.h"
+#include "ArticulosManager.h"
 #include "ArchivoVHS.h"
 #include "ArchivoJuego.h"
 #include "VHS.h"
