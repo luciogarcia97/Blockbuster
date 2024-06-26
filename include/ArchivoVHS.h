@@ -1,8 +1,14 @@
 #ifndef ARCHIVOVHS_H
 #define ARCHIVOVHS_H
 #include "VHS.h"
+#include "Juego.h"
+#include "ArchivoJuego.h"
 #include "Articulo.h"
 #include <cstring>
+#include <iostream>
+#include "funciones.h"
+
+using namespace std;
 
 class ArchivoVHS {
 public:
@@ -14,6 +20,7 @@ public:
 	VHS leerRegistro(int pos);
 	bool listarRegistros();
 	int contarRegistro();
+	int getNumeroArticuloV();
 private:
 	
 };

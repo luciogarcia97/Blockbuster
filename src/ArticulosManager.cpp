@@ -9,15 +9,36 @@ using namespace std;
 
 
 void ArticulosManager::agregarVHS(){
-	VHS art;
 	ArchivoVHS archiVHS;
-	art.cargar();
-	if(archiVHS.guardar(art)==1){
+	
+	if(archiVHS.guardar(crearArticuloVHS()) == 1){
 		cout<<"Agregado correctamente..."<<endl;
 		system("pause");
 	}
 	ArticulosManager::menuVHS();
 }
+VHS ArticulosManager::crearArticuloVHS(){
+	string titulo, genero, director;
+	int duracion, numeroArt;
+	Articulo articulo;
+	
+	articulo.cargar();
+	
+	cout<<"Numero de Articulo: ";
+	numeroArt = validarCinInt();
+	cin.ignore();
+	cout << "Titulo: ";
+	getline(cin, titulo); 
+	cout << "Genero: ";
+	getline(cin, genero);
+	cout << "Director: ";
+	getline(cin, director); 
+	cout << "Duracion: ";
+	duracion = validarCinInt();
+
+	return VHS (titulo, genero, director, duracion);
+}
+
 void ArticulosManager::listarVHS(){
 	ArchivoVHS archiVHS;
 	int cantidad = archiVHS.contarRegistro();
@@ -83,7 +104,7 @@ void ArticulosManager::eliminarVHS(){
 	if(index != -2){
 		art = archi.leerRegistro(index);
 		mostrarVHS(art);
-		cout<<"�Desea eliminar el registro? (1-Si / 0-No)"<<endl;
+		cout<<"Desea eliminar el registro? (1-Si / 0-No)"<<endl;
 		resp = validarCinBool();
 		if(resp){
 			art.setEstado(false);
@@ -299,15 +320,27 @@ void ArticulosManager::eliminarJuego(){
 	}
 }
 
-bool ArticulosManager::validarExistenciaId(int numero_articulo){
+bool ArticulosManager::validarExistenciaId(int numero_articulo, int tipo){
 	ArchivoJuego objArchivoJuego;
 	ArchivoVHS objArchivoVHS;
-
-	if (objArchivoJuego.buscarXnumero(numero_articulo) >= 0 || objArchivoVHS.buscarXnumero(numero_articulo) >= 0)
+	switch (tipo)
 	{
-		return true;
+	case 1:
+		if(objArchivoVHS.buscarXnumero(numero_articulo) >= 0){
+			return true;
+		}
+		return false;
+		break;
+	case 2:
+		if(objArchivoJuego.buscarXnumero(numero_articulo) >= 0){
+			return true;
+		}
+		return false;
+		break;
+	default:
+		return false;
+		break;
 	}
-	return false;
 }
 
 void ArticulosManager::menuJuegos(){

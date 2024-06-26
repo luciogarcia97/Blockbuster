@@ -43,11 +43,9 @@ int Articulo::getEstado(){
 	return _estado;
 }
 void Articulo::cargar(){
-	int numeroArt, stock;
+	int stock;
 	float precio;
 	bool estado;
-	cout<<"Numero de Articulo: ";
-	numeroArt = validarCinInt();
 	cin.ignore();
 	cout<<"Stock: ";
 	stock = validarCinInt();
@@ -57,7 +55,6 @@ void Articulo::cargar(){
 	cin.ignore();
 	cout<<"Estado: ";
 	estado = validarCinBool();
-	setNumero(numeroArt);
 	setStock(stock);
 	setPrecio(precio);
 	setEstado(estado);

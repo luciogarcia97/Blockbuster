@@ -107,7 +107,6 @@ int PersonalArchivo::getNuevoLegajo()
 
     if (cantidad >0){
         return leer(cantidad-1).getLegajoPersonal()+1;
-
     }
     return 1;
 }

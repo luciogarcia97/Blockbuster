@@ -1,10 +1,7 @@
 #pragma once
 #include "VentaDetalle.h"
 #include "VentaDetalleArchivo.h"
-#include "ArchivoVHS.h"
-#include "ArchivoJuego.h"
-#include "VHS.h"
-#include "Juego.h"
+#include "ArticulosManager.h"
 
 class VentaDetalleManager
 {

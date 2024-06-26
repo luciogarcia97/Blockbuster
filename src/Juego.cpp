@@ -46,15 +46,24 @@ void Juego::setPlataforma(int plataforma){
 	_plataforma=plataforma;
 }
 void Juego::cargar(){
+	string titulo, genero;
+	int plataforma;
 	Articulo::cargar();
+	
+	cin.ignore();
 	cout<<"Titulo: ";
-	cin>>_tituloJ;
-	cout<<endl;
+	getline(cin, titulo); 
+	
 	cout<<"Genero: ";
-	cin>>_generoJ;
-	cout<<endl;
+	getline(cin, genero);
+	cin.ignore();
+	
 	cout<<"Plataforma: ";
-	_plataforma = validarCinInt();
+	plataforma = validarCinInt();
+	
+	setTituloJ(titulo);
+	setGeneroJ(genero);
+	setPlataforma(plataforma);
 }
 void Juego::mostrar(){
 	Articulo::mostrar();

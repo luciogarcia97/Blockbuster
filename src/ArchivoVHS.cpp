@@ -1,9 +1,4 @@
 #include "ArchivoVHS.h"
-#include "VHS.h"
-#include "Articulo.h"
-#include <iostream>
-#include "funciones.h"
-using namespace std;
 
 bool ArchivoVHS::guardar(VHS art){
 	bool result;
@@ -16,6 +11,7 @@ bool ArchivoVHS::guardar(VHS art){
 	fclose(pFile);
 	return result;
 }
+
 int ArchivoVHS::buscarXnumero(int numeroArt){
 	FILE* pFile;
 	VHS obj;
@@ -32,6 +28,18 @@ int ArchivoVHS::buscarXnumero(int numeroArt){
 	fclose(pFile);
 	return -2;
 }
+
+int ArchivoVHS::getNumeroArticuloV(){
+	int cantidad_vhs = contarRegistro();
+	
+	if (cantidad_vhs > 0)
+	{
+		return leerRegistro(cantidad_vhs-1).getNumero()+1;
+	}
+
+	return 1;
+}
+
 int ArchivoVHS::buscarXtitulo(){
 	FILE *pFile;
 	VHS obj;
@@ -56,6 +64,7 @@ int ArchivoVHS::buscarXtitulo(){
 	fclose(pFile);
 	return -2;
 }
+
 int ArchivoVHS::buscarXgenero(){
 	FILE *pFile;
 	VHS obj;
@@ -80,6 +89,7 @@ int ArchivoVHS::buscarXgenero(){
 	fclose(pFile);
 	return -2;
 }
+
 VHS ArchivoVHS::leerRegistro(int index){
 	VHS reg;
 	FILE *pFile;
@@ -92,6 +102,7 @@ VHS ArchivoVHS::leerRegistro(int index){
 	fclose(pFile);
 	return reg;
 }
+
 bool ArchivoVHS::listarRegistros(){
 	FILE *p;
 	VHS obj;
@@ -104,6 +115,7 @@ bool ArchivoVHS::listarRegistros(){
 	fclose(p);
 	return true;
 }
+
 int ArchivoVHS::contarRegistro(){
 	FILE *pFile;
 	int tam;
@@ -118,6 +130,7 @@ int ArchivoVHS::contarRegistro(){
 	fclose(pFile);
 	return tam;
 }
+
 bool ArchivoVHS::grabar(int index, VHS art){
 	bool result;
 	FILE *pFile;

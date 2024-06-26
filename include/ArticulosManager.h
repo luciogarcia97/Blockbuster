@@ -1,11 +1,11 @@
 #ifndef ARTICULOSMANAGER_H
 #define ARTICULOSMANAGER_H
 #include <iostream>
-#include "ArticulosManager.h"
 #include "Articulo.h"
 #include "VHS.h"
 #include "Juego.h"
 #include "ArchivoVHS.h"
+#include "ArchivoJuego.h"
 #include"funciones.h"
 class ArticulosManager {
 public:
@@ -14,9 +14,10 @@ public:
 	void menuJuegos();
 	void menuBuscarVHS();
 	void menuBuscarJuegos();
-	bool validarExistenciaId(int numero_articulo);
+	bool validarExistenciaId(int numero_articulo, int tipo);
 private:
 	void agregarVHS();
+	VHS crearArticuloVHS();
 	void listarVHS();
 	void mostrarVHS(VHS reg);
 	void buscarVHS();

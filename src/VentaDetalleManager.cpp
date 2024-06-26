@@ -4,41 +4,38 @@ void VentaDetalleManager::cargarDetalleVenta(int numeroVenta){
     int numero_articulo;
     int cantidad;
     float precio = 0;
-    
     int opcion;
+    int tipo_articulo;
+    ArchivoVHS dataVHS;
+    ArchivoJuego dataJuego;
+    ArticulosManager am;
     do
     {
         system("cls");
         std::cout << "Carga del detalle de la venta #" << numeroVenta << std::endl;
         std::cout << "--------------------------------------" << std::endl << std::endl;
 
-
+        std::cout << "Ingrese el tipo de articulo (1-VHS, 2-Juego): ";
+        tipo_articulo = validarCinInt();
         std::cout << "1) Ingrese el numero de articulo: ";
         numero_articulo = validarCinInt();
+
+        while (!am.validarExistenciaId(numero_articulo,tipo_articulo)){ 
+            std::cout << "El articulo no existe, ingrese nuevamente: ";numero_articulo = validarCinInt();
+        }
 
         std::cout << "2) Ingrese la cantidad de productos: ";
         cantidad = validarCinInt();
 
-        //TO DO: Carga de precio con Articulo => cantidad * precio_unitario
-        ArchivoVHS dataVHS;
-        ArchivoJuego dataJuego;
-
-        //validaciones
-        int posicionVHS = dataVHS.buscarXnumero(numero_articulo);
-
-        if(posicionVHS > 0){
+        if (tipo_articulo == 1)
+        {
+            int posicionVHS = dataVHS.buscarXnumero(numero_articulo);
             precio = dataVHS.leerRegistro(posicionVHS).getPrecio() * cantidad;
-            std::cout << "Entro al calculo de precio" << std::endl;
+        }else if (tipo_articulo == 2)
+        {
+            int posicionJuego = dataJuego.buscarXnumero(numero_articulo);
+            precio = dataJuego.leerRegistro(posicionJuego).getPrecio() * cantidad;
         }
-        else if (posicionVHS == -2) std::cout << "No hay un VHS cargado con este Id" << std::endl;
-        else std::cout << "Error al leer el archivo" << std::endl;
-        
-        
-        // int posicionJuego = dataJuego.buscarXnumero(numero_articulo);
-        //
-        // if(posicionJuego!= -2 && posicionJuego != -1)precio = dataJuego.leerRegistro(posicionJuego).getPrecio() * cantidad;
-        // else if (posicionJuego == -2)std::cout << "No hay un Juego cargado con este Id" << std::endl;
-        // else std::cout << "Error al leer el archivo" << std::endl;
 
         agregarVentaDetalle(Detalleventa(numeroVenta,numero_articulo,cantidad,precio));
         std::cout << "Desea cargar otro producto? (1-Si o 2-No): ";
