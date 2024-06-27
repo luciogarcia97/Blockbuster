@@ -9,17 +9,11 @@ int main()
 {
     AppManager am;
     am.menu();
-
     /*
-        TO DO:
+        TO DO (Revisar trello)
             numero de articulo automatico para VHS y Juego
-            Descomentar la parte de carga de articulo juego en alquiler y venta.
-            Arreglar menus de articulos.
-            Agregar mejora de validar numero en todas las busquedas
+            Arreglar menus de todos los menus.
             Agregar validacion carga detalle para mostrar el articulo y confirmarlo
-            Arreglar validacion de bool, aparece mensaje de 1 y 0
-
-
             Agregar validacion del tipo de articulo en venta y alquiler detalles
     */
     return 0;

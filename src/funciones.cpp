@@ -44,11 +44,11 @@ bool validarCinBool() {
 
   do {
         error = 0;
-        std::cout << "Ingrese un valor (0 o 1): ";
         std::cin >> entrada;
 
         if (std::cin.fail() || (entrada != 0 && entrada != 1)) {
-            std::cout << "Dato invalido, reingrese nuevamente" << std::endl;
+            std::cout << "Dato invalido, reingrese nuevamente. " << std::endl;
+            std::cout << "Ingrese un valor (0 o 1): ";
             error = 1;
             std::cin.clear();
             std::cin.ignore(80, '\n');
