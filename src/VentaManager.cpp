@@ -33,7 +33,6 @@ Venta VentaManager::crearVenta(){
     std::cout << "4) La fecha de la operacion fue: " << timestamp.fechaTexto() << std::endl;
     
     system("cls");
-    std::cout << "Se registro la venta correctamente!" << std::endl;
     return Venta(numero_venta, timestamp, numero_cliente,legajo_personal, forma_pago);
 }
 

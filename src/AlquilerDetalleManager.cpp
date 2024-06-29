@@ -18,14 +18,19 @@ void AlquilerDetalleManager::cargarDetalleAlquiler(int numeroAlquiler){
 
         std::cout << "Ingrese el tipo de articulo (1-VHS, 2-Juego): ";
         tipo_articulo = validarCinInt();
+        while (tipo_articulo != 1 && tipo_articulo != 2)
+        {
+            std::cout << "Tipo de articulo incorrecto, intente nuevamente (1-VHS, 2-Juego): ";
+            tipo_articulo = validarCinInt();
+        }
         
         std::cout << "1) Ingrese el numero de articulo: ";
         numero_articulo = validarCinInt();
         
         while (!am.validarExistenciaId(numero_articulo,tipo_articulo)){ 
-            std::cout << "El articulo no existe, ingrese nuevamente: ";numero_articulo = validarCinInt();
+            std::cout << "El articulo no existe, ingrese nuevamente: ";
+            numero_articulo = validarCinInt();
         }
-
 
         std::cout << "2) Ingrese la cantidad de productos: ";
         cantidad = validarCinInt();

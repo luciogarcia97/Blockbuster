@@ -17,6 +17,12 @@ void VentaDetalleManager::cargarDetalleVenta(int numeroVenta){
 
         std::cout << "Ingrese el tipo de articulo (1-VHS, 2-Juego): ";
         tipo_articulo = validarCinInt();
+        while (tipo_articulo != 1 && tipo_articulo != 2)
+        {
+            std::cout << "Tipo de articulo incorrecto, intente nuevamente (1-VHS, 2-Juego): ";
+            tipo_articulo = validarCinInt();
+        }
+        
         std::cout << "1) Ingrese el numero de articulo: ";
         numero_articulo = validarCinInt();
 
