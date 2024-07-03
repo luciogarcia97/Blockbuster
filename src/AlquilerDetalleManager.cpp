@@ -45,7 +45,7 @@ void AlquilerDetalleManager::cargarDetalleAlquiler(int numeroAlquiler){
             precio = dataJuego.leerRegistro(posicionJuego).getPrecio() * cantidad;
         }
 
-        agregarAlquilerDetalle(DetalleAlquiler(numeroAlquiler,numero_articulo,cantidad,precio));
+        agregarAlquilerDetalle(DetalleAlquiler(numeroAlquiler,numero_articulo, tipo_articulo,cantidad,precio));
         std::cout << "Desea cargar otro producto? (1-Si o 2-No): ";
         opcion = validarCinInt();
     } while (opcion == 1);
@@ -72,7 +72,15 @@ void AlquilerDetalleManager::listarAlquilerDetalle(){
     }
     
     headerAlquilerDetalle();
-    for (int i = 0; i < cantidad; i++) mostrarAlquilerDetalle(_archivoAlquilerDetalle.leerRegistro(i));
+    for (int i = 0; i < cantidad; i++){
+        if (_archivoAlquilerDetalle.leerRegistro(i).getNumeroAlquilerDetalle() == -1)
+        {
+            std::cout << "No existe el archivo" << std::endl;
+            delete []obj;
+            return;
+        }
+        mostrarAlquilerDetalle(_archivoAlquilerDetalle.leerRegistro(i));
+    }
     
     delete []obj;
 }
@@ -113,7 +121,7 @@ void AlquilerDetalleManager::listarAlquilerDetalleById(){
 }
 
 void AlquilerDetalleManager::mostrarAlquilerDetalle(DetalleAlquiler reg){
-    std::cout << reg.getNumeroAlquilerDetalle() << "\t\t" << reg.getNumeroArticuloAlquilerDetalle() << "\t\t" << reg.getCantidad() << "\t\t" << reg.getPrecio() << std::endl;
+    std::cout << reg.getNumeroAlquilerDetalle() << "\t\t" << reg.getNumeroArticuloAlquilerDetalle() << "\t\t" << reg.getTipoArticulo() << "\t\t" << reg.getCantidad() << "\t\t" << reg.getPrecio() << std::endl;
 }
 
 DetalleAlquiler* AlquilerDetalleManager::buscarAlquilerDetalle(int id){

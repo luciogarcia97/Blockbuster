@@ -72,6 +72,12 @@ void AlquilerManager::listarAlquiler(){
     headerAlquiler();
     for (int i = 0; i < cantidad; i++)
     {
+        if (_archivoAlquiler.leerRegistro(i).getNumeroAlquiler() == -1)
+        {
+            std::cout << "No existe el archivo" << std::endl;
+            delete []obj;
+            return;
+        }
         mostrarAlquiler(_archivoAlquiler.leerRegistro(i));
     }
 

@@ -4,13 +4,13 @@
 	"AppManager.h"
 	"GeneroManager.h"
 
-1717460172 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\detallealquiler.cpp
+1720040310 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\detallealquiler.cpp
 	"DetalleAlquiler.h"
 
 1718072808 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\funciones.h
 	<iostream>
 
-1717460160 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\detallealquiler.h
+1720040088 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\detallealquiler.h
 	"funciones.h"
 
 1717284061 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquiler.cpp
@@ -42,7 +42,7 @@
 	<cstring>
 	"Venta.h"
 
-1718073862 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivoalquiler.cpp
+1720041829 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivoalquiler.cpp
 	"ArchivoAlquiler.h"
 
 1718073855 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivoalquiler.h
@@ -143,7 +143,7 @@
 	<iostream>
 	<cstdlib>
 
-1719978829 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\articulosmanager.cpp
+1720038520 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\articulosmanager.cpp
 	"ArticulosManager.h"
 
 1719974658 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\articulosmanager.h
@@ -217,10 +217,10 @@
 	"ArchivoAlquiler.h"
 	"AlquilerDetalleManager.h"
 
-1718162161 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilermanager.cpp
+1720041878 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilermanager.cpp
 	"AlquilerManager.h"
 
-1719695886 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilerdetallemanager.cpp
+1720041563 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilerdetallemanager.cpp
 	"AlquilerDetalleManager.h"
 
 1718231275 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\alquilerdetallemanager.h

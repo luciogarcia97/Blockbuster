@@ -8,6 +8,7 @@ ArchivoAlquiler::ArchivoAlquiler(std::string nombre)
 Alquiler ArchivoAlquiler::leerRegistro(int posicion){
     Alquiler reg;
     FILE* p;
+    reg.setNumeroAlquiler(-1);
     p = fopen(_nombre,"rb");
     if(p == nullptr) return reg;
     fseek(p, sizeof (Alquiler) * posicion, 0);
