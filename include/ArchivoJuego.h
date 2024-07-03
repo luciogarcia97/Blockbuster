@@ -11,6 +11,7 @@ public:
 	Juego leerRegistro(int pos);
 	bool listarRegistros();
 	int contarRegistro();
+	int getNumeroArticuloJ();
 private:
 };
 

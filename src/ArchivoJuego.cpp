@@ -129,3 +129,14 @@ int ArchivoJuego::buscarXgenero(int genero){
     fclose(pFile);
     return -1;
 }
+
+int ArchivoJuego::getNumeroArticuloJ(){
+	int cantidad_juego = contarRegistro();
+	
+	if (cantidad_juego > 0)
+	{
+		return leerRegistro(cantidad_juego-1).getNumeroArtJ()+1;
+	}
+
+	return 1;
+}

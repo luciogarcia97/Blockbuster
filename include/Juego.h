@@ -7,10 +7,12 @@ class Juego : public Articulo {
 public:
 	Juego();
 	Juego(std::string titulo, int genero, int plataforma);
-	Juego(Articulo articulo, std::string titulo, int genero, int plataforma);
+	Juego(Articulo articulo, int numero,std::string titulo, int genero, int plataforma);
 	std::string getTituloJ();
 	int getGeneroJ();
 	int getPlataforma();
+	int getNumeroArtJ();
+	void setNumeroArtJ(int numero);
 	void setTituloJ(std::string titulo);
 	void setGeneroJ(int genero);
 	void setPlataforma(int plataforma);
@@ -20,6 +22,7 @@ private:
 	char _tituloJ [30];
 	int _generoJ;
 	int _plataforma;
+	int _numeroArt;
 };
 
 #endif

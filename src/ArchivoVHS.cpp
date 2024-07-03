@@ -34,7 +34,7 @@ int ArchivoVHS::getNumeroArticuloV(){
 	
 	if (cantidad_vhs > 0)
 	{
-		return leerRegistro(cantidad_vhs-1).getNumero()+1;
+		return leerRegistro(cantidad_vhs-1).getNumeroArtV()+1;
 	}
 
 	return 1;

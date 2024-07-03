@@ -15,14 +15,21 @@ Juego::Juego(std::string titulo, int genero, int plataforma){
 	setGeneroJ(genero);
 	setPlataforma(plataforma);
 }
-Juego::Juego(Articulo articulo, std::string titulo, int genero, int plataforma){
-	setNumero(articulo.getNumero());
+Juego::Juego(Articulo articulo, int numero,std::string titulo, int genero, int plataforma){
+	setNumero;
     setStock(articulo.getStock());
     setEstado(articulo.getEstado());
 	setTituloJ(titulo);
 	setGeneroJ(genero);
 	setPlataforma(plataforma);
 }
+int Juego::getNumeroArtJ(){
+	return _numeroArt;
+}
+void Juego::setNumeroArtJ(int numero){
+	_numeroArt = numero;
+}
+
 std::string Juego::getTituloJ(){
 	return _tituloJ;
 }

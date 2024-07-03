@@ -63,6 +63,13 @@ std::string VHS::getDirector(){
 int VHS::getDuracion(){
 	return _duracion;
 }
+void VHS::setNumeroArtV(int numero){
+	_numeroArt = numero;
+}
+int VHS::getNumeroArtV(){
+	return _numeroArt;
+}
+
 /*
 void VHS::cargar(){
 	string titulo,director;

@@ -6,7 +6,6 @@
 using namespace std;
 
 Articulo::Articulo() {
-	_numeroArt=0;
 	_stock=0;
 	_precio=0.0f;
 	_estado=0;

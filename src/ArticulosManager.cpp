@@ -270,8 +270,8 @@ Juego ArticulosManager::crearArticuloJuego(){
 	string titulo;
 	int plataforma, genero, numeroArt;
 	
-	cout<<"Numero de Articulo: ";
-	numeroArt = validarCinInt();
+	numeroArt = _archivoJuego.getNumeroArticuloJ();
+	cout<<"Carga del articulo Juego #" << numeroArt << endl;
 	cin.ignore();
 	cout<<"Titulo: ";
 	getline(cin, titulo); 
@@ -297,7 +297,7 @@ Juego ArticulosManager::crearArticuloJuego(){
 	Articulo a;
 	a = cargarArticulo();
 
-	return Juego (a,titulo, genero, plataforma);
+	return Juego (a,numeroArt,titulo, genero, plataforma);
 }
 void ArticulosManager::listarJuego(){
 	ArchivoJuego archiJ;
