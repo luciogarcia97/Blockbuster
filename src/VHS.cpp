@@ -7,6 +7,7 @@
 using namespace std;
 
 VHS::VHS() {
+	_numeroArtV = 0;
 	strcpy(_tituloP, "");
 	_generoP = 0;
 	strcpy(_director, "");
@@ -19,9 +20,10 @@ VHS::VHS(std::string titulo, int genero, std::string director, int duracion){
 	setDuracion(duracion);
 }
 VHS::VHS(Articulo art,int numero, std::string titulo, int genero, std::string director, int duracion){
-    setNumero(numero);
     setStock(art.getStock());
+	setPrecio(art.getPrecio());
     setEstado(art.getEstado());
+    setNumeroArtV(numero);
     setTituloP(titulo);
     setGeneroP(genero);
     setDirector(director);
@@ -64,10 +66,10 @@ int VHS::getDuracion(){
 	return _duracion;
 }
 void VHS::setNumeroArtV(int numero){
-	_numeroArt = numero;
+	_numeroArtV = numero;
 }
 int VHS::getNumeroArtV(){
-	return _numeroArt;
+	return _numeroArtV;
 }
 
 /*

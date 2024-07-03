@@ -16,7 +16,7 @@ public:
 	void mostrar();
 	void cargar();
 protected:
-	int _numeroArt;
+	//int _numeroArt;
 	int _stock;
 	float _precio;
 	bool _estado;

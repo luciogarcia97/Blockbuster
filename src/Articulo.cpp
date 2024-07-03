@@ -17,7 +17,7 @@ Articulo::Articulo(int stock, float precio, bool estado){
 }
 
 void Articulo::setNumero(int numeroArt){
-	_numeroArt=numeroArt;
+	//_numeroArt=numeroArt;
 }
 void Articulo::setStock(int stock){
 	_stock=stock;
@@ -29,7 +29,7 @@ void Articulo::setEstado(bool estado){
 	_estado=estado;
 }
 int Articulo::getNumero(){
-	return _numeroArt;
+	//return _numeroArt;
 }
 int Articulo::getStock(){
 	return _stock;

@@ -16,7 +16,7 @@ Juego::Juego(std::string titulo, int genero, int plataforma){
 	setPlataforma(plataforma);
 }
 Juego::Juego(Articulo articulo, int numero,std::string titulo, int genero, int plataforma){
-	setNumero;
+	setNumeroArtJ(numero);
     setStock(articulo.getStock());
     setEstado(articulo.getEstado());
 	setTituloJ(titulo);

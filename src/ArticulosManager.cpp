@@ -17,9 +17,9 @@ VHS ArticulosManager::crearArticuloVHS(){
 	int duracion, numeroArt;
     Articulo a;
 
+	cin.ignore();
 	numeroArt = _archivoVHS.getNumeroArticuloV();
 	cout<<"Carga del articulo VHS #" << numeroArt << endl;
-	cin.ignore();
 	cout << "Titulo: ";
 	getline(cin, titulo);
 	cout << "Genero: 1-Terror 2-Accion 3-Suspenso 4-Drama 5-Infantil : ";
@@ -46,7 +46,7 @@ void ArticulosManager::listarVHS(){
 	}
 }
 void ArticulosManager::mostrarVHS(VHS reg) {
-	cout << "Numero de Articulo: " << reg.getNumero() << endl;
+	cout << "Numero de Articulo: " << reg.getNumeroArtV() << endl;
 	cout << "Titulo: " << reg.getTituloP() << endl;
 	cout << "Genero: " << reg.getGeneroP() << endl;
 	cout << "Director: " << reg.getDirector() << endl;
@@ -310,7 +310,7 @@ void ArticulosManager::listarJuego(){
 	}
 }
 void ArticulosManager::mostrarJuego(Juego reg){
-	cout << "Numero de Articulo: " << reg.getNumero() << endl;
+	cout << "Numero de Articulo: " << reg.getNumeroArtJ() << endl;
 	cout << "Titulo: " << reg.getTituloJ() << endl;
 	cout << "Genero: " << reg.getGeneroJ() << endl;
 	cout << "Plataforma: " << reg.getPlataforma() << endl;

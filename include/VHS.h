@@ -26,7 +26,7 @@ private:
 	int _generoP;
 	char _director [30];
 	int _duracion;
-	int _numeroArt;
+	int _numeroArtV;
 };
 
 #endif
