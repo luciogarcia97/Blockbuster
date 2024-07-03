@@ -21,6 +21,8 @@ private:
 	void agregarVHS();
 	VHS crearArticuloVHS();
 	Juego crearArticuloJuego();
+	Articulo cargarArticulo();
+	void mostrarArticulo();
 	void listarVHS();
 	void mostrarVHS(VHS reg);
 	void buscarVHS();

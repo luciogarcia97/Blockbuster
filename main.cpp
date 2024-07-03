@@ -16,5 +16,10 @@ int main()
             Agregar validacion carga detalle para mostrar el articulo y confirmarlo
             Agregar validacion del tipo de articulo en venta y alquiler detalles
     */
+
+//    GeneroManager gm;
+
+//    gm.menu();
+
     return 0;
 }

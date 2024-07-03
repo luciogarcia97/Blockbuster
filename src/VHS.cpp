@@ -18,9 +18,8 @@ VHS::VHS(std::string titulo, int genero, std::string director, int duracion){
 	setDirector(director);
 	setDuracion(duracion);
 }
-VHS::VHS(Articulo art,std::string titulo, int genero, std::string director, int duracion){
-
-    setNumero(art.getNumero());
+VHS::VHS(Articulo art,int numero, std::string titulo, int genero, std::string director, int duracion){
+    setNumero(numero);
     setStock(art.getStock());
     setEstado(art.getEstado());
     setTituloP(titulo);

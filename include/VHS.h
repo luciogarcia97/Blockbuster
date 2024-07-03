@@ -8,7 +8,7 @@ class VHS : public Articulo {
 public:
 	VHS();
 	VHS(std::string titulo, int genero, std::string director, int duracion);
-	VHS(Articulo art,std::string titulo, int genero, std::string director, int duracion);
+	VHS(Articulo art,int numero, std::string titulo, int genero, std::string director, int duracion);
 	std::string getTituloP();
 	int getGeneroP();
 	std::string getDirector();

@@ -4,7 +4,7 @@
 class Articulo {
 public:
 	Articulo();
-	Articulo(int numeroArt, int stock, float precio, bool estado);
+	Articulo(int stock, float precio, bool estado);
 	int getNumero();
 	int getStock();
 	int getPrecio();

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1719964164 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
+1719974162 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\main.cpp
 	<iostream>
 	"AppManager.h"
 	"GeneroManager.h"
@@ -99,14 +99,14 @@
 1719966272 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivojuego.h
 	"Juego.h"
 
-1719967763 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\articulo.cpp
+1719974719 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\articulo.cpp
 	"Articulo.h"
 	"funciones.h"
 	<cstdlib>
 	<cstdio>
 	<iostream>
 
-1718070053 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\articulo.h
+1719974709 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\articulo.h
 
 1719968417 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\juego.cpp
 	"Juego.h"
@@ -131,11 +131,11 @@
 	<iostream>
 	"funciones.h"
 
-1719964820 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\vhs.h
+1719975043 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\vhs.h
 	"Articulo.h"
 	<string>
 
-1719965630 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\vhs.cpp
+1719975059 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\vhs.cpp
 	"VHS.h"
 	"funciones.h"
 	<cstring>
@@ -143,10 +143,10 @@
 	<iostream>
 	<cstdlib>
 
-1719969137 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\articulosmanager.cpp
+1719975090 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\articulosmanager.cpp
 	"ArticulosManager.h"
 
-1719968861 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\articulosmanager.h
+1719974658 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\articulosmanager.h
 	<iostream>
 	"Articulo.h"
 	"VHS.h"

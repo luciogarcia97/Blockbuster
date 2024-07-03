@@ -17,8 +17,8 @@ VHS ArticulosManager::crearArticuloVHS(){
 	int duracion, numeroArt;
     Articulo a;
 
-	cout<<"Numero de Articulo: ";
-	numeroArt = validarCinInt();
+	numeroArt = _archivoVHS.getNumeroArticuloV();
+	cout<<"Carga del articulo VHS #" << numeroArt << endl;
 	cin.ignore();
 	cout << "Titulo: ";
 	getline(cin, titulo);
@@ -29,9 +29,10 @@ VHS ArticulosManager::crearArticuloVHS(){
 	getline(cin, director);
 	cout << "Duracion: ";
 	duracion = validarCinInt();
-	a.cargar();
+	
+	a = cargarArticulo();
 
-	return VHS (a,titulo, genero, director, duracion);
+	return VHS (a,numeroArt,titulo, genero, director, duracion);
 }
 
 void ArticulosManager::listarVHS(){
@@ -230,7 +231,30 @@ void ArticulosManager::menuBuscarVHS(){
      }while(opc !=4);
 }
 
+Articulo ArticulosManager::cargarArticulo(){
+	int stock;
+	float precio;
+	bool estado;
+	
+	cin.ignore();
+	cout<<"Stock: ";
+	stock = validarCinInt();
+	cin.ignore();
+	cout<<"Precio: ";
+	precio = validarCinFloat();
+	cin.ignore();
+	cout<<"Estado: ";
+	estado = validarCinBool();
+	
+	return Articulo(stock, precio, estado);
+}
 
+void ArticulosManager::mostrarArticulo(){
+	Articulo articulo;
+	cout<<"Stock: "<<articulo.getStock()<<endl;
+	cout<<"Precio: "<<articulo.getPrecio()<<endl;
+	cout<<"Estado: "<<articulo.getEstado()<<endl;
+}
 
 void ArticulosManager::agregarJuego(){
 	if(_archivoJuego.guardar(crearArticuloJuego()) == 1){
@@ -271,7 +295,7 @@ Juego ArticulosManager::crearArticuloJuego(){
 	}
 
 	Articulo a;
-	a.cargar();
+	a = cargarArticulo();
 
 	return Juego (a,titulo, genero, plataforma);
 }

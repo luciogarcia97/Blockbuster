@@ -11,8 +11,7 @@ Articulo::Articulo() {
 	_precio=0.0f;
 	_estado=0;
 }
-Articulo::Articulo(int numeroArt, int stock, float precio, bool estado){
-	setNumero(numeroArt);
+Articulo::Articulo(int stock, float precio, bool estado){
 	setStock(stock);
 	setPrecio(precio);
 	setEstado(estado);
