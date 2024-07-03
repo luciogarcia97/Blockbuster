@@ -1,21 +1,15 @@
-#include <iostream>
 #include "ArticulosManager.h"
-#include "Articulo.h"
-#include "VHS.h"
-#include "Juego.h"
-#include "ArchivoVHS.h"
-#include "ArchivoJuego.h"
-using namespace std;
 
 
 void ArticulosManager::agregarVHS(){
-	ArchivoVHS archiVHS;
-	
-	if(archiVHS.guardar(crearArticuloVHS()) == 1){
+	if(_archivoVHS.guardar(crearArticuloVHS()) == 1){
 		cout<<"Agregado correctamente..."<<endl;
 		system("pause");
+	}else
+	{
+		cout<<"Hubo un error en guardar el VHS"<<endl;
+		system("pause");
 	}
-	ArticulosManager::menuVHS();
 }
 VHS ArticulosManager::crearArticuloVHS(){
 	string titulo, director;
@@ -28,7 +22,7 @@ VHS ArticulosManager::crearArticuloVHS(){
 	cin.ignore();
 	cout << "Titulo: ";
 	getline(cin, titulo);
-	cout << "Genero: 1-Terror 2-Accion 3-Suspenso 4-Drama 5-Infantil :" <<  endl;
+	cout << "Genero: 1-Terror 2-Accion 3-Suspenso 4-Drama 5-Infantil : ";
 	genero = validarCinInt();
 	cin.ignore();
 	cout << "Director: ";
@@ -47,7 +41,7 @@ void ArticulosManager::listarVHS(){
 
 	for(int i=0;i<cantidad;i++){
 		VHS reg = archiVHS.leerRegistro(i);
-		ArticulosManager::mostrarVHS(reg);
+		mostrarVHS(reg);
 	}
 }
 void ArticulosManager::mostrarVHS(VHS reg) {
@@ -134,6 +128,8 @@ void ArticulosManager::menu(){
 		opc = validarCinInt();
 		system("cls");
 		switch(opc){
+		case 0:
+			break;
 		case 1:
 			menuVHS();
 			system("pause");
@@ -156,8 +152,7 @@ void ArticulosManager::menuVHS(){
 		cout<<"3) Listar"<<endl;
 		cout<<"4) Buscar"<<endl;
 		cout<<"5) Eliminar registro"<<endl;
-		cout<<"==========================="<<endl;
-		cout<<"0) SALIR"<<endl;
+		cout<<"6) Volver al menu de stock"<<endl;
 		opc = validarCinInt();
 		system("cls");
 		switch(opc){
@@ -181,24 +176,23 @@ void ArticulosManager::menuVHS(){
 			eliminarVHS();
 			system("pause");
 			break;
+		case 6:
+			break;
 		default:
-			cout << "Opci�n inv�lida. Intente nuevamente..." << endl;
+			cout << "Opcion invalida. Intente nuevamente..." << endl;
 			break;
 		}
-		}while(opc != 0);
+		}while(opc != 6);
 	}
 void ArticulosManager::menuBuscarVHS(){
 	int opc;
-	while(true){
+	do{
 		system("cls");
-		cout<<"        BUSCAR POR         "<<endl;
 		cout<<"==========================="<<endl;
 		cout<<"1) Nuemro de Articulo"<<endl;
 		cout<<"2) Titulo"<<endl;
 		cout<<"3) Genero"<<endl;
 		cout<<"4) Volver al menu anterior"<<endl;
-		cout<<"==========================="<<endl;
-		cout<<"0) SALIR"<<endl;
 		opc = validarCinInt();
 		system("cls");
 		switch(opc){
@@ -223,28 +217,63 @@ void ArticulosManager::menuBuscarVHS(){
 
 			posicion = _archivoVHS.buscarXgenero(genero);
 
-			ArticulosManager::mostrarVHS(_archivoVHS.leerRegistro(posicion));
+			mostrarVHS(_archivoVHS.leerRegistro(posicion));
 			system("pause");
 			break;
 		case 4:
-			menuVHS();
+			break;
+		default:
+			cout << "Opcion invalida. Intente nuevamente..." << endl;
 			system("pause");
 			break;
         }
-     }
+     }while(opc !=4);
 }
 
 
 
 void ArticulosManager::agregarJuego(){
-	Juego art;
-	ArchivoJuego archiJ;
-	art.cargar();
-	if(archiJ.guardar(art)==1){
+	if(_archivoJuego.guardar(crearArticuloJuego()) == 1){
 		cout<<"Agregado correctamente..."<<endl;
 		system("pause");
+	}else
+	{
+		cout<<"Hubo un error en guardar el VHS"<<endl;
+		system("pause");
 	}
-	ArticulosManager::menuJuegos();
+}
+Juego ArticulosManager::crearArticuloJuego(){
+	string titulo;
+	int plataforma, genero, numeroArt;
+	
+	cout<<"Numero de Articulo: ";
+	numeroArt = validarCinInt();
+	cin.ignore();
+	cout<<"Titulo: ";
+	getline(cin, titulo); 
+	
+	cout<<"Genero: 1-Aventura 2-Accion 3-RPG 4-Deportes";
+	genero = validarCinInt();
+
+	while (genero != 1 && genero != 2 && genero != 3 && genero != 4)
+    {
+		cout << "Dato invalido, ingrese nuevamente :" << endl;
+		genero = validarCinInt();
+	}
+	
+	cout<<"Plataforma: 1-PC 2-PSN 3-XBOX" << endl;
+    plataforma = validarCinInt();
+
+	while (plataforma != 1 && plataforma != 2 && plataforma !=3)
+    {
+    cout << "Dato invalido, ingrese nuevamente :" << endl;
+    plataforma = validarCinInt();
+	}
+
+	Articulo a;
+	a.cargar();
+
+	return Juego (a,titulo, genero, plataforma);
 }
 void ArticulosManager::listarJuego(){
 	ArchivoJuego archiJ;
@@ -351,7 +380,7 @@ bool ArticulosManager::validarExistenciaId(int numero_articulo, int tipo){
 
 void ArticulosManager::menuJuegos(){
 	int opc;
-	while(true){
+	do{
 		system("cls");
 		cout<<"           JUEGOS          "<<endl;
 		cout<<"==========================="<<endl;
@@ -361,8 +390,6 @@ void ArticulosManager::menuJuegos(){
 		cout<<"4) Buscar "<<endl;
 		cout<<"5) Eliminar registro"<<endl;
 		cout<<"6) Volver al menu anterior"<<endl;
-		cout<<"==========================="<<endl;
-		cout<<"0) SALIR"<<endl;
 		opc = validarCinInt();
 		system("cls");
 		switch(opc){
@@ -387,17 +414,16 @@ void ArticulosManager::menuJuegos(){
 			system("pause");
 			break;
 		case 6:
-			menu();
-			return;
+			break;
 		default:
-			cout << "Opci�n inv�lida. Intente nuevamente..." << endl;
+			cout << "Opcion invalida. Intente nuevamente..." << endl;
 			break;
 		}
-	}
+	} while(opc !=6 );
 }
 void ArticulosManager::menuBuscarJuegos(){
 	int opcion;
-	while(true){
+	do{
 		system("cls");
 		cout<<"        BUSCAR POR         "<<endl;
 		cout<<"==========================="<<endl;
@@ -405,8 +431,6 @@ void ArticulosManager::menuBuscarJuegos(){
 		cout<<"2) Titulo"<<endl;
 		cout<<"3) Genero"<<endl;
 		cout<<"4) Volver al menu anterior"<<endl;
-		cout<<"==========================="<<endl;
-		cout<<"0) SALIR"<<endl;
 		opcion = validarCinInt();
 		system("cls");
 		switch(opcion){
@@ -433,47 +457,12 @@ void ArticulosManager::menuBuscarJuegos(){
 			ArticulosManager::mostrarJuego(arch.leerRegistro(posicion));
 			system("pause");
 			break;
-	    case 4:
-			menuJuegos();
+		case 4:
+			break;
+	    default:
+			cout << "dato invalido, reingrese nuevamente";
 			system("pause");
 			break;
 		}
-	}
-	int opc;
-	while(true){
-		system("cls");
-		cout<<"        BUSCAR POR         "<<endl;
-		cout<<"==========================="<<endl;
-		cout<<"1) Nuemro de Articulo"<<endl;
-		cout<<"2) Titulo"<<endl;
-		cout<<"3) Genero"<<endl;
-		cout<<"4) Volver al menu anterior"<<endl;
-		cout<<"==========================="<<endl;
-		cout<<"0) SALIR"<<endl;
-		opc = validarCinInt();
-		system("cls");
-		switch(opc){
-		case 1:
-			ArchivoJuego arch;
-			int pos, nArt;
-			cout<<"Ingresar numero de articulo: ";
-			nArt = validarCinInt();
-			pos = arch.buscarXnumero(nArt);
-			ArticulosManager::mostrarJuego(arch.leerRegistro(pos));
-			system("pause");
-			break;
-			//case 2:
-
-			system("pause");
-			break;
-			//case 3:
-
-			system("pause");
-			break;
-			//case 4:
-			return;
-			system("pause");
-			break;
-		}
-	}
+	}while(opcion !=4);
 }

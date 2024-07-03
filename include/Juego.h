@@ -7,6 +7,7 @@ class Juego : public Articulo {
 public:
 	Juego();
 	Juego(std::string titulo, int genero, int plataforma);
+	Juego(Articulo articulo, std::string titulo, int genero, int plataforma);
 	std::string getTituloJ();
 	int getGeneroJ();
 	int getPlataforma();

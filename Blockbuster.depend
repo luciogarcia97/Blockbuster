@@ -99,7 +99,7 @@
 1719966272 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivojuego.h
 	"Juego.h"
 
-1719360576 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\articulo.cpp
+1719967763 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\articulo.cpp
 	"Articulo.h"
 	"funciones.h"
 	<cstdlib>
@@ -108,14 +108,14 @@
 
 1718070053 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\articulo.h
 
-1719966002 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\juego.cpp
+1719968417 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\juego.cpp
 	"Juego.h"
 	"funciones.h"
 	<cstring>
 	<string>
 	<iostream>
 
-1719965746 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\juego.h
+1719968929 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\juego.h
 	"Articulo.h"
 	<string>
 
@@ -143,23 +143,16 @@
 	<iostream>
 	<cstdlib>
 
-1719965564 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\articulosmanager.cpp
-	<iostream>
+1719969137 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\articulosmanager.cpp
 	"ArticulosManager.h"
-	"Articulo.h"
-	"VHS.h"
-	"Juego.h"
-	"ArchivoVHS.h"
-	"ArchivoJuego.h"
 
-1719966411 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\articulosmanager.h
+1719968861 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\articulosmanager.h
 	<iostream>
 	"Articulo.h"
 	"VHS.h"
 	"Juego.h"
 	"ArchivoVHS.h"
 	"ArchivoJuego.h"
-	"funciones.h"
 
 1718073736 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivodetallealquiler.cpp
 	"ArchivoDetalleAlquiler.h"

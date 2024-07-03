@@ -6,7 +6,8 @@
 #include "Juego.h"
 #include "ArchivoVHS.h"
 #include "ArchivoJuego.h"
-#include"funciones.h"
+
+using namespace std;
 
 class ArticulosManager {
 public:
@@ -19,6 +20,7 @@ public:
 private:
 	void agregarVHS();
 	VHS crearArticuloVHS();
+	Juego crearArticuloJuego();
 	void listarVHS();
 	void mostrarVHS(VHS reg);
 	void buscarVHS();

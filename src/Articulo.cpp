@@ -47,21 +47,22 @@ void Articulo::cargar(){
 	float precio;
 	bool estado;
 	cin.ignore();
-	cout<<"Stock: ";
+	cout<<"Ingrese la cantidad de unidades: ";
 	stock = validarCinInt();
 	cin.ignore();
-	cout<<"Precio: ";
+	cout<<"Indique el precio del Articulo $:";
 	precio = validarCinFloat();
-	cin.ignore();
-	cout<<"Estado: ";
-	estado = validarCinBool();
+	estado = 1;
+
+	//cout<<"Estado: ";
+	//estado = validarCinBool();
 	setStock(stock);
 	setPrecio(precio);
 	setEstado(estado);
+	///COMENTO LAS LINEAS 56,57 PORQUE VOY A COLOCAR EL ESTADO EN 1 Y SI SE ELIMINA QUE SE MODIFIQUE A 0.
 }
 void Articulo::mostrar(){
 	if(_estado==true){
-	cout<<"Numero de Articulo: "<<_numeroArt<<endl;
 	cout<<"Stock: "<<_stock<<endl;
 	cout<<"Precio: "<<_precio<<endl;
 	}
