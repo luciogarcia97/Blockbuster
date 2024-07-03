@@ -7,7 +7,7 @@ public:
 	bool grabar(int index, Juego art);
 	int buscarXnumero(int numeroArt);
 	int buscarXtitulo();
-	int buscarXgenero();
+	int buscarXgenero(int genero);
 	Juego leerRegistro(int pos);
 	bool listarRegistros();
 	int contarRegistro();

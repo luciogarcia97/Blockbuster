@@ -65,29 +65,27 @@ int ArchivoVHS::buscarXtitulo(){
 	return -2;
 }
 
-int ArchivoVHS::buscarXgenero(){
+int ArchivoVHS::buscarXgenero(int genero){
 	FILE *pFile;
-	VHS obj;
-	int pos=0;
-	string genero;
-	char set[30];
-	cout<<"Ingrese el titulo a buscar: "<<endl;
-	getline(cin, genero);
-	if(genero.size() <= 30){
-		strcpy(set, genero.c_str());
-	}
-	setCaracteres(set);
-	pFile = fopen("VHS.dat", "rb");
-	if(pFile==nullptr){ return -1;}
-	while(fread(&obj, sizeof obj, 1, pFile)==1){
-		if(strcmp(stringToConstChar(obj.getGeneroP(), 30), set) == 0){
-			fclose(pFile);
-			return pos;
-		}
-		pos++;
-	}
-	fclose(pFile);
-	return -2;
+	VHS reg;
+	int pos = 0;
+
+   pFile = fopen("VHS.dat","rb");
+
+    if (pFile == nullptr){
+        return -2;
+    }
+    while (fread(&reg, sizeof(genero),1,pFile))
+    {
+        if (reg.getGeneroP()== genero){
+            fclose(pFile);
+            return pos;
+        }
+        pos++;
+    }
+
+    fclose(pFile);
+    return -1;
 }
 
 VHS ArchivoVHS::leerRegistro(int index){

@@ -16,7 +16,7 @@ public:
 	bool grabar(int index, VHS art);
 	int buscarXnumero(int numeroArt);
 	int buscarXtitulo();
-	int buscarXgenero();
+	int buscarXgenero(int genero);
 	VHS leerRegistro(int pos);
 	bool listarRegistros();
 	int contarRegistro();

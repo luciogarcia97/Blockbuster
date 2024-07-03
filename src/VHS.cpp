@@ -8,15 +8,25 @@ using namespace std;
 
 VHS::VHS() {
 	strcpy(_tituloP, "");
-	strcpy(_generoP, "");
+	_generoP = 0;
 	strcpy(_director, "");
 	_duracion = 0;
 }
-VHS::VHS(std::string titulo, std::string genero, std::string director, int duracion){
+VHS::VHS(std::string titulo, int genero, std::string director, int duracion){
 	setTituloP(titulo);
 	setGeneroP(genero);
 	setDirector(director);
 	setDuracion(duracion);
+}
+VHS::VHS(Articulo art,std::string titulo, int genero, std::string director, int duracion){
+
+    setNumero(art.getNumero());
+    setStock(art.getStock());
+    setEstado(art.getEstado());
+    setTituloP(titulo);
+    setGeneroP(genero);
+    setDirector(director);
+    setDuracion(duracion);
 }
 void VHS::setTituloP(std::string titulo){
 	if(titulo.size() <= 30){
@@ -27,14 +37,8 @@ void VHS::setTituloP(std::string titulo){
 	}
 	setCaracteres(_tituloP);
 }
-void VHS::setGeneroP(std::string genero){
-	if(genero.size() <= 30){
-		strcpy(_generoP, genero.c_str());
-	}
-	else{
-		strcpy(_generoP, "ERROR AL CARGAR");
-	}
-	setCaracteres(_generoP);
+void VHS::setGeneroP(int genero){
+	_generoP = genero;
 }
 void VHS::setDirector(std::string director){
 	if(director.size() <= 30){
@@ -51,7 +55,7 @@ void VHS::setDuracion(int duracion){
 std::string VHS::getTituloP(){
 	return _tituloP;
 }
-std::string VHS::getGeneroP(){
+int VHS::getGeneroP(){
 	return _generoP;
 }
 std::string VHS::getDirector(){
@@ -60,18 +64,20 @@ std::string VHS::getDirector(){
 int VHS::getDuracion(){
 	return _duracion;
 }
+/*
 void VHS::cargar(){
-	string titulo, genero, director;
-	int duracion;
+	string titulo,director;
+	int duracion, genero;
 	Articulo::cargar();
 
 	cin.ignore();
 	cout << "Titulo: ";
-	getline(cin, titulo); 
+	getline(cin, titulo);
 	cout << "Genero: ";
-	getline(cin, genero);
+	genero = validarCinInt();
+	cin.ignore();
 	cout << "Director: ";
-	getline(cin, director); 
+	getline(cin, director);
 	cout << "Duracion: ";
 	duracion = validarCinInt();
 
@@ -80,10 +86,11 @@ void VHS::cargar(){
 	setDirector(director);
 	setDuracion(duracion);
 }
+*/
 void VHS::mostrar(){
 	Articulo::mostrar();
-	cout<<"Titulo: "<<_tituloP<<endl;
-	cout<<"Genero: "<<_generoP<<endl;
-	cout<<"Director: "<<_director<<endl;
-	cout<<"Duracion: "<<_duracion<<endl;
+	cout<<"Titulo: "<<  getTituloP() <<endl;
+	cout<<"Genero: " << getGeneroP() <<endl;
+	cout<<"Director: "<< getDirector() <<endl;
+	cout<<"Duracion: "<< getDuracion() <<endl;
 }

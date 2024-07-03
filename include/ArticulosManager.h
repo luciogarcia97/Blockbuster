@@ -7,6 +7,7 @@
 #include "ArchivoVHS.h"
 #include "ArchivoJuego.h"
 #include"funciones.h"
+
 class ArticulosManager {
 public:
 	void menu();
@@ -31,6 +32,8 @@ private:
 	void buscarJuego();
 	void modificarJuego();
 	void eliminarJuego();
+	ArchivoVHS _archivoVHS;
+	ArchivoJuego _archivoJuego;
 };
 
 #endif

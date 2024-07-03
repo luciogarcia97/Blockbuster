@@ -107,27 +107,25 @@ int ArchivoJuego::buscarXtitulo(){
 	fclose(pFile);
 	return -2;
 }
-int ArchivoJuego::buscarXgenero(){
+int ArchivoJuego::buscarXgenero(int genero){
 	FILE *pFile;
-	Juego obj;
-	int pos=0;
-	string genero;
-	char set[30];
-	cout<<"Ingrese el titulo a buscar: "<<endl;
-	getline(cin, genero);
-	if(genero.size() <= 30){
-		strcpy(set, genero.c_str());
-	}
-	setCaracteres(set);
-	pFile = fopen("Juegos.dat", "rb");
-	if(pFile==nullptr){ return -1;}
-	while(fread(&obj, sizeof obj, 1, pFile)==1){
-		if(strcmp(stringToConstChar(obj.getGeneroJ(), 30), set) == 0){
-			fclose(pFile);
-			return pos;
-		}
-		pos++;
-	}
-	fclose(pFile);
-	return -2;
+	Juego reg;
+	int pos = 0;
+
+   pFile = fopen("Juegos.dat","rb");
+
+    if (pFile == nullptr){
+        return -2;
+    }
+    while (fread(&reg, sizeof(genero),1,pFile))
+    {
+        if (reg.getGeneroJ()== genero){
+            fclose(pFile);
+            return pos;
+        }
+        pos++;
+    }
+
+    fclose(pFile);
+    return -1;
 }

@@ -7,10 +7,10 @@ using namespace std;
 
 Juego::Juego() {
 	strcpy(_tituloJ, "");
-	strcpy(_generoJ, "");
+	_generoJ = 0;
 	_plataforma = 0;
 }
-Juego::Juego(std::string titulo, std::string genero, int plataforma){
+Juego::Juego(std::string titulo, int genero, int plataforma){
 	setTituloJ(titulo);
 	setGeneroJ(genero);
 	setPlataforma(plataforma);
@@ -18,7 +18,7 @@ Juego::Juego(std::string titulo, std::string genero, int plataforma){
 std::string Juego::getTituloJ(){
 	return _tituloJ;
 }
-std::string Juego::getGeneroJ(){
+int Juego::getGeneroJ(){
 	return _generoJ;
 }
 int Juego::getPlataforma(){
@@ -33,33 +33,34 @@ void Juego::setTituloJ(std::string titulo){
 	}
 	setCaracteres(_tituloJ);
 }
-void Juego::setGeneroJ(std::string genero){
-	if(genero.size() <= 30){
-		strcpy(_generoJ, genero.c_str());
-	}
-	else{
-		strcpy(_generoJ, "ERROR DE CARGA");
-	}
-	setCaracteres(_generoJ);
+void Juego::setGeneroJ(int genero){
+	_generoJ = genero;
 }
 void Juego::setPlataforma(int plataforma){
 	_plataforma=plataforma;
 }
 void Juego::cargar(){
-	string titulo, genero;
-	int plataforma;
-	Articulo::cargar();
+	string titulo;
+	int plataforma, genero;
+	
 	
 	cin.ignore();
 	cout<<"Titulo: ";
 	getline(cin, titulo); 
 	
 	cout<<"Genero: ";
-	getline(cin, genero);
-	cin.ignore();
+	genero = validarCinInt();
 	
-	cout<<"Plataforma: ";
-	plataforma = validarCinInt();
+	cout<<"Plataforma: 1-PC 2-PSN 3-XBOX" << endl;
+    plataforma = validarCinInt();
+
+	while (plataforma != 1 && plataforma != 2 && plataforma !=3)
+    {
+    cout << "Dato invalido, ingrese nuevamente :" << endl;
+    plataforma = validarCinInt();
+	}
+
+	Articulo::cargar();
 	
 	setTituloJ(titulo);
 	setGeneroJ(genero);
@@ -67,7 +68,17 @@ void Juego::cargar(){
 }
 void Juego::mostrar(){
 	Articulo::mostrar();
-	cout<<"Titulo: "<<_tituloJ<<endl;
-	cout<<"Genero: "<<_generoJ<<endl;
-	cout<<"Plataforma: "<<_plataforma<<endl;
+
+	cout<<"Titulo: "<< getTituloJ()<<endl;
+	cout<<"Genero: "<<getGeneroJ()<<endl;
+
+	if (getPlataforma() == 1){
+        cout << "Plataforma: PC " << endl;
+	}
+	else if(getPlataforma()== 2){
+        cout << "Plataforma: PSN " << endl;
+	}
+	else{
+        cout << "Plataforma: XBOX " << endl;
+	}
 }

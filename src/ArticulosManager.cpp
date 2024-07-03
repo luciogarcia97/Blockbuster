@@ -18,25 +18,26 @@ void ArticulosManager::agregarVHS(){
 	ArticulosManager::menuVHS();
 }
 VHS ArticulosManager::crearArticuloVHS(){
-	string titulo, genero, director;
+	string titulo, director;
+	int genero;
 	int duracion, numeroArt;
-	Articulo articulo;
-	
-	articulo.cargar();
-	
+    Articulo a;
+
 	cout<<"Numero de Articulo: ";
 	numeroArt = validarCinInt();
 	cin.ignore();
 	cout << "Titulo: ";
-	getline(cin, titulo); 
-	cout << "Genero: ";
-	getline(cin, genero);
+	getline(cin, titulo);
+	cout << "Genero: 1-Terror 2-Accion 3-Suspenso 4-Drama 5-Infantil :" <<  endl;
+	genero = validarCinInt();
+	cin.ignore();
 	cout << "Director: ";
-	getline(cin, director); 
+	getline(cin, director);
 	cout << "Duracion: ";
 	duracion = validarCinInt();
+	a.cargar();
 
-	return VHS (titulo, genero, director, duracion);
+	return VHS (a,titulo, genero, director, duracion);
 }
 
 void ArticulosManager::listarVHS(){
@@ -216,8 +217,13 @@ void ArticulosManager::menuBuscarVHS(){
 			system("pause");
 			break;
 		case 3:
-			pos = arch.buscarXgenero();
-			ArticulosManager::mostrarVHS(arch.leerRegistro(pos));
+			int genero,posicion;
+			cout << "Ingrese el Genero: 1-Suspenso 2-Animada 3-Terror 4-Comedia 5-Ciencia ficcion";
+			genero = validarCinInt();
+
+			posicion = _archivoVHS.buscarXgenero(genero);
+
+			ArticulosManager::mostrarVHS(_archivoVHS.leerRegistro(posicion));
 			system("pause");
 			break;
 		case 4:
@@ -419,8 +425,12 @@ void ArticulosManager::menuBuscarJuegos(){
 			system("pause");
 			break;
 		case 3:
-			pos = arch.buscarXgenero();
-			ArticulosManager::mostrarJuego(arch.leerRegistro(pos));
+			int genero,posicion;
+			cout << "Ingrese el Genero: 1-Aventura 2-Accion 3-RPG 4-Deportes";
+			genero = validarCinInt();
+
+			posicion = arch.buscarXgenero(genero);
+			ArticulosManager::mostrarJuego(arch.leerRegistro(posicion));
 			system("pause");
 			break;
 	    case 4:
