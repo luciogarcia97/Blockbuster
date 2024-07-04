@@ -77,7 +77,7 @@ int ArchivoVHS::buscarXgenero(int genero){
     }
     while (fread(&reg, sizeof(genero),1,pFile))
     {
-        if (reg.getGeneroP()== genero){
+        if (reg.getGeneroP() == genero){
             fclose(pFile);
             return pos;
         }
@@ -120,7 +120,7 @@ int ArchivoVHS::contarRegistro(){
 	
 	pFile = fopen("VHS.dat", "rb");
 	if(pFile==nullptr){
-		return 0;
+		return -1;
 	}
 	fseek(pFile, 0, SEEK_END);
 	tam = ftell(pFile) / sizeof (VHS);

@@ -18,6 +18,7 @@ public:
 	void menuBuscarVHS();
 	void menuBuscarJuegos();
 	bool validarExistenciaId(int numero_articulo, int tipo);
+	void mostrarVHS(VHS reg);
 private:
 	void agregarVHS();
 	VHS crearArticuloVHS();
@@ -25,7 +26,6 @@ private:
 	Articulo cargarArticulo();
 	void mostrarArticulo();
 	void listarVHS();
-	void mostrarVHS(VHS reg);
 	void buscarVHS();
 	void modificarValoresVHS(VHS &art);
 	void modificarVHS();
