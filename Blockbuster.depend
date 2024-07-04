@@ -211,14 +211,14 @@
 	"VentaDetalleManager.h"
 	"funciones.h"
 
-1720098944 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\alquilermanager.h
+1720124776 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\alquilermanager.h
 	<iostream>
 	"Alquiler.h"
 	"Cliente.h"
 	"ArchivoAlquiler.h"
 	"AlquilerDetalleManager.h"
 
-1720099884 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilermanager.cpp
+1720124931 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilermanager.cpp
 	"AlquilerManager.h"
 
 1720102278 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilerdetallemanager.cpp

@@ -184,9 +184,12 @@ void AlquilerManager::menu(){
             listarAlquiler();
             system("pause");
 			break;
-        case 3:
-            buscarAlquiler();
-			break;
+        case 3:{
+            Alquiler obj = buscarAlquiler();
+            headerAlquiler();
+            mostrarAlquiler(obj);
+            system("pause");
+			break;}
         case 4:
             devolucionAlquiler();
 			break;
