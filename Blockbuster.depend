@@ -221,7 +221,7 @@
 1720129287 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilermanager.cpp
 	"AlquilerManager.h"
 
-1720129538 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilerdetallemanager.cpp
+1720129703 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilerdetallemanager.cpp
 	"AlquilerDetalleManager.h"
 
 1720129347 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\alquilerdetallemanager.h
@@ -243,7 +243,7 @@
 	"AppFacturacionManagger.h"
 	"ArticulosManager.h"
 
-1720128595 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\appmanager.cpp
+1720129861 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\appmanager.cpp
 	<iostream>
 	"AppManager.h"
 
@@ -267,7 +267,7 @@
 1720098946 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventadetallearchivo.cpp
 	"VentaDetalleArchivo.h"
 
-1720129663 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventadetallemanager.cpp
+1720131007 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventadetallemanager.cpp
 	"VentaDetalleManager.h"
 
 1720098944 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\apppersonamanager.h

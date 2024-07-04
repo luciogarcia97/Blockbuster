@@ -4,11 +4,13 @@ void VentaDetalleManager::cargarDetalleVenta(int numeroVenta){
     int numero_articulo;
     int cantidad;
     float precio = 0;
-    int opcion;
+    int opcion, stock=0;
     int tipo_articulo;
     ArchivoVHS dataVHS;
     ArchivoJuego dataJuego;
     ArticulosManager am;
+    VHS artV;
+    Juego artJ;
     do
     {
         system("cls");
@@ -33,14 +35,24 @@ void VentaDetalleManager::cargarDetalleVenta(int numeroVenta){
         std::cout << "2) Ingrese la cantidad de productos: ";
         cantidad = validarCinInt();
 
+
         if (tipo_articulo == 1)
         {
             int posicionVHS = dataVHS.buscarXnumero(numero_articulo);
             precio = dataVHS.leerRegistro(posicionVHS).getPrecio() * cantidad;
-        }else if (tipo_articulo == 2)
+            stock = dataVHS.leerRegistro(posicionVHS).getStock() - cantidad;
+            artV = dataVHS.leerRegistro(posicionVHS);
+            artV.setStock(stock);
+            dataVHS.grabar(posicionVHS, artV);
+        }
+        else if (tipo_articulo == 2)
         {
             int posicionJuego = dataJuego.buscarXnumero(numero_articulo);
             precio = dataJuego.leerRegistro(posicionJuego).getPrecio() * cantidad;
+            stock = dataJuego.leerRegistro(posicionJuego).getStock() - cantidad;
+            artJ = dataJuego.leerRegistro(posicionJuego);
+            artJ.setStock(stock);
+            dataJuego.grabar(posicionJuego, artJ);
         }
 
         agregarVentaDetalle(Detalleventa(numeroVenta,numero_articulo, tipo_articulo,cantidad,precio));

@@ -359,7 +359,10 @@ void AppManager::menu()
         cout << "1- Menu Facturacion" << endl;
         cout << "2- Menu Persona" << endl;
         cout << "3- Menu Stock" << endl;
-        cout << "4- Reportes" << endl;
+        if (obj.getCargo() == 1)
+        {
+            cout << "4- Reportes" << endl;
+        }
         cout << "-----------------------------" << endl;
         cout << "0- SALIR" << endl;
         cout << "Opcion: "<< endl;
