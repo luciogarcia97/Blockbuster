@@ -30,8 +30,6 @@ void GeneroManager::menu(){
         break;
 
         }
-    system("pause");
-
     }while(opcion!= 0);
 
 }

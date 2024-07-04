@@ -43,7 +43,7 @@ void VentaDetalleManager::cargarDetalleVenta(int numeroVenta){
             precio = dataJuego.leerRegistro(posicionJuego).getPrecio() * cantidad;
         }
 
-        agregarVentaDetalle(Detalleventa(numeroVenta,numero_articulo,cantidad,precio));
+        agregarVentaDetalle(Detalleventa(numeroVenta,numero_articulo, tipo_articulo,cantidad,precio));
         std::cout << "Desea cargar otro producto? (1-Si o 2-No): ";
         opcion = validarCinInt();
     } while (opcion == 1);
@@ -176,7 +176,6 @@ int option;
             std::cout << "1) Ingrese el numero de alquiler: ";
             numero_venta = validarCinInt();
             cargarDetalleVenta(numero_venta);
-			system("pause");
 			break;
 		case 2:
             listarVentaDetalle();
@@ -190,7 +189,6 @@ int option;
             break;
         default:
             std::cout << "Opcion incorrecta, presione cualquier tecla para volver a seleccionar opcion" << std::endl;
-			system("pause");
 			break;
 		}
 	}while (option != 0);

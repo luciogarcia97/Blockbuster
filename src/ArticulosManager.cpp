@@ -133,11 +133,9 @@ void ArticulosManager::menu(){
 			break;
 		case 1:
 			menuVHS();
-			system("pause");
 			break;
 		case 2:
 			menuJuegos();
-			system("pause");
 			break;
 		}
 	}while(opc != 0);
@@ -159,11 +157,9 @@ void ArticulosManager::menuVHS(){
 		switch(opc){
 		case 1:
 			agregarVHS();
-			system("pause");
 			break;
 		case 2:
 			modificarVHS();
-			system("pause");
 			break;
 		case 3:
 			listarVHS();
@@ -171,11 +167,9 @@ void ArticulosManager::menuVHS(){
 			break;
 		case 4:
 			menuBuscarVHS();
-			system("pause");
 			break;
 		case 5:
 			eliminarVHS();
-			system("pause");
 			break;
 		case 6:
 			break;
@@ -419,11 +413,9 @@ void ArticulosManager::menuJuegos(){
 		switch(opc){
 		case 1:
 			agregarJuego();
-			system("pause");
 			break;
 		case 2:
 			modificarJuego();
-			system("pause");
 			break;
 		case 3:
 			listarJuego();
@@ -431,11 +423,9 @@ void ArticulosManager::menuJuegos(){
 			break;
 		case 4:
 			menuBuscarJuegos();
-			system("pause");
 			break;
 		case 5:
 			eliminarJuego();
-			system("pause");
 			break;
 		case 6:
 			break;

@@ -182,6 +182,7 @@ void AlquilerManager::menu(){
 			break;
 		case 2:
             listarAlquiler();
+            system("pause");
 			break;
         case 3:
             buscarAlquiler();
@@ -198,6 +199,5 @@ void AlquilerManager::menu(){
             std::cout << "Opcion incorrecta, presione cualquier tecla para volver a seleccionar opcion" << std::endl;
 			break;
 		}
-        system("pause");
 	}while (option != 0);
 }

@@ -186,7 +186,6 @@ int option;
             std::cout << "1) Ingrese el numero de alquiler: ";
             numero_alquiler = validarCinInt();
             cargarDetalleAlquiler(numero_alquiler);
-			system("pause");
 			break;
 		case 2:
             listarAlquilerDetalle();

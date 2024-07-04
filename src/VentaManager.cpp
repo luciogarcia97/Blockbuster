@@ -170,6 +170,7 @@ void VentaManager::menu(){
 			break;
 		case 2:
             listarVenta();
+            system("pause");
 			break;
         case 3:
             buscarVenta();
@@ -183,7 +184,6 @@ void VentaManager::menu(){
             std::cout << "Opcion incorrecta, presione cualquier tecla para volver a seleccionar opcion" << std::endl;
 			break;
 		}
-        system("pause");
 	}while (option != 0);
     
 }
