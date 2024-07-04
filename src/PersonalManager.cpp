@@ -31,7 +31,7 @@ Personal PersonalManager::crearPersonal()
         cout << "Ingrese el Cargo del Personal : (1-Gerente, 2-Supervisor, 3-Vendedor)" << endl;
         cargo = validarCinInt();
     } while (cargo < 1 || cargo > 3);
-    
+
     cout << "Ingrese el Sueldo del Personal: " << endl;
     sueldo = validarCinFloat();
     cout << "Ingrese el porcentaje de comision del Personal: " << endl;
@@ -100,6 +100,7 @@ void PersonalManager::menu(){
         break;
         case 2:
         listarPersonal();
+        system("pause");
         break;
         case 3:
         modificarPersonal();
@@ -108,7 +109,6 @@ void PersonalManager::menu(){
         eliminarPersonal();
         break;
         }
-        system("pause");
     }while(opcion!= 0);
 
 }
@@ -206,7 +206,7 @@ void PersonalManager::volverCargarPersonal(Personal &registro)
         cout << "Ingrese el Cargo del Personal : (1-Gerente, 2-Supervisor, 3-Vendedor)" << endl;
         cargo = validarCinInt();
     } while (cargo < 1 || cargo > 3);
-    
+
     cout << "Ingrese el Sueldo del Personal: " << endl;
     sueldo = validarCinFloat();
     cout << "Ingrese la comision del Personal: " << endl;
@@ -233,10 +233,10 @@ void PersonalManager::mostrarPersonal(Personal reg)
     cout << "Mail: " << reg.getMail() << endl;
     cout << "Cel: " << reg.getCel() << endl;
     cout << "Dni: " << reg.getDni() << endl;
-    cout << "Num Legajo: " << reg.getLegajoPersonal();
-    cout << "Contrasena del Personal: " << reg.getContrasena();
-    cout << "Cargo del Personal: " << reg.getCargo();
-    cout << "Sueldo del Personal: " << reg.getSueldo();
+    cout << "Num Legajo: " << reg.getLegajoPersonal()<<endl;
+    cout << "Contrasena del Personal: " << reg.getContrasena()<<endl;
+    cout << "Cargo del Personal: " << reg.getCargo()<<endl;
+    cout << "Sueldo del Personal: " << reg.getSueldo()<<endl;
     cout << "Estado del Personal: " << (reg.getEstadoPersonal() ? "Disponible": "Eliminado") << endl;
 }
 

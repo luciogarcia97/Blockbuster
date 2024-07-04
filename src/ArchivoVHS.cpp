@@ -31,7 +31,7 @@ int ArchivoVHS::buscarXnumero(int numeroArt){
 
 int ArchivoVHS::getNumeroArticuloV(){
 	int cantidad_vhs = contarRegistro();
-	
+
 	if (cantidad_vhs > 0)
 	{
 		return leerRegistro(cantidad_vhs-1).getNumeroArtV()+1;
@@ -117,14 +117,14 @@ bool ArchivoVHS::listarRegistros(){
 int ArchivoVHS::contarRegistro(){
 	FILE *pFile;
 	int tam;
-	
+
 	pFile = fopen("VHS.dat", "rb");
 	if(pFile==nullptr){
 		return 0;
 	}
 	fseek(pFile, 0, SEEK_END);
 	tam = ftell(pFile) / sizeof (VHS);
-	
+
 	fclose(pFile);
 	return tam;
 }

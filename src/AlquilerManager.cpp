@@ -60,24 +60,28 @@ void AlquilerManager::agregarAlquiler(){
 
 void AlquilerManager::listarAlquiler(){
     int cantidad = _archivoAlquiler.contarRegistros();
-    Alquiler obj;
+    Alquiler *obj;
 
-    if (cantidad == 0)
-    {
-        std::cout << "No hay registros para mostrar" << std::endl;
-        return;
-    }
-    if (cantidad == -1)
-    {
-        std::cout << "Error al leer el archivo" << std::endl;
+    obj = new Alquiler[cantidad];
+    if(obj == nullptr){
+        std::cout << "No se pudo pedir memoria..." << std::endl;
+        delete []obj;
         return;
     }
 
     headerAlquiler();
     for (int i = 0; i < cantidad; i++)
     {
+        if (_archivoAlquiler.leerRegistro(i).getNumeroAlquiler() == -1)
+        {
+            std::cout << "No existe el archivo" << std::endl;
+            delete []obj;
+            return;
+        }
         mostrarAlquiler(_archivoAlquiler.leerRegistro(i));
     }
+
+    delete []obj;
 }
 
 void AlquilerManager::mostrarAlquiler(Alquiler reg){
@@ -143,7 +147,7 @@ void AlquilerManager::devolucionAlquiler(){
         std::cout << "El alquiler ingresado se encuentra entregado, se regresara al menu de alquileres" << std::endl;
         return;
     }
-    
+
     headerAlquiler();
     mostrarAlquiler(reg);
     std::cout << std::endl << "Actualizar el alquiler como entregado? (1-Si o 0-No)" << std::endl;
@@ -182,6 +186,7 @@ void AlquilerManager::menu(){
 			break;
 		case 2:
             listarAlquiler();
+            system("pause");
 			break;
         case 3:
             buscarAlquiler();
@@ -198,6 +203,5 @@ void AlquilerManager::menu(){
             std::cout << "Opcion incorrecta, presione cualquier tecla para volver a seleccionar opcion" << std::endl;
 			break;
 		}
-        system("pause");
 	}while (option != 0);
 }

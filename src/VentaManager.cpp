@@ -27,11 +27,11 @@ Venta VentaManager::crearVenta(){
     //Carga de la venta detalle
     VentaDetalleManager vdm;
     vdm.cargarDetalleVenta(numero_venta);
-    
+
     //Carga la fecha de compra del momento en el cual se ejecuto la carga.
     timestamp = Fecha();
     std::cout << "4) La fecha de la operacion fue: " << timestamp.fechaTexto() << std::endl;
-    
+
     system("cls");
     return Venta(numero_venta, timestamp, numero_cliente,legajo_personal, forma_pago);
 }
@@ -83,25 +83,22 @@ void VentaManager::agregarVenta(){
 
 void VentaManager::listarVenta(){
     int cantidad = _archivoVenta.contarRegistros();
-    Venta obj;
+    Venta *obj;
 
-    if (cantidad == 0)
-    {
-        std::cout << "No hay registros para mostrar" << std::endl;
+    obj = new Venta[cantidad];
+    if(obj == nullptr){
+        cout << "No se pudo pedir memoria... " << std::endl;
+        delete []obj;
         return;
     }
-    if (cantidad == -1)
-    {
-        std::cout << "Error al leer el archivo" << std::endl;
-        return;
-    }
-    
-    
+
     headerVentas();
     for(int i=0; i<cantidad; i++)
     {
         mostrarVenta(_archivoVenta.leerRegistro(i));
     }
+
+    delete []obj;
 }
 
 void VentaManager::modificarVenta(){
@@ -129,7 +126,7 @@ void VentaManager::modificarVenta(){
 
 void VentaManager::buscarVenta(){
     int id, posicion;
-    
+
     std::cout << "Ingrese el id de venta a buscar: ";
     id = validarCinInt();
 
@@ -183,7 +180,6 @@ void VentaManager::menu(){
             std::cout << "Opcion incorrecta, presione cualquier tecla para volver a seleccionar opcion" << std::endl;
 			break;
 		}
-        system("pause");
 	}while (option != 0);
-    
+
 }

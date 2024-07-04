@@ -30,8 +30,6 @@ void GeneroManager::menu(){
         break;
 
         }
-    system("pause");
-
     }while(opcion!= 0);
 
 }
@@ -164,7 +162,7 @@ int num_genero, index;
 void GeneroManager::volverCargarGenero(Genero &registro){
     string nombre_genero;
     bool estado;
-    
+
     cin.ignore();
     cout << "Ingrese el nombre del Genero: " << endl;
     std::getline (std::cin,nombre_genero);

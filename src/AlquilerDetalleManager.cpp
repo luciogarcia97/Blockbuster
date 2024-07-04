@@ -23,11 +23,11 @@ void AlquilerDetalleManager::cargarDetalleAlquiler(int numeroAlquiler){
             std::cout << "Tipo de articulo incorrecto, intente nuevamente (1-VHS, 2-Juego): ";
             tipo_articulo = validarCinInt();
         }
-        
+
         std::cout << "1) Ingrese el numero de articulo: ";
         numero_articulo = validarCinInt();
-        
-        while (!am.validarExistenciaId(numero_articulo,tipo_articulo)){ 
+
+        while (!am.validarExistenciaId(numero_articulo,tipo_articulo)){
             std::cout << "El articulo no existe, ingrese nuevamente: ";
             numero_articulo = validarCinInt();
         }
@@ -49,7 +49,7 @@ void AlquilerDetalleManager::cargarDetalleAlquiler(int numeroAlquiler){
         std::cout << "Desea cargar otro producto? (1-Si o 2-No): ";
         opcion = validarCinInt();
     } while (opcion == 1);
-    
+
 }
 void AlquilerDetalleManager::agregarAlquilerDetalle(DetalleAlquiler obj){
     if (_archivoAlquilerDetalle.agregarRegistroAlquilerDetalle(obj))
@@ -62,7 +62,7 @@ void AlquilerDetalleManager::agregarAlquilerDetalle(DetalleAlquiler obj){
 void AlquilerDetalleManager::listarAlquilerDetalle(){
     int cantidad = _archivoAlquilerDetalle.contarRegistros();
     DetalleAlquiler *obj;
-    
+
     obj = new DetalleAlquiler[cantidad];
     if (obj == nullptr)
     {
@@ -70,7 +70,7 @@ void AlquilerDetalleManager::listarAlquilerDetalle(){
         delete []obj;
         return;
     }
-    
+
     headerAlquilerDetalle();
     for (int i = 0; i < cantidad; i++){
         if (_archivoAlquilerDetalle.leerRegistro(i).getNumeroAlquilerDetalle() == -1)
@@ -81,7 +81,7 @@ void AlquilerDetalleManager::listarAlquilerDetalle(){
         }
         mostrarAlquilerDetalle(_archivoAlquilerDetalle.leerRegistro(i));
     }
-    
+
     delete []obj;
 }
 
@@ -161,7 +161,7 @@ DetalleAlquiler* AlquilerDetalleManager::buscarAlquilerDetalle(int id){
         return obj;
         delete []obj;
     }
-    
+
     return obj;
     delete []obj;
 }
@@ -186,15 +186,14 @@ int option;
             std::cout << "1) Ingrese el numero de alquiler: ";
             numero_alquiler = validarCinInt();
             cargarDetalleAlquiler(numero_alquiler);
-			system("pause");
 			break;
 		case 2:
             listarAlquilerDetalle();
-			system("pause");
+            system("pause");
 			break;
         case 3:
             listarAlquilerDetalleById();
-			system("pause");
+            system("pause");
 			break;
         case 0:
             break;

@@ -60,14 +60,14 @@ bool ArchivoJuego::listarRegistros(){
 int ArchivoJuego::contarRegistro(){
 	FILE *pFile;
 	int tam;
-	
+
 	pFile = fopen("Juegos.dat", "rb");
 	if(pFile==nullptr){
 		return 0;
 	}
 	fseek(pFile, 0, SEEK_END);
 	tam = ftell(pFile) / sizeof (Juego);
-	
+
 	fclose(pFile);
 	return tam;
 }
@@ -132,7 +132,7 @@ int ArchivoJuego::buscarXgenero(int genero){
 
 int ArchivoJuego::getNumeroArticuloJ(){
 	int cantidad_juego = contarRegistro();
-	
+
 	if (cantidad_juego > 0)
 	{
 		return leerRegistro(cantidad_juego-1).getNumeroArtJ()+1;

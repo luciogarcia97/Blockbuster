@@ -22,11 +22,11 @@ void VentaDetalleManager::cargarDetalleVenta(int numeroVenta){
             std::cout << "Tipo de articulo incorrecto, intente nuevamente (1-VHS, 2-Juego): ";
             tipo_articulo = validarCinInt();
         }
-        
+
         std::cout << "1) Ingrese el numero de articulo: ";
         numero_articulo = validarCinInt();
 
-        while (!am.validarExistenciaId(numero_articulo,tipo_articulo)){ 
+        while (!am.validarExistenciaId(numero_articulo,tipo_articulo)){
             std::cout << "El articulo no existe, ingrese nuevamente: ";numero_articulo = validarCinInt();
         }
 
@@ -43,11 +43,11 @@ void VentaDetalleManager::cargarDetalleVenta(int numeroVenta){
             precio = dataJuego.leerRegistro(posicionJuego).getPrecio() * cantidad;
         }
 
-        agregarVentaDetalle(Detalleventa(numeroVenta,numero_articulo,cantidad,precio));
+        agregarVentaDetalle(Detalleventa(numeroVenta,numero_articulo, tipo_articulo,cantidad,precio));
         std::cout << "Desea cargar otro producto? (1-Si o 2-No): ";
         opcion = validarCinInt();
     } while (opcion == 1);
-    
+
 }
 void VentaDetalleManager::agregarVentaDetalle(Detalleventa obj){
     if (_archivoVentaDetalle.agregarRegistroVentaDetalle(obj))
@@ -60,7 +60,7 @@ void VentaDetalleManager::agregarVentaDetalle(Detalleventa obj){
 void VentaDetalleManager::listarVentaDetalle(){
     int cantidad = _archivoVentaDetalle.contarRegistros();
     Detalleventa *obj;
-    
+
     obj = new Detalleventa[cantidad];
     if (obj == nullptr)
     {
@@ -68,10 +68,10 @@ void VentaDetalleManager::listarVentaDetalle(){
         delete []obj;
         return;
     }
-    
+
     headerVentaDetalle();
     for (int i = 0; i < cantidad; i++) mostrarVentaDetalle(_archivoVentaDetalle.leerRegistro(i));
-    
+
     delete []obj;
 }
 
@@ -151,7 +151,7 @@ Detalleventa* VentaDetalleManager::buscarVentaDetalle(int id){
         return obj;
         delete []obj;
     }
-    
+
     return obj;
     delete []obj;
 }
@@ -176,21 +176,19 @@ int option;
             std::cout << "1) Ingrese el numero de alquiler: ";
             numero_venta = validarCinInt();
             cargarDetalleVenta(numero_venta);
-			system("pause");
 			break;
 		case 2:
             listarVentaDetalle();
-			system("pause");
+            system("pause");
 			break;
         case 3:
             listarVentaDetalleById();
-			system("pause");
+            system("pause");
 			break;
         case 0:
             break;
         default:
             std::cout << "Opcion incorrecta, presione cualquier tecla para volver a seleccionar opcion" << std::endl;
-			system("pause");
 			break;
 		}
 	}while (option != 0);

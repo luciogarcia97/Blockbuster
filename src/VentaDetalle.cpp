@@ -6,11 +6,12 @@ Detalleventa::Detalleventa(){
     _precio = 0.0f;
 }
 
-Detalleventa::Detalleventa(int nv, int na, int c, float p){
+Detalleventa::Detalleventa(int nv, int na, int t, int c, float p){
     setnumventa(nv);
     setnumarticulo(na);
     setcantidad(c);
     setprecio(p);
+    setTipoArticulo(t);
 }
 
 int Detalleventa::getnumventa(){
@@ -23,6 +24,10 @@ int Detalleventa::getnumarticulo(){
 
 int Detalleventa::getcantidad(){
     return _cantidad;
+}
+
+int Detalleventa::getTipoArticulo(){
+    return _tipo_articulo;
 }
 
 float Detalleventa::getprecio(){
@@ -48,6 +53,11 @@ void Detalleventa::setcantidad(int c){
     if (validarPositivoInt(c)) _cantidad = c;
     else _cantidad = 0;
 }
+
+void Detalleventa::setTipoArticulo(int t){
+    _tipo_articulo = t;
+}
+
 
 // void Detalleventa::cargardetalleventa(){
 //     int numventa;

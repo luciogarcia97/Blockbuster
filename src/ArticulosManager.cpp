@@ -29,7 +29,7 @@ VHS ArticulosManager::crearArticuloVHS(){
 	getline(cin, director);
 	cout << "Duracion: ";
 	duracion = validarCinInt();
-	
+
 	a = cargarArticulo();
 
 	return VHS (a,numeroArt,titulo, genero, director, duracion);
@@ -133,11 +133,9 @@ void ArticulosManager::menu(){
 			break;
 		case 1:
 			menuVHS();
-			system("pause");
 			break;
 		case 2:
 			menuJuegos();
-			system("pause");
 			break;
 		}
 	}while(opc != 0);
@@ -159,11 +157,9 @@ void ArticulosManager::menuVHS(){
 		switch(opc){
 		case 1:
 			agregarVHS();
-			system("pause");
 			break;
 		case 2:
 			modificarVHS();
-			system("pause");
 			break;
 		case 3:
 			listarVHS();
@@ -171,11 +167,9 @@ void ArticulosManager::menuVHS(){
 			break;
 		case 4:
 			menuBuscarVHS();
-			system("pause");
 			break;
 		case 5:
 			eliminarVHS();
-			system("pause");
 			break;
 		case 6:
 			break;
@@ -235,7 +229,7 @@ Articulo ArticulosManager::cargarArticulo(){
 	int stock;
 	float precio;
 	bool estado;
-	
+
 	cin.ignore();
 	cout<<"Stock: ";
 	stock = validarCinInt();
@@ -245,7 +239,7 @@ Articulo ArticulosManager::cargarArticulo(){
 	cin.ignore();
 	cout<<"Estado: ";
 	estado = validarCinBool();
-	
+
 	return Articulo(stock, precio, estado);
 }
 
@@ -269,13 +263,13 @@ void ArticulosManager::agregarJuego(){
 Juego ArticulosManager::crearArticuloJuego(){
 	string titulo;
 	int plataforma, genero, numeroArt;
-	
+
 	numeroArt = _archivoJuego.getNumeroArticuloJ();
 	cout<<"Carga del articulo Juego #" << numeroArt << endl;
 	cin.ignore();
 	cout<<"Titulo: ";
-	getline(cin, titulo); 
-	
+	getline(cin, titulo);
+
 	cout<<"Genero: 1-Aventura 2-Accion 3-RPG 4-Deportes";
 	genero = validarCinInt();
 
@@ -284,7 +278,7 @@ Juego ArticulosManager::crearArticuloJuego(){
 		cout << "Dato invalido, ingrese nuevamente :" << endl;
 		genero = validarCinInt();
 	}
-	
+
 	cout<<"Plataforma: 1-PC 2-PSN 3-XBOX" << endl;
     plataforma = validarCinInt();
 
@@ -419,11 +413,9 @@ void ArticulosManager::menuJuegos(){
 		switch(opc){
 		case 1:
 			agregarJuego();
-			system("pause");
-			break;
+            break;
 		case 2:
 			modificarJuego();
-			system("pause");
 			break;
 		case 3:
 			listarJuego();
@@ -431,11 +423,9 @@ void ArticulosManager::menuJuegos(){
 			break;
 		case 4:
 			menuBuscarJuegos();
-			system("pause");
 			break;
 		case 5:
 			eliminarJuego();
-			system("pause");
 			break;
 		case 6:
 			break;
