@@ -19,7 +19,7 @@ int ArchivoVHS::buscarXnumero(int numeroArt){
 	pFile = fopen("VHS.dat", "rb");
 	if(pFile==nullptr){ return -1;}
 	while(fread(&obj, sizeof(VHS), 1, pFile)==1){
-		if(obj.getNumero() == numeroArt){
+		if(obj.getNumeroArtV() == numeroArt){
 			fclose(pFile);
 			return pos;
 		}

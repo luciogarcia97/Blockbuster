@@ -83,22 +83,25 @@ void VentaManager::agregarVenta(){
 
 void VentaManager::listarVenta(){
     int cantidad = _archivoVenta.contarRegistros();
-    Venta *obj;
+    Venta obj;
 
-    obj = new Venta[cantidad];
-    if(obj == nullptr){
-        cout << "No se pudo pedir memoria... " << std::endl;
-        delete []obj;
+    if (cantidad == 0)
+    {
+        std::cout << "No hay registros para mostrar" << std::endl;
         return;
     }
-
+    if (cantidad == -1)
+    {
+        std::cout << "Error al leer el archivo" << std::endl;
+        return;
+    }
+    
+    
     headerVentas();
     for(int i=0; i<cantidad; i++)
     {
         mostrarVenta(_archivoVenta.leerRegistro(i));
     }
-    
-    delete []obj;
 }
 
 void VentaManager::modificarVenta(){

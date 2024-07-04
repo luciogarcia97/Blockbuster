@@ -24,7 +24,7 @@ int ArchivoJuego::buscarXnumero(int numeroArt){
 	pFile = fopen("Juegos.dat", "rb");
 	if(pFile==nullptr){ return -1;}
 	while(fread(&obj, sizeof obj, 1, pFile)==1){
-		if(obj.getNumero() == numeroArt){
+		if(obj.getNumeroArtJ() == numeroArt){
 			fclose(pFile);
 			return pos;
 		}

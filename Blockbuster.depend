@@ -85,10 +85,10 @@
 	"Persona.h"
 	<string>
 
-1719526360 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\funciones.cpp
+1720058801 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\funciones.cpp
 	"funciones.h"
 
-1719977017 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivojuego.cpp
+1720058115 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivojuego.cpp
 	"ArchivoJuego.h"
 	"Juego.h"
 	"Articulo.h"
@@ -108,7 +108,7 @@
 
 1719978329 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\articulo.h
 
-1719977700 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\juego.cpp
+1720059367 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\juego.cpp
 	"Juego.h"
 	"funciones.h"
 	<cstring>
@@ -119,7 +119,7 @@
 	"Articulo.h"
 	<string>
 
-1719977306 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivovhs.cpp
+1720058094 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\archivovhs.cpp
 	"ArchivoVHS.h"
 
 1719965138 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\archivovhs.h
@@ -200,7 +200,7 @@
 	"Personal.h"
 	"Persona.h"
 
-1719696014 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventamanager.cpp
+1720057703 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventamanager.cpp
 	"VentaManager.h"
 
 1717553593 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\ventamanager.h
@@ -217,7 +217,7 @@
 	"ArchivoAlquiler.h"
 	"AlquilerDetalleManager.h"
 
-1720041878 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilermanager.cpp
+1720058424 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilermanager.cpp
 	"AlquilerManager.h"
 
 1720041563 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilerdetallemanager.cpp

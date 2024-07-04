@@ -72,11 +72,11 @@ void headerAlquiler(){
 }
 
 void headerAlquilerDetalle(){
-    std::cout << "Alquiler" << "\tArticulo" << "\tCantidad" << "\tValor total" << std::endl;
+    std::cout << "Alquiler" << "\tArticulo" << "\tTipo Articulo" << "\tCantidad" << "\tValor total" << std::endl;
 }
 
 void headerVentaDetalle(){
-    std::cout << "Venta" << "\tArticulo" << "\tCantidad" << "\tValor total" << std::endl;
+    std::cout << "Venta" << "\tArticulo" << "\tTipo Articulo" << "\tCantidad" << "\tValor total" << std::endl;
 }
 
 const char* stringToConstChar(std::string nombre, int caracteres){
