@@ -9,6 +9,7 @@ class AlquilerManager
 {
     public:
         void menu();
+        bool validarExistencia(int numero);
     private:
         void agregarAlquiler();
         void listarAlquiler();

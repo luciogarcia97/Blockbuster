@@ -23,11 +23,11 @@ void AlquilerDetalleManager::cargarDetalleAlquiler(int numeroAlquiler){
             std::cout << "Tipo de articulo incorrecto, intente nuevamente (1-VHS, 2-Juego): ";
             tipo_articulo = validarCinInt();
         }
-        
+
         std::cout << "1) Ingrese el numero de articulo: ";
         numero_articulo = validarCinInt();
-        
-        while (!am.validarExistenciaId(numero_articulo,tipo_articulo)){ 
+
+        while (!am.validarExistenciaId(numero_articulo,tipo_articulo)){
             std::cout << "El articulo no existe, ingrese nuevamente: ";
             numero_articulo = validarCinInt();
         }
@@ -49,7 +49,7 @@ void AlquilerDetalleManager::cargarDetalleAlquiler(int numeroAlquiler){
         std::cout << "Desea cargar otro producto? (1-Si o 2-No): ";
         opcion = validarCinInt();
     } while (opcion == 1);
-    
+
 }
 void AlquilerDetalleManager::agregarAlquilerDetalle(DetalleAlquiler obj){
     if (_archivoAlquilerDetalle.agregarRegistroAlquilerDetalle(obj))
@@ -68,7 +68,7 @@ void AlquilerDetalleManager::listarAlquilerDetalle(){
     }
 
     DetalleAlquiler *obj;
-    
+
     obj = new DetalleAlquiler[cantidad];
     if (obj == nullptr)
     {
@@ -76,7 +76,7 @@ void AlquilerDetalleManager::listarAlquilerDetalle(){
         delete []obj;
         return;
     }
-    
+
     headerAlquilerDetalle();
     for (int i = 0; i < cantidad; i++){
         if (_archivoAlquilerDetalle.leerRegistro(i).getNumeroAlquilerDetalle() == -1)
@@ -87,7 +87,7 @@ void AlquilerDetalleManager::listarAlquilerDetalle(){
         }
         mostrarAlquilerDetalle(_archivoAlquilerDetalle.leerRegistro(i));
     }
-    
+
     delete []obj;
 }
 
@@ -176,7 +176,7 @@ DetalleAlquiler* AlquilerDetalleManager::buscarAlquilerDetalle(int id){
         return obj;
         delete []obj;
     }
-    
+
     return obj;
     delete []obj;
 }
@@ -195,13 +195,21 @@ int option;
 		system("cls");
 
 		switch(option){
-		case 1:
+		case 1:{
             system("cls");
             int numero_alquiler;
+            AlquilerManager am;
             std::cout << "1) Ingrese el numero de alquiler: ";
             numero_alquiler = validarCinInt();
+            while (!am.validarExistencia(numero_alquiler))
+            {
+                std::cout << "Alquiler ingresado no existe, ingrese nuevamente o presione 0 para salir: ";
+                numero_alquiler = validarCinInt();
+                if (numero_alquiler == 0) return;
+            }
+
             cargarDetalleAlquiler(numero_alquiler);
-			break;
+			break;}
 		case 2:
             listarAlquilerDetalle();
 			system("pause");
@@ -222,7 +230,7 @@ int option;
 
 bool AlquilerDetalleManager::validarExistenciaId(int numeroAlquiler){
     int cantidad = _archivoAlquilerDetalle.contarRegistros();
-    
+
     for (int i = 0; i < cantidad; i++)
     {
         if (_archivoAlquilerDetalle.leerRegistro(i).getNumeroAlquilerDetalle() == numeroAlquiler)

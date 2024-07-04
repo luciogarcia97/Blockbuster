@@ -1,6 +1,7 @@
 #pragma once
 #include "DetalleAlquiler.h"
 #include "ArchivoDetalleAlquiler.h"
+#include "AlquilerManager.h"
 #include "ArticulosManager.h"
 
 class AlquilerDetalleManager

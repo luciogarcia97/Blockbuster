@@ -342,7 +342,6 @@ void menuReportes(){
     }while(option != 0);
 }
 
-
 void AppManager::menu()
 {
     Personal obj;

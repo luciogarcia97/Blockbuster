@@ -204,3 +204,15 @@ void AlquilerManager::menu(){
 		}
 	}while (option != 0);
 }
+bool AlquilerManager::validarExistencia(int numero){
+    int cantidad = _archivoAlquiler.contarRegistros();
+    
+    for (int i = 0; i < cantidad; i++)
+    {
+        if (_archivoAlquiler.leerRegistro(i).getNumeroAlquiler() == numero)
+        {
+            return true;
+        }
+    }
+    return false;
+}

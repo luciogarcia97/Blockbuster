@@ -188,3 +188,15 @@ void VentaManager::menu(){
 	}while (option != 0);
     
 }
+bool VentaManager::validarExistencia(int numero){
+    int cantidad = _archivoVenta.contarRegistros();
+
+    for (int i = 0; i < cantidad; i++)
+    {
+        if (_archivoVenta.leerRegistro(i).getNumeroVenta() == numero)
+        {
+            return true;
+        }
+    }
+    return false;
+}

@@ -9,6 +9,7 @@ class VentaManager
 {
 public:
    void menu();
+   bool validarExistencia(int numero);
 private:
    void agregarVenta();
    void listarVenta();

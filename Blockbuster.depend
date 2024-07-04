@@ -26,7 +26,7 @@
 	<string>
 	"funciones.h"
 
-1720098946 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\venta.cpp
+1720128939 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\venta.cpp
 	"Venta.h"
 
 1720098944 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\venta.h
@@ -201,32 +201,33 @@
 	"Personal.h"
 	"Persona.h"
 
-1720125311 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventamanager.cpp
+1720129009 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventamanager.cpp
 	"VentaManager.h"
 
-1720098945 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\ventamanager.h
+1720128887 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\ventamanager.h
 	<iostream>
 	"Venta.h"
 	"ArchivoVenta.h"
 	"VentaDetalleManager.h"
 	"funciones.h"
 
-1720124776 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\alquilermanager.h
+1720129243 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\alquilermanager.h
 	<iostream>
 	"Alquiler.h"
 	"Cliente.h"
 	"ArchivoAlquiler.h"
 	"AlquilerDetalleManager.h"
 
-1720124931 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilermanager.cpp
+1720129287 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilermanager.cpp
 	"AlquilerManager.h"
 
-1720102278 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilerdetallemanager.cpp
+1720129538 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\alquilerdetallemanager.cpp
 	"AlquilerDetalleManager.h"
 
-1720102099 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\alquilerdetallemanager.h
+1720129347 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\alquilerdetallemanager.h
 	"DetalleAlquiler.h"
 	"ArchivoDetalleAlquiler.h"
+	"AlquilerManager.h"
 	"ArticulosManager.h"
 
 1720098944 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\personamanager.h
@@ -242,7 +243,7 @@
 	"AppFacturacionManagger.h"
 	"ArticulosManager.h"
 
-1720128216 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\appmanager.cpp
+1720128595 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\appmanager.cpp
 	<iostream>
 	"AppManager.h"
 
@@ -252,9 +253,10 @@
 1720099604 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\ventadetalle.h
 	"funciones.h"
 
-1720101376 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\ventadetallemanager.h
+1720129076 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\ventadetallemanager.h
 	"VentaDetalle.h"
 	"VentaDetalleArchivo.h"
+	"VentaManager.h"
 	"ArticulosManager.h"
 
 1720098944 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\ventadetallearchivo.h
@@ -265,7 +267,7 @@
 1720098946 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventadetallearchivo.cpp
 	"VentaDetalleArchivo.h"
 
-1720101973 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventadetallemanager.cpp
+1720129663 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventadetallemanager.cpp
 	"VentaDetalleManager.h"
 
 1720098944 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\apppersonamanager.h

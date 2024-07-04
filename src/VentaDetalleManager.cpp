@@ -22,11 +22,11 @@ void VentaDetalleManager::cargarDetalleVenta(int numeroVenta){
             std::cout << "Tipo de articulo incorrecto, intente nuevamente (1-VHS, 2-Juego): ";
             tipo_articulo = validarCinInt();
         }
-        
+
         std::cout << "1) Ingrese el numero de articulo: ";
         numero_articulo = validarCinInt();
 
-        while (!am.validarExistenciaId(numero_articulo,tipo_articulo)){ 
+        while (!am.validarExistenciaId(numero_articulo,tipo_articulo)){
             std::cout << "El articulo no existe, ingrese nuevamente: ";numero_articulo = validarCinInt();
         }
 
@@ -47,7 +47,7 @@ void VentaDetalleManager::cargarDetalleVenta(int numeroVenta){
         std::cout << "Desea cargar otro producto? (1-Si o 2-No): ";
         opcion = validarCinInt();
     } while (opcion == 1);
-    
+
 }
 void VentaDetalleManager::agregarVentaDetalle(Detalleventa obj){
     if (_archivoVentaDetalle.agregarRegistroVentaDetalle(obj))
@@ -66,7 +66,7 @@ void VentaDetalleManager::listarVentaDetalle(){
     }
 
     Detalleventa *obj;
-    
+
     obj = new Detalleventa[cantidad];
     if (obj == nullptr)
     {
@@ -74,10 +74,10 @@ void VentaDetalleManager::listarVentaDetalle(){
         delete []obj;
         return;
     }
-    
+
     headerVentaDetalle();
     for (int i = 0; i < cantidad; i++) mostrarVentaDetalle(_archivoVentaDetalle.leerRegistro(i));
-    
+
     delete []obj;
 }
 
@@ -136,7 +136,7 @@ Detalleventa* VentaDetalleManager::buscarVentaDetalle(int id){
         return obj;
         delete []obj;
     }
-    
+
     if (!validarExistenciaId(id))
     {
         std::cout << "No existe el detalle de la venta ingresada" << std::endl;
@@ -164,7 +164,7 @@ Detalleventa* VentaDetalleManager::buscarVentaDetalle(int id){
         return obj;
         delete []obj;
     }
-    
+
     return obj;
     delete []obj;
 }
@@ -183,13 +183,21 @@ int option;
 		system("cls");
 
 		switch(option){
-		case 1:
+		case 1:{
             system("cls");
+            VentaManager vm;
             int numero_venta;
             std::cout << "1) Ingrese el numero de venta: ";
             numero_venta = validarCinInt();
+            while (!vm.validarExistencia(numero_venta))
+            {
+                std::cout << "Venta ingresado no existe, ingrese nuevamente o presione 0 para salir: ";
+                numero_venta = validarCinInt();
+                if (numero_venta == 0) return;
+            }
+
             cargarDetalleVenta(numero_venta);
-			break;
+			break;}
 		case 2:
             listarVentaDetalle();
 			system("pause");
@@ -209,7 +217,7 @@ int option;
 
 bool VentaDetalleManager::validarExistenciaId(int numeroVenta){
     int cantidad = _archivoVentaDetalle.contarRegistros();
-    
+
     for (int i = 0; i < cantidad; i++)
     {
         if (_archivoVentaDetalle.leerRegistro(i).getnumventa() == numeroVenta)
