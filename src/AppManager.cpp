@@ -31,6 +31,7 @@ Personal AppManager::Logueo(){
 }
 
 void ventasPorGenero(int genero){
+    system("cls");
 
     ArchivoVHS dataVhs;
     ArchivoDetalleVenta dataVentaDetalle("VentaDetalle.dat");
@@ -56,6 +57,7 @@ void ventasPorGenero(int genero){
     if (contador_vhs_por_genero == 0)
     {
         cout << "No hay ventas registradas de ese genero de pelicula" << endl;
+        return;
     }
 
     int *posicion_vhs;
@@ -124,12 +126,33 @@ void ventasPorGenero(int genero){
             }
         }
     }
+    int auxAcu, auxPos;
 
+    for (int i = 0; i < contador_vhs_por_genero; i++)
+    {
+        for (int j = 0; j < contador_vhs_por_genero; j++)
+        {
+            if (acumuladorCantidad[j] > acumuladorCantidad[j+1])
+            {
+                auxAcu = acumuladorCantidad[j];
+                acumuladorCantidad[j] = acumuladorCantidad[j+1];
+                acumuladorCantidad[j+1] = auxAcu;
+
+                auxPos = posicion_vhs[j];
+                posicion_vhs[j] = posicion_vhs[j+1];
+                posicion_vhs[j+1] = auxPos;
+            }
+        }
+    }
+
+
+    int contadoraux = contador_vhs_por_genero - 1;
 
     system("cls");
     cout << "id_vhs \t\t Titulo \t\t\t Cantidad de ventas" << endl;
-    for (int i = 0; i < contador_vhs_por_genero; i++)
+    for (int i = contadoraux; i >= 0; i--)
     {
+        if(acumuladorCantidad[i] == 0) continue;
         int posicion = dataVhs.buscarXnumero(posicion_vhs[i]);
         if (posicion != -1 && posicion !=-2)
         {
@@ -159,14 +182,14 @@ void ventasPorPlataforma(int plataforma){
         if (dataJuego.leerRegistro(i).getPlataforma() == plataforma)
         {
             contador_juego_por_plataforma++;
-        } 
+        }
     }
 
     if (contador_juego_por_plataforma == 0)
     {
         cout << "No hay ventas registradas de esa plataforma" << endl;
     }
-    
+
     int *numero_juego;
 
     numero_juego = new int[contador_juego_por_plataforma];
@@ -175,7 +198,7 @@ void ventasPorPlataforma(int plataforma){
         cout << "No se pudo pedir memoria para el vector numero_juego";
         return;
     }
-    
+
     int j = 0;
     for (int i = 0; i < cantidad_registros_juego; i++)
     {
@@ -194,12 +217,12 @@ void ventasPorPlataforma(int plataforma){
         delete numero_juego;
         return;
     }
-    
+
     for (int i = 0; i < contador_juego_por_plataforma; i++)
     {
         acumulador_cantidad[i] = 0;
     }
-    
+
     int cantidad_venta_detalle = dataVentaDetalle.contarRegistros();
 
     if (cantidad_venta_detalle == -1)
@@ -209,7 +232,7 @@ void ventasPorPlataforma(int plataforma){
         delete acumulador_cantidad;
         return;
     }
-    
+
     for (int i = 0; i < cantidad_venta_detalle; i++)
     {
         if (dataVentaDetalle.leerRegistro(i).getnumventa() == -1)
@@ -235,12 +258,33 @@ void ventasPorPlataforma(int plataforma){
             }
         }
     }
-    
-    system("cls");
-    cout << "id_juego \t Titulo \t\t Cantidad de ventas" << endl;
+
+int auxAcu, auxPos;
 
     for (int i = 0; i < contador_juego_por_plataforma; i++)
     {
+        for (int j = 0; j < contador_juego_por_plataforma; j++)
+        {
+            if (acumulador_cantidad[j] > acumulador_cantidad[j+1])
+            {
+                auxAcu = acumulador_cantidad[j];
+                acumulador_cantidad[j] = acumulador_cantidad[j+1];
+                acumulador_cantidad[j+1] = auxAcu;
+
+                auxPos = numero_juego[j];
+                numero_juego[j] = numero_juego[j+1];
+                numero_juego[j+1] = auxPos;
+            }
+        }
+    }
+
+    int contadoraux = contador_juego_por_plataforma - 1;
+
+    system("cls");
+    cout << "id_juego \t Titulo \t\t Cantidad de ventas" << endl;
+    for (int i = contadoraux; i >= 0; i--)
+    {
+        if(acumulador_cantidad[i] == 0) continue;
         int posicion = dataJuego.buscarXnumero(numero_juego[i]);
         if (posicion != -1 && posicion !=-2)
         {

@@ -201,7 +201,7 @@
 	"Personal.h"
 	"Persona.h"
 
-1720100663 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventamanager.cpp
+1720125311 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\ventamanager.cpp
 	"VentaManager.h"
 
 1720098945 c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\include\ventamanager.h
@@ -242,7 +242,7 @@
 	"AppFacturacionManagger.h"
 	"ArticulosManager.h"
 
-1720121733 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\appmanager.cpp
+1720128216 source:c:\users\lucio pipo\desktop\proyecto integrador\blockbuster\src\appmanager.cpp
 	<iostream>
 	"AppManager.h"
 
