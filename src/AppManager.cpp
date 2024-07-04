@@ -330,7 +330,7 @@ void menuReportes(){
                 int plataforma;
                 cout<<"Ingrese la plataforma: 1)PC 2)PSN 3)XBOX" << endl;
                 plataforma = validarCinInt();
-                	while (plataforma != 1 && plataforma != 2 && plataforma !=3)
+                while (plataforma != 1 && plataforma != 2 && plataforma !=3)
                     {
                         cout << "Dato invalido, ingrese nuevamente :" << endl;
                         plataforma = validarCinInt();
