@@ -11,11 +11,11 @@ class GeneroManager{
 
         void menu();
         void buscarGeneroPorNumero();
-
+        void listarGenero();
+        bool validarExistenciaId(int numero);
     private:
         Genero crearGenero();
         void agregarGenero();
-        void listarGenero();
         void mostrarGenero(Genero reg);
         void modificarGenero();
         void eliminarGenero();

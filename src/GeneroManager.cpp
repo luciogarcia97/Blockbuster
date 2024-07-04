@@ -77,13 +77,10 @@ int cantidad = _generoArchivo.contarRegistros();
 
         if(reg.getEstado()==1)
         {
-        cout << "ID : " << reg.getNumero() << endl;
-        cout << "Nombre : " << reg.getNombre() << endl;
-        cout << "Estado Genero: " << (reg.getEstado() ? "Disponible": "Eliminado") << endl;
-        cout << "----------------------------" << endl;
+            cout << reg.getNumero() << ")" << reg.getNombre() << " ";
         }
-
     }
+    cout << endl;
 }
 
 void GeneroManager::mostrarGenero(Genero reg){
@@ -174,3 +171,14 @@ void GeneroManager::volverCargarGenero(Genero &registro){
     registro.setEstado(estado);
 }
 
+bool GeneroManager::validarExistenciaId(int numero){
+    int cantidad = _generoArchivo.contarRegistros();
+    for (int i = 0; i < cantidad; i++)
+    {
+        if (_generoArchivo.leerRegistro(i).getNumero() == numero)
+        {
+            return true;
+        }
+    }
+    return false;
+}

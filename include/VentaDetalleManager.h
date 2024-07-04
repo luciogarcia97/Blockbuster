@@ -8,6 +8,7 @@ class VentaDetalleManager
     public:
         void menu();
         void cargarDetalleVenta(int numeroVenta);
+        bool validarExistenciaId(int numeroVenta);
     private:
         void agregarVentaDetalle(Detalleventa obj);
         void listarVentaDetalle();

@@ -59,6 +59,12 @@ void VentaDetalleManager::agregarVentaDetalle(Detalleventa obj){
 }
 void VentaDetalleManager::listarVentaDetalle(){
     int cantidad = _archivoVentaDetalle.contarRegistros();
+    if (cantidad == -1)
+    {
+        cout << "No existe el archivo VentaDetalle.dat" << endl;
+        return;
+    }
+
     Detalleventa *obj;
     
     obj = new Detalleventa[cantidad];
@@ -77,10 +83,11 @@ void VentaDetalleManager::listarVentaDetalle(){
 
 void VentaDetalleManager::listarVentaDetalleById(){
     int id;
-    std::cout << "Ingrese el numero de alquiler a buscar: ";
+    std::cout << "Ingrese el numero de venta a buscar: ";
     id = validarCinInt();
 
     int cantidad = _archivoVentaDetalle.contarRegistrosRepetidos(id);
+
     Detalleventa *obj;
     obj = new Detalleventa[cantidad];
     if (obj == nullptr)
@@ -111,7 +118,7 @@ void VentaDetalleManager::listarVentaDetalleById(){
 }
 
 void VentaDetalleManager::mostrarVentaDetalle(Detalleventa reg){
-    std::cout << reg.getnumventa() << "\t\t" << reg.getnumarticulo() << "\t\t" << reg.getcantidad() << "\t\t" << reg.getprecio() << std::endl;
+    std::cout << reg.getnumventa() << "\t\t" << reg.getnumarticulo() << "\t\t" << reg.getTipoArticulo() << "\t\t" << reg.getcantidad() << "\t\t" << reg.getprecio() << std::endl;
 }
 
 Detalleventa* VentaDetalleManager::buscarVentaDetalle(int id){
@@ -129,7 +136,13 @@ Detalleventa* VentaDetalleManager::buscarVentaDetalle(int id){
         return obj;
         delete []obj;
     }
-
+    
+    if (!validarExistenciaId(id))
+    {
+        std::cout << "No existe el detalle de la venta ingresada" << std::endl;
+        return obj;
+        delete []obj;
+    }
     int indiceIgualdad = 0;
     int ciclos = _archivoVentaDetalle.contarRegistros();
     for (int i = 0; i < ciclos; i++)
@@ -173,7 +186,7 @@ int option;
 		case 1:
             system("cls");
             int numero_venta;
-            std::cout << "1) Ingrese el numero de alquiler: ";
+            std::cout << "1) Ingrese el numero de venta: ";
             numero_venta = validarCinInt();
             cargarDetalleVenta(numero_venta);
 			break;
@@ -192,4 +205,17 @@ int option;
 			break;
 		}
 	}while (option != 0);
+}
+
+bool VentaDetalleManager::validarExistenciaId(int numeroVenta){
+    int cantidad = _archivoVentaDetalle.contarRegistros();
+    
+    for (int i = 0; i < cantidad; i++)
+    {
+        if (_archivoVentaDetalle.leerRegistro(i).getnumventa() == numeroVenta)
+        {
+            return true;
+        }
+    }
+    return false;
 }

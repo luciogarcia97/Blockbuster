@@ -174,6 +174,7 @@ void VentaManager::menu(){
 			break;
         case 3:
             buscarVenta();
+            system("pause");
 			break;
         case 4:
             vdm.menu();

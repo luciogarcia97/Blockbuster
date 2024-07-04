@@ -8,6 +8,7 @@ class AlquilerDetalleManager
     public:
         void menu();
         void cargarDetalleAlquiler(int numeroAlquiler);
+        bool validarExistenciaId(int numeroAlquiler);
     private:
         void agregarAlquilerDetalle(DetalleAlquiler obj);
         void listarAlquilerDetalle();

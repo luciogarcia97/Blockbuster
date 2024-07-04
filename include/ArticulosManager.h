@@ -6,6 +6,7 @@
 #include "Juego.h"
 #include "ArchivoVHS.h"
 #include "ArchivoJuego.h"
+#include "GeneroManager.h"
 
 using namespace std;
 

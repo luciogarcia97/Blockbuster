@@ -61,6 +61,12 @@ void AlquilerDetalleManager::agregarAlquilerDetalle(DetalleAlquiler obj){
 }
 void AlquilerDetalleManager::listarAlquilerDetalle(){
     int cantidad = _archivoAlquilerDetalle.contarRegistros();
+    if (cantidad == -1)
+    {
+        cout << "No existe el archivo AlquilerDetalle.dat" << endl;
+        return;
+    }
+
     DetalleAlquiler *obj;
     
     obj = new DetalleAlquiler[cantidad];
@@ -91,6 +97,8 @@ void AlquilerDetalleManager::listarAlquilerDetalleById(){
     id = validarCinInt();
 
     int cantidad = _archivoAlquilerDetalle.contarRegistrosRepetidos(id);
+
+
     DetalleAlquiler *obj;
     obj = new DetalleAlquiler[cantidad];
     if (obj == nullptr)
@@ -136,6 +144,13 @@ DetalleAlquiler* AlquilerDetalleManager::buscarAlquilerDetalle(int id){
             obj[i] = DetalleAlquiler();
             obj[i].setNumeroAlquilerDetalle(-1);
         }
+        return obj;
+        delete []obj;
+    }
+
+    if (!validarExistenciaId(id))
+    {
+        std::cout << "No existe el detalle del aquiler ingresado" << std::endl;
         return obj;
         delete []obj;
     }
@@ -203,4 +218,17 @@ int option;
 			break;
 		}
 	}while (option != 0);
+}
+
+bool AlquilerDetalleManager::validarExistenciaId(int numeroAlquiler){
+    int cantidad = _archivoAlquilerDetalle.contarRegistros();
+    
+    for (int i = 0; i < cantidad; i++)
+    {
+        if (_archivoAlquilerDetalle.leerRegistro(i).getNumeroAlquilerDetalle() == numeroAlquiler)
+        {
+            return true;
+        }
+    }
+    return false;
 }
